@@ -35,8 +35,8 @@ export default function LookbookGrid() {
         <div className="w-full mb-10 bg-base-cream border-2 border-text-black p-4 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-[4px_4px_0px_#111111]">
           <div className="flex items-center gap-3">
             <AlertCircle className="h-5 w-5 text-electric-blue shrink-0 animate-pulse" />
-            <span className="text-xs md:text-sm font-bold uppercase tracking-wide text-text-black">
-              Product availability changes rapidly. DM on Instagram or visit our store in Mansarovar for the latest drops!
+            <span className="text-xs md:text-sm font-black uppercase tracking-wide text-text-black">
+              KAPDOLOGY® DROP 001 — LIMITED PRODUCTION RUN • 200-220 GSM HEAVY COTTON
             </span>
           </div>
           <a
@@ -45,7 +45,7 @@ export default function LookbookGrid() {
             rel="noopener noreferrer"
             className="flex items-center gap-1.5 text-xs font-black uppercase tracking-wider text-hot-pink hover:underline shrink-0"
           >
-            <span>Instagram Drops</span>
+            <span>INSTAGRAM UPDATES</span>
             <ArrowRight className="h-3 w-3" />
           </a>
         </div>
@@ -73,20 +73,18 @@ export default function LookbookGrid() {
                 
                 {/* Visual Indicators */}
                 <div className="absolute top-3 left-3 flex flex-col gap-1.5 z-20">
-                  {product.isNew && (
-                    <span className="bg-neon-green text-text-black text-[9px] font-black uppercase tracking-widest px-2 py-0.5 border border-text-black shadow-[1px_1px_0px_#111111]">
-                      NEW DROP
-                    </span>
-                  )}
-                  {product.isPopular && (
+                  <span className="bg-electric-blue text-white text-[9px] font-black uppercase tracking-widest px-2 py-0.5 border border-text-black shadow-[1px_1px_0px_#111111]">
+                    {product.drop}
+                  </span>
+                  {product.featured && (
                     <span className="bg-hot-pink text-white text-[9px] font-black uppercase tracking-widest px-2 py-0.5 border border-text-black shadow-[1px_1px_0px_#111111]">
-                      BEST SELLER
+                      FEATURED
                     </span>
                   )}
                 </div>
 
                 <div className="absolute bottom-3 right-3 bg-white text-text-black text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 border border-text-black shadow-[1px_1px_0px_#111111]">
-                  {product.fit}
+                  {product.gsm} • {product.fit}
                 </div>
               </div>
 
@@ -101,13 +99,13 @@ export default function LookbookGrid() {
                   </span>
                 </div>
 
-                {/* Inquiry Link */}
+                {/* View Product Link */}
                 <Link
-                  href={`/contact?product=${encodeURIComponent(product.name)}`}
-                  className="flex items-center justify-center gap-2 w-full py-2.5 text-xs font-bold uppercase tracking-wider border-2 border-text-black bg-white hover:bg-text-black hover:text-white transition-colors duration-300"
+                  href={`/product/${product.slug}`}
+                  className="flex items-center justify-center gap-2 w-full py-2.5 text-xs font-black uppercase tracking-wider border-2 border-text-black bg-electric-blue text-white hover:bg-text-black transition-colors duration-300 shadow-[2px_2px_0px_#111111]"
                 >
                   <ShoppingBag className="h-3.5 w-3.5" />
-                  <span>Check Availability</span>
+                  <span>VIEW PRODUCT</span>
                 </Link>
               </div>
             </motion.div>
@@ -120,7 +118,7 @@ export default function LookbookGrid() {
             href="/collections"
             className="inline-flex items-center gap-2 px-8 py-4 font-black uppercase tracking-widest text-sm border-2 border-text-black bg-text-black text-white hover:bg-electric-blue transition-colors duration-300 shadow-[4px_4px_0px_#A3E635]"
           >
-            <span>Explore All Products</span>
+            <span>SHOP DROP 001</span>
             <ArrowRight className="h-4.5 w-4.5" />
           </Link>
         </div>

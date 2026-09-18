@@ -78,7 +78,7 @@ function LookbookCard({ isMobile = false }: LookbookCardProps) {
               ₹599
             </span>
             <Link
-              href="/collections?category=new-drops"
+              href="/collections?category=drop-001"
               className="inline-flex items-center gap-1 text-[11px] font-black uppercase tracking-wider text-[#111111] hover:text-[#FF3B00] transition-colors group"
             >
               <span>SHOP</span>
@@ -170,7 +170,7 @@ export default function HeroSection() {
             className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3.5 sm:gap-4 mb-5 sm:mb-7"
           >
             <Link
-              href="/collections?category=new-drops"
+              href="/collections?category=drop-001"
               className="group inline-flex items-center justify-center gap-2.5 px-8 py-3.5 font-black uppercase tracking-wider text-xs sm:text-sm border-2 border-[#111111] bg-[#111111] text-[#FAF7F2] shadow-[4px_4px_0px_#FF3B00] hover:shadow-[2px_2px_0px_#FF3B00] hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-150 text-center"
             >
               <span>SHOP DROP 001</span>

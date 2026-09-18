@@ -2,9 +2,8 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { motion } from "framer-motion";
 import { brandData } from "@/data/brand";
-import { Sparkles, MapPin, Instagram, ShieldCheck, Heart } from "lucide-react";
+import { Sparkles, ShieldCheck, Heart, Instagram } from "lucide-react";
 
 export default function AboutPage() {
   return (
@@ -14,13 +13,13 @@ export default function AboutPage() {
       <section className="relative py-20 border-b-2 border-text-black streetwear-grid">
         <div className="max-w-7xl mx-auto px-4 md:px-8 text-center relative z-10">
           <span className="text-xs font-black uppercase tracking-widest text-electric-blue block mb-3">
-            WHO WE ARE
+            WHAT IS KAPDOLOGY?
           </span>
           <h1 className="font-black text-5xl md:text-7xl lg:text-8xl tracking-tight uppercase leading-none text-text-black mb-6">
-            The Manifesto
+            NOT JUST CLOTHES.<br />IT&apos;S A MOOD.
           </h1>
-          <p className="text-lg md:text-xl font-semibold text-text-black/70 max-w-xl mx-auto">
-            Bringing boxy proportions, heavyweight oversized tees, and authentic streetwear style to Mansarovar, Jaipur.
+          <p className="text-lg md:text-xl font-semibold text-text-black/70 max-w-2xl mx-auto">
+            Kapdology combines &quot;Kapda&quot; and &quot;ology&quot; — the culture and study of clothing.
           </p>
         </div>
       </section>
@@ -29,34 +28,40 @@ export default function AboutPage() {
       <section className="max-w-7xl mx-auto px-4 md:px-8 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
-          {/* Left Column: Visual Stack */}
+          {/* Left Column: Visual Card */}
           <div className="lg:col-span-5 relative h-[450px] border-3 border-text-black shadow-[8px_8px_0px_#111111] bg-white overflow-hidden">
             <Image
-              src="/images/slate-boxy.jpg"
-              alt="Off Culture Clothing Store Vibe"
+              src="/images/hero.png"
+              alt="KAPDOLOGY Drop 001 oversized tee campaign"
               fill
               sizes="(max-width: 1024px) 100vw, 40vw"
               className="object-cover object-center"
             />
-            <div className="absolute top-4 left-4 bg-neon-green text-text-black text-xs font-black uppercase tracking-widest px-3 py-1 shadow-[2px_2px_0px_#111111]">
-              MANSAROVAR BASEMENT
+            <div className="absolute top-4 left-4 bg-hot-pink text-white text-xs font-black uppercase tracking-widest px-3 py-1 shadow-[2px_2px_0px_#111111]">
+              DROP 001 / 2026
             </div>
           </div>
 
-          {/* Right Column: Narrative */}
+          {/* Right Column: Brand Narrative */}
           <div className="lg:col-span-7 flex flex-col justify-center">
-            <h2 className="font-extrabold text-3xl md:text-4xl uppercase tracking-tight text-text-black mb-6">
-              Our Story / No Gatekeeping
+            <h2 className="font-black text-3xl md:text-4xl uppercase tracking-tight text-text-black mb-6">
+              WHAT IS KAPDOLOGY?
             </h2>
             <div className="space-y-6 text-base md:text-lg text-text-black/80 font-medium leading-relaxed">
               <p>
-                <strong>Off Culture Jaipur</strong> was born out of frustration. The frustration of seeing basic, generic designs, sub-par thin fabrics, and corporate markups dominating local streetwear options in Jaipur.
+                <strong>Kapdology</strong> combines <strong>&quot;Kapda&quot;</strong> and <strong>&quot;ology&quot;</strong> — the culture and study of clothing.
               </p>
               <p>
-                We wanted fits that look premium. We wanted shirts with a heavy drape that hang perfectly on your frame. We wanted cropped shirts that complement high-waist styling. And we wanted to make them accessible to everyone without paying luxury markups.
+                We don&apos;t see clothing as just fabric.
               </p>
+              <div className="p-6 bg-white border-2 border-text-black shadow-[4px_4px_0px_#111111] space-y-2">
+                <p className="font-black text-xl uppercase tracking-wider text-electric-blue">• IT&apos;S IDENTITY.</p>
+                <p className="font-black text-xl uppercase tracking-wider text-hot-pink">• IT&apos;S ATTITUDE.</p>
+                <p className="font-black text-xl uppercase tracking-wider text-neon-green text-shadow-sm">• IT&apos;S CULTURE.</p>
+                <p className="font-black text-xl uppercase tracking-wider text-text-black">• IT&apos;S SELF-EXPRESSION.</p>
+              </div>
               <p>
-                Located near VT Road Circle, our basement outlet is a direct reflection of this vision. It is not just a place to buy clothing; it is a spot where you can browse custom drops, check out new fits, and vibe with the growing Jaipur fashion subculture.
+                Kapdology exists to turn those things into something you can wear.
               </p>
             </div>
           </div>
@@ -64,40 +69,40 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Brand Values / Pillars */}
+      {/* Brand Values / Quality Specs */}
       <section className="max-w-7xl mx-auto px-4 md:px-8 py-12 border-t-2 border-b-2 border-text-black bg-white my-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           
-          {/* Pillar 1 */}
+          {/* Quality 1 */}
           <div className="p-6 border-2 border-text-black bg-base-cream shadow-[3px_3px_0px_#111111]">
             <div className="w-10 h-10 bg-electric-blue text-white flex items-center justify-center border border-text-black mb-4">
               <ShieldCheck className="h-5 w-5" />
             </div>
-            <h3 className="font-extrabold uppercase text-lg mb-2">Tailored Silhouettes</h3>
+            <h3 className="font-extrabold uppercase text-lg mb-2">200–220 GSM Cotton</h3>
             <p className="text-sm font-semibold text-text-black/70 leading-relaxed">
-              We focus entirely on custom Gen-Z patterns: drop shoulders, wide boxy body dimensions, tight rib necklines, and clean hem edges.
+              Crafted with 100% premium cotton delivering a heavy, structured drape that maintains shape wash after wash.
             </p>
           </div>
 
-          {/* Pillar 2 */}
+          {/* Quality 2 */}
           <div className="p-6 border-2 border-text-black bg-base-cream shadow-[3px_3px_0px_#111111]">
             <div className="w-10 h-10 bg-hot-pink text-white flex items-center justify-center border border-text-black mb-4">
               <Sparkles className="h-5 w-5" />
             </div>
-            <h3 className="font-extrabold uppercase text-lg mb-2">Heavyweight Materials</h3>
+            <h3 className="font-extrabold uppercase text-lg mb-2">Structured Fits</h3>
             <p className="text-sm font-semibold text-text-black/70 leading-relaxed">
-              Standard shirts are thin and lose form. We source durable 220-260 GSM combed cotton fabrics that hold their structure wash after wash.
+              Designed around heavy oversized silhouettes with reinforced collar construction and precision stitching.
             </p>
           </div>
 
-          {/* Pillar 3 */}
+          {/* Quality 3 */}
           <div className="p-6 border-2 border-text-black bg-base-cream shadow-[3px_3px_0px_#111111]">
             <div className="w-10 h-10 bg-neon-green text-text-black flex items-center justify-center border border-text-black mb-4">
               <Heart className="h-5 w-5" />
             </div>
-            <h3 className="font-extrabold uppercase text-lg mb-2">Affordable Drops</h3>
+            <h3 className="font-extrabold uppercase text-lg mb-2">Graphic DTF Production</h3>
             <p className="text-sm font-semibold text-text-black/70 leading-relaxed">
-              We produce in controlled drops to keep quality high and waste low, letting us price our graphics and crop lines starting around ₹599.
+              High-definition graphic-driven DTF printing for crisp details, high color depth, and lasting wear.
             </p>
           </div>
 
@@ -106,29 +111,30 @@ export default function AboutPage() {
 
       {/* Call to Actions */}
       <section className="max-w-4xl mx-auto px-4 text-center mt-16">
-        <h2 className="font-extrabold text-3xl uppercase tracking-tight text-text-black mb-6">
-          VIBE WITH THE CULTURE
+        <h2 className="font-black text-3xl md:text-4xl uppercase tracking-tight text-text-black mb-6">
+          WEAR THE CULTURE.
         </h2>
         <div className="flex flex-wrap justify-center gap-4">
           <Link
             href="/collections"
-            className="px-6 py-3 font-bold uppercase tracking-wider text-xs border-2 border-text-black bg-text-black text-white hover:bg-electric-blue transition-colors duration-200 shadow-[3px_3px_0px_#0052FF]"
+            className="px-8 py-4 font-black uppercase tracking-wider text-sm border-2 border-text-black bg-electric-blue text-white hover:bg-text-black transition-colors duration-200 shadow-[3px_3px_0px_#111111]"
           >
-            Explore Collections
+            SHOP DROP 001
           </Link>
           <Link
-            href="/contact"
-            className="px-6 py-3 font-bold uppercase tracking-wider text-xs border-2 border-text-black bg-white text-text-black hover:bg-chrome-silver transition-all duration-200"
+            href="/collections"
+            className="px-8 py-4 font-black uppercase tracking-wider text-sm border-2 border-text-black bg-white text-text-black hover:bg-chrome-silver transition-all duration-200 shadow-[3px_3px_0px_#111111]"
           >
-            Visit Our Store
+            EXPLORE LOOKBOOK
           </Link>
           <a
             href={brandData.instagram}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-6 py-3 font-bold uppercase tracking-wider text-xs border-2 border-text-black bg-transparent text-text-black hover:bg-hot-pink hover:text-white transition-all duration-200"
+            className="px-8 py-4 font-black uppercase tracking-wider text-sm border-2 border-text-black bg-transparent text-text-black hover:bg-hot-pink hover:text-white transition-all duration-200 shadow-[3px_3px_0px_#111111] flex items-center gap-2"
           >
-            Follow on Instagram
+            <Instagram className="h-4.5 w-4.5" />
+            <span>INSTAGRAM</span>
           </a>
         </div>
       </section>

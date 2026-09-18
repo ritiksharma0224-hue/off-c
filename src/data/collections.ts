@@ -9,51 +9,59 @@ export interface Collection {
 
 export const collectionsData: Collection[] = [
   {
-    id: "oversized",
-    name: "Oversized Tees",
-    slug: "oversized-tees",
-    description: "Heavyweight drop-shoulder shirts with relaxed boxes, built to last and hang just right.",
-    features: ["240+ GSM Cotton Blend", "Relaxed Fit Ribbed Collar", "Drop-Shoulder Silhouette"],
-    tag: "SIGNATURE FIT"
+    id: "drop-001",
+    name: "DROP 001",
+    slug: "drop-001",
+    description: "The inaugural release of KAPDOLOGY®. Identity, attitude, and culture in garment form.",
+    features: ["220-240 GSM Heavy Cotton", "Graphic-Driven DTF Prints", "Structured Oversized Cut"],
+    tag: "PRIMARY DROP"
   },
   {
-    id: "boxy",
-    name: "Boxy Fits",
-    slug: "boxy-fits",
-    description: "Wide and slightly cropped body layout. The ultimate streetwear proportion for layering.",
-    features: ["Pre-shrunk Terry Cloth", "Boxy Silhouette", "Reinforced Hems"],
-    tag: "TRENDING"
+    id: "restricted",
+    name: "RESTRICTED",
+    slug: "restricted",
+    description: "Ultra-limited graphic drops produced in strict low-quantity runs.",
+    features: ["Chrome Foil Artwork", "Numbered Release Items", "Exclusive Collectors Packaging"],
+    tag: "LIMITED RELEASE"
   },
   {
-    id: "cropped",
-    name: "Cropped Shirts",
-    slug: "cropped-shirts",
-    description: "Modern high-cut shirts that drop perfectly at the waistline. Tailored streetwear style.",
-    features: ["Relaxed Shoulders", "Straight Waist Edge", "Premium Button Details"],
-    tag: "STREETWEAR CORE"
+    id: "identity",
+    name: "IDENTITY",
+    slug: "identity",
+    description: "Statement graphic tees built around subculture typography and visual self-expression.",
+    features: ["Subculture Typography", "Heavy Organic Canvas", "Drop Shoulder Drape"],
+    tag: "GRAPHIC HEAVY"
   },
   {
-    id: "graphic",
-    name: "Graphic Tees",
-    slug: "graphic-tees",
-    description: "High-density digital and screen prints featuring cyber, retro, and subculture graphics.",
-    features: ["High-Density Puff Prints", "Fade-Resistant Colors", "Bold Original Graphics"],
-    tag: "LIMITED DROP"
+    id: "global",
+    name: "GLOBAL",
+    slug: "global",
+    description: "Worldwide streetwear silhouettes tailored for the contemporary Gen-Z aesthetic.",
+    features: ["Unisex Boxy Proportions", "Reinforced Taped Shoulders", "Pre-Shrunk Cotton"],
+    tag: "CORE LINE"
   },
   {
-    id: "casual",
-    name: "Casual Fits",
-    slug: "casual-fits",
-    description: "Everyday trousers, cargos, and essentials matching our boxy top profiles.",
-    features: ["Durable Canvas / Twill", "Elastic & Adjustable Hems", "Multi-pocket Utilities"],
-    tag: "EVERYDAY"
+    id: "chaos",
+    name: "CHAOS",
+    slug: "chaos",
+    description: "Distressed washes, raw textures, and graphic rebellion.",
+    features: ["Acid Wash Finishing", "Terry Cloth Weave", "Distressed Artwork Edges"],
+    tag: "EXPERIMENTAL"
   },
   {
-    id: "drops",
-    name: "New Drops",
-    slug: "new-drops",
-    description: "The latest limited releases fresh off our production line. Grab them before they're gone.",
-    features: ["Numbered Items", "Exclusive Colorways", "First Come First Served"],
-    tag: "HOT SELLING"
+    id: "minimal",
+    name: "MINIMAL",
+    slug: "minimal",
+    description: "Ultra-clean structured boxy fits focusing purely on fabric weight, drape, and proportion.",
+    features: ["220 GSM Combed Cotton", "High Mock Neck Collar", "Clean Box Cut"],
+    tag: "ESSENTIALS"
+  },
+  {
+    id: "technical",
+    name: "TECHNICAL",
+    slug: "technical",
+    description: "Cropped button-downs, utility pockets, and functional streetwear cuts.",
+    features: ["Cotton Twill Weave", "Metal Snap Hardware", "Square Cropped Waist"],
+    tag: "UTILITY & CUTS"
   }
 ];

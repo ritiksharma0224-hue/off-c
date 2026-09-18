@@ -6,16 +6,16 @@ import CustomCursor from "@/components/ui/CustomCursor";
 import KapdologyVideoPreloader from "@/components/KapdologyVideoPreloader";
 
 export const metadata: Metadata = {
-  title: "KAPDOLOGY® | Independent Indian Gen-Z Streetwear",
+  title: "KAPDOLOGY® — Not Just Clothes. It's a Mood.",
   description:
-    "KAPDOLOGY® — Independent Indian Gen-Z streetwear brand. Not just clothes, it's a mood. Shop heavy oversized tees, raw boxy fits, cropped shirts, and graphic streetwear.",
+    "Kapdology is a Jaipur-born Gen-Z streetwear brand built around identity, graphics, attitude and culture.",
   keywords:
-    "KAPDOLOGY, KAPDOLOGY streetwear, Indian streetwear brand, Gen-Z streetwear, oversized t-shirts India, boxy fit streetwear, luxury streetwear India, streetwear brand Jaipur",
+    "KAPDOLOGY, KAPDOLOGY streetwear, Indian streetwear brand, Gen-Z streetwear, oversized t-shirts India, boxy fit streetwear, streetwear brand Jaipur",
   authors: [{ name: "KAPDOLOGY®" }],
   openGraph: {
-    title: "KAPDOLOGY® | Independent Indian Gen-Z Streetwear",
+    title: "KAPDOLOGY® — Not Just Clothes. It's a Mood.",
     description:
-      "KAPDOLOGY® — NOT JUST CLOTHES. IT'S A MOOD. Minimal, luxury streetwear identity for the new generation.",
+      "Kapdology is a Jaipur-born Gen-Z streetwear brand built around identity, graphics, attitude and culture.",
     url: "https://kapdology.com",
     siteName: "KAPDOLOGY®",
     type: "website",

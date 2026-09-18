@@ -7,23 +7,25 @@ import { collectionsData } from "@/data/collections";
 import { ArrowUpRight } from "lucide-react";
 
 export default function CollectionGrid() {
-  // Map category slugs to specific placeholder images we copied earlier
+  // Map category slugs to specific placeholder images
   const getCategoryImage = (slug: string) => {
     switch (slug) {
-      case "oversized-tees":
+      case "drop-001":
+        return "/images/hero.png";
+      case "restricted":
         return "/images/vintage-wash.jpg";
-      case "boxy-fits":
-        return "/images/slate-boxy.jpg";
-      case "cropped-shirts":
-        return "/images/cropped-shirt.jpg";
-      case "graphic-tees":
+      case "identity":
         return "/images/cyber-tee.jpg";
-      case "casual-fits":
-        return "/images/cargos.jpg";
-      case "new-drops":
+      case "global":
         return "/images/chrome-tee.jpg";
+      case "chaos":
+        return "/images/slate-boxy.jpg";
+      case "minimal":
+        return "/images/cropped-shirt.jpg";
+      case "technical":
+        return "/images/cargos.jpg";
       default:
-        return "/images/cyber-tee.jpg";
+        return "/images/hero.png";
     }
   };
 
@@ -35,17 +37,17 @@ export default function CollectionGrid() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div>
             <span className="text-xs font-black uppercase tracking-widest text-electric-blue block mb-2">
-              CURATED VIBES
+              KAPDOLOGY® FAMILIES
             </span>
             <h2 className="font-black text-4xl md:text-5xl lg:text-6xl tracking-tight uppercase leading-none">
-              The Collections
+              DESIGN FAMILIES
             </h2>
           </div>
           <Link
             href="/collections"
             className="inline-flex items-center gap-1.5 font-bold uppercase tracking-wider text-sm border-b-2 border-text-black pb-0.5 hover:text-electric-blue hover:border-electric-blue transition-colors self-start"
           >
-            <span>View All Categories</span>
+            <span>EXPLORE ALL DROPS</span>
             <ArrowUpRight className="h-4 w-4" />
           </Link>
         </div>

@@ -7,31 +7,29 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { productsData } from "@/data/products";
 import { collectionsData } from "@/data/collections";
-import { ShoppingBag, SlidersHorizontal, AlertCircle, HelpCircle } from "lucide-react";
+import { ShoppingBag, SlidersHorizontal, Sparkles } from "lucide-react";
 
 function CollectionsContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
   
-  // State for active filter selection
-  const [activeCategory, setActiveCategory] = useState<string>("all");
+  // State for active collection selection
+  const [activeCollection, setActiveCollection] = useState<string>("all");
 
   // Read initial filter from URL search params on mount
   useEffect(() => {
     const categoryQuery = searchParams.get("category");
     if (categoryQuery) {
-      // Confirm the category exists
       const isValid = collectionsData.some((c) => c.slug === categoryQuery);
       if (isValid) {
-        setActiveCategory(categoryQuery);
+        setActiveCollection(categoryQuery);
       }
     }
   }, [searchParams]);
 
-  // Handle category button click
-  const handleCategorySelect = (slug: string) => {
-    setActiveCategory(slug);
-    // Update URL query parameters without page reload
+  // Handle collection button click
+  const handleCollectionSelect = (slug: string) => {
+    setActiveCollection(slug);
     if (slug === "all") {
       router.push("/collections");
     } else {
@@ -39,19 +37,10 @@ function CollectionsContent() {
     }
   };
 
-  // Filter products based on active category
+  // Filter products based on active collection family
   const filteredProducts = productsData.filter((product) => {
-    if (activeCategory === "all") return true;
-    
-    // Custom mapping for categories
-    if (activeCategory === "oversized-tees") return product.category === "oversized-tees";
-    if (activeCategory === "boxy-fits") return product.category === "boxy-fits";
-    if (activeCategory === "cropped-shirts") return product.category === "cropped-shirts";
-    if (activeCategory === "graphic-tees") return product.category === "graphic-tees";
-    if (activeCategory === "casual-fits") return product.category === "casual-fits";
-    if (activeCategory === "new-drops") return product.category === "new-drops";
-    
-    return true;
+    if (activeCollection === "all") return true;
+    return product.collection.toLowerCase() === activeCollection.toLowerCase();
   });
 
   return (
@@ -60,13 +49,13 @@ function CollectionsContent() {
       {/* Editorial Header */}
       <div className="mb-12 text-left">
         <span className="text-xs font-black uppercase tracking-widest text-electric-blue block mb-2">
-          OFF CULTURE CATALOG
+          KAPDOLOGY® / DROP 001
         </span>
         <h1 className="font-black text-4xl md:text-6xl uppercase tracking-tight text-text-black">
-          The Collections
+          THE COLLECTIONS
         </h1>
-        <p className="text-sm font-semibold text-text-black/60 mt-2 max-w-lg">
-          Browse our streetwear drops. All items are locally designed in Mansarovar, Jaipur. Select a fit profile below to filter.
+        <p className="text-sm md:text-base font-semibold text-text-black/70 mt-2 max-w-xl leading-relaxed">
+          Not just clothes. It&apos;s a mood. Explore our official Drop 001 heavy structured oversized fits.
         </p>
       </div>
 
@@ -75,22 +64,22 @@ function CollectionsContent() {
         {/* Buttons List */}
         <div className="flex flex-wrap gap-2.5">
           <button
-            onClick={() => handleCategorySelect("all")}
+            onClick={() => handleCollectionSelect("all")}
             className={`px-4 py-2 text-xs font-black uppercase tracking-wider border-2 border-text-black transition-all ${
-              activeCategory === "all"
-                ? "bg-text-black text-white shadow-[2px_2px_0px_#0052FF]"
+              activeCollection === "all"
+                ? "bg-text-black text-white shadow-[2px_2px_0px_#FF3B00]"
                 : "bg-white text-text-black hover:bg-chrome-silver"
             }`}
           >
-            All Items
+            ALL DROPS
           </button>
           {collectionsData.map((item) => (
             <button
               key={item.id}
-              onClick={() => handleCategorySelect(item.slug)}
+              onClick={() => handleCollectionSelect(item.slug)}
               className={`px-4 py-2 text-xs font-black uppercase tracking-wider border-2 border-text-black transition-all ${
-                activeCategory === item.slug
-                  ? "bg-text-black text-white shadow-[2px_2px_0px_#0052FF]"
+                activeCollection === item.slug
+                  ? "bg-text-black text-white shadow-[2px_2px_0px_#FF3B00]"
                   : "bg-white text-text-black hover:bg-chrome-silver"
               }`}
             >
@@ -107,10 +96,15 @@ function CollectionsContent() {
       </div>
 
       {/* Drop Alert Disclaimer */}
-      <div className="w-full mb-10 bg-yellow-50 border-2 border-text-black p-4 flex items-center gap-3 shadow-[3px_3px_0px_#111111]">
-        <AlertCircle className="h-5 w-5 text-hot-pink shrink-0" />
-        <span className="text-xs md:text-sm font-bold uppercase tracking-wide text-text-black">
-          To buy or confirm stock status, click &apos;Check Availability&apos; to contact our VT Road Circle store directly.
+      <div className="w-full mb-10 bg-white border-2 border-text-black p-4 flex items-center justify-between gap-3 shadow-[3px_3px_0px_#111111]">
+        <div className="flex items-center gap-2.5">
+          <Sparkles className="h-5 w-5 text-hot-pink shrink-0" />
+          <span className="text-xs md:text-sm font-black uppercase tracking-wide text-text-black">
+            DROP 001 / 2026 — HEAVYWEIGHT 200–220 GSM OVERSIZED FITS
+          </span>
+        </div>
+        <span className="hidden md:inline-block text-xs font-bold uppercase tracking-widest text-electric-blue">
+          WEAR THE CULTURE
         </span>
       </div>
 
@@ -132,52 +126,60 @@ function CollectionsContent() {
                 className="group relative flex flex-col bg-white border-2 border-text-black shadow-[4px_4px_0px_#111111] hover:shadow-[8px_8px_0px_#111111] hover:translate-x-[-4px] hover:translate-y-[-4px] transition-all duration-300 overflow-hidden"
               >
                 {/* Visual Cover */}
-                <div className="relative w-full h-[300px] bg-chrome-silver overflow-hidden">
+                <div className="relative w-full h-[320px] bg-chrome-silver overflow-hidden">
                   <Image
                     src={product.image}
-                    alt={product.name}
+                    alt={`${product.name} - KAPDOLOGY Drop 001`}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                     className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute top-3 left-3 flex flex-col gap-1.5 z-20">
-                    {product.isNew && (
-                      <span className="bg-neon-green text-text-black text-[9px] font-black uppercase tracking-widest px-2 py-0.5 border border-text-black shadow-[1px_1px_0px_#111111]">
-                        NEW DROP
-                      </span>
-                    )}
-                    {product.isPopular && (
+                    <span className="bg-electric-blue text-white text-[9px] font-black uppercase tracking-widest px-2 py-0.5 border border-text-black shadow-[1px_1px_0px_#111111]">
+                      {product.drop}
+                    </span>
+                    {product.featured && (
                       <span className="bg-hot-pink text-white text-[9px] font-black uppercase tracking-widest px-2 py-0.5 border border-text-black shadow-[1px_1px_0px_#111111]">
-                        HOT ITEM
+                        FEATURED
                       </span>
                     )}
                   </div>
                   <div className="absolute bottom-3 right-3 bg-white text-text-black text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 border border-text-black">
-                    {product.fit}
+                    {product.gsm} • {product.fit}
                   </div>
                 </div>
 
                 {/* Details */}
                 <div className="p-4 flex-grow flex flex-col justify-between border-t border-text-black bg-white">
                   <div className="mb-4">
-                    <h3 className="font-extrabold uppercase text-sm tracking-wide text-text-black line-clamp-1 group-hover:text-electric-blue transition-colors">
+                    <div className="text-[10px] font-black uppercase tracking-widest text-text-black/50 mb-1">
+                      {product.collection} FAMILY
+                    </div>
+                    <h3 className="font-black uppercase text-sm tracking-wide text-text-black line-clamp-1 group-hover:text-electric-blue transition-colors">
                       {product.name}
                     </h3>
                     <p className="text-xs text-text-black/60 font-medium line-clamp-2 mt-1 mb-2 leading-relaxed">
                       {product.description}
                     </p>
-                    <span className="font-black text-base text-text-black block">
-                      ₹{product.price}
-                    </span>
+                    <div className="flex items-baseline gap-2">
+                      <span className="font-black text-base text-text-black">
+                        ₹{product.price}
+                      </span>
+                      {product.compareAtPrice && (
+                        <span className="text-xs font-semibold text-text-black/40 line-through">
+                          ₹{product.compareAtPrice}
+                        </span>
+                      )}
+                    </div>
                   </div>
 
-                  {/* CTA Availability Action */}
+                  {/* Action */}
                   <Link
-                    href={`/contact?product=${encodeURIComponent(product.name)}`}
-                    className="flex items-center justify-center gap-2 w-full py-2.5 text-xs font-bold uppercase tracking-wider border-2 border-text-black bg-white hover:bg-text-black hover:text-white transition-colors duration-300"
+                    href={`/product/${product.slug}`}
+                    className="flex items-center justify-center gap-2 w-full py-2.5 text-xs font-black uppercase tracking-wider border-2 border-text-black bg-electric-blue text-white hover:bg-text-black transition-colors duration-300 shadow-[2px_2px_0px_#111111]"
                   >
                     <ShoppingBag className="h-3.5 w-3.5" />
-                    <span>Check Availability</span>
+                    <span>VIEW PRODUCT</span>
                   </Link>
                 </div>
               </motion.div>
@@ -186,10 +188,9 @@ function CollectionsContent() {
         </motion.div>
       ) : (
         <div className="w-full py-20 border-2 border-dashed border-text-black/20 text-center bg-white flex flex-col items-center justify-center">
-          <HelpCircle className="h-12 w-12 text-text-black/40 mb-3" />
           <h3 className="font-extrabold uppercase text-lg mb-1">No items found</h3>
           <p className="text-sm font-semibold text-text-black/50">
-            We haven&apos;t loaded items for this segment yet. Please check back soon or ask on Instagram.
+            More items dropping soon under KAPDOLOGY® Drop 001.
           </p>
         </div>
       )}

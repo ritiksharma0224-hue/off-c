@@ -2,8 +2,8 @@ import HeroSection from "@/components/HeroSection";
 import BrandSnapshot from "@/components/BrandSnapshot";
 import CollectionGrid from "@/components/CollectionGrid";
 import LookbookGrid from "@/components/LookbookGrid";
-import WhyOffCulture from "@/components/WhyOffCulture";
-import StoreMap from "@/components/StoreMap";
+import WhyKapdology from "@/components/WhyKapdology";
+import KapdologyConcierge from "@/components/KapdologyConcierge";
 import InstagramFeed from "@/components/InstagramFeed";
 import CTASection from "@/components/CTASection";
 
@@ -23,10 +23,10 @@ export default function Home() {
       <LookbookGrid />
 
       {/* Section 5: Brand Manifesto / Statement */}
-      <WhyOffCulture />
+      <WhyKapdology />
 
-      {/* Section 6: Physical Store Details & Map */}
-      <StoreMap />
+      {/* Section 6: Online Concierge & Support */}
+      <KapdologyConcierge />
 
       {/* Section 7: Social Proof Feed */}
       <InstagramFeed />

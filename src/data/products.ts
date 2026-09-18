@@ -1,103 +1,183 @@
 export interface Product {
   id: string;
   name: string;
+  slug: string;
   price: number;
+  compareAtPrice?: number;
   category: string;
+  collection: string;
+  drop: string;
   fit: string;
   description: string;
   details: string[];
+  fabric: string;
+  gsm: string;
+  care: string;
   image: string;
+  sizes?: string[];
   isNew?: boolean;
   isPopular?: boolean;
+  featured?: boolean;
 }
 
 export const productsData: Product[] = [
   {
-    id: "oc-01",
-    name: "Cyber Culture Oversized Tee",
-    price: 599,
-    category: "graphic-tees",
-    fit: "Oversized Fit (Drop Shoulder)",
-    description: "Features high-density puff print subculture graphics on premium 240 GSM organic cotton.",
-    details: ["100% Organic Heavyweight Cotton", "Drop-shoulder aesthetic", "Shrink-resistant double-stitch neck ribbon"],
+    id: "kpd-01",
+    name: "KAPDOLOGY® Drop 001 Graphic Tee",
+    slug: "kapdology-drop-001-graphic-tee",
+    price: 1299,
+    compareAtPrice: 1599,
+    category: "OVERSIZED T-SHIRTS",
+    collection: "IDENTITY",
+    drop: "DROP 001",
+    fit: "Heavy / Structured Oversized Fit",
+    description: "Kapdology Drop 001 signature graphic oversized tee. Graphic-driven DTF printing on luxury organic cotton canvas.",
+    details: [
+      "240 GSM 100% Organic Heavyweight Cotton",
+      "Graphic-Driven DTF Artwork Front & Back",
+      "Drop-Shoulder Streetwear Cut",
+      "Shrink-Resistant Double-Stitch Neck Rib"
+    ],
+    fabric: "100% Organic Cotton",
+    gsm: "240 GSM",
+    care: "Machine wash cold inside out, iron on reverse",
     image: "/images/cyber-tee.jpg",
     isNew: true,
-    isPopular: true
+    isPopular: true,
+    featured: true
   },
   {
-    id: "oc-02",
-    name: "Minimalist Slate Boxy Tee",
-    price: 599,
-    category: "boxy-fits",
-    fit: "Boxy Cropped Silhouette",
-    description: "An ultra-clean structured boxy fit with slightly shorter body length, perfect for layering.",
-    details: ["Structured 220 GSM combed yarn", "Clean seamless sleeves", "High rib mock neck collar"],
+    id: "kpd-02",
+    name: "KAPDOLOGY® Minimal Boxy Tee",
+    slug: "kapdology-minimal-boxy-tee",
+    price: 1199,
+    category: "OVERSIZED T-SHIRTS",
+    collection: "MINIMAL",
+    drop: "DROP 001",
+    fit: "Structured Boxy Fit",
+    description: "Pure minimal streetwear silhouette featuring high rib mock collar and clean box drape.",
+    details: [
+      "220 GSM Combed Cotton Canvas",
+      "High Rib Mock Collar",
+      "Structured Boxy Silhouette",
+      "KAPDOLOGY Minimal Stencil Tagging"
+    ],
+    fabric: "100% Combed Cotton",
+    gsm: "220 GSM",
+    care: "Machine wash cold, lay flat to dry",
     image: "/images/slate-boxy.jpg",
-    isPopular: true
+    isPopular: true,
+    featured: true
   },
   {
-    id: "oc-03",
-    name: "Vintage Acid Wash Oversized Tee",
-    price: 599,
-    category: "oversized-tees",
-    fit: "Signature Oversized Fit",
+    id: "kpd-03",
+    name: "KAPDOLOGY® Distressed Wash Tee",
+    slug: "kapdology-distressed-wash-tee",
+    price: 1399,
+    category: "OVERSIZED T-SHIRTS",
+    collection: "CHAOS",
+    drop: "DROP 001",
+    fit: "Signature Oversized Silhouette",
     description: "Individually washed heavy cotton tee offering a distressed vintage streetwear aesthetic.",
-    details: ["Acid washed finish", "240 GSM premium terry cloth", "Wide ribbed collar"],
+    details: [
+      "240 GSM Heavyweight Terry Cotton",
+      "Custom Vintage Acid Wash Finish",
+      "Distressed Edge Detailing",
+      "Wide Ribbed Collar"
+    ],
+    fabric: "100% Heavy Terry Cotton",
+    gsm: "240 GSM",
+    care: "Wash cold separately, line dry in shade",
     image: "/images/vintage-wash.jpg",
     isNew: true
   },
   {
-    id: "oc-04",
-    name: "Urban Utility Cropped Shirt",
-    price: 699,
-    category: "cropped-shirts",
+    id: "kpd-04",
+    name: "KAPDOLOGY® Utility Cropped Shirt",
+    slug: "kapdology-utility-cropped-shirt",
+    price: 1499,
+    category: "OVERSIZED T-SHIRTS",
+    collection: "TECHNICAL",
+    drop: "DROP 001",
     fit: "Cropped Relaxed Cut",
-    description: "Street-forward cropped utility button-down featuring dual cargo chest pockets and a structured hem.",
-    details: ["Lightweight durable cotton twill", "Metal button snap closures", "Square-cut cropped hemline"],
+    description: "Technical streetwear utility button-down featuring dual cargo chest pockets and square hemline.",
+    details: [
+      "200 GSM Durable Cotton Twill",
+      "Metal Button Snap Closures",
+      "Square-Cut Cropped Hemline",
+      "Dual Chest Utility Pockets"
+    ],
+    fabric: "100% Cotton Twill",
+    gsm: "200 GSM",
+    care: "Machine wash cold with like colors",
     image: "/images/cropped-shirt.jpg",
     isNew: true,
     isPopular: true
   },
   {
-    id: "oc-05",
-    name: "Subculture Graphic Puff Tee",
-    price: 599,
-    category: "graphic-tees",
+    id: "kpd-05",
+    name: "KAPDOLOGY® Subculture Graphic Tee",
+    slug: "kapdology-subculture-graphic-tee",
+    price: 1299,
+    category: "OVERSIZED T-SHIRTS",
+    collection: "IDENTITY",
+    drop: "DROP 001",
     fit: "Oversized Fit",
-    description: "Bold typographic graphic print celebrating Jaipur's growing new-age streetwear culture.",
-    details: ["Electric green puff graphics", "Breathable 200 GSM summer weight cotton", "Reinforced shoulders"],
+    description: "Bold typographic graphic print celebrating identity, attitude, and clothing culture.",
+    details: [
+      "220 GSM Organic Cotton",
+      "High-Density Screenprint Front",
+      "Breathable Summer-Weight Drape",
+      "Reinforced Shoulder Taping"
+    ],
+    fabric: "100% Organic Cotton",
+    gsm: "220 GSM",
+    care: "Machine wash cold inside out",
     image: "/images/puff-tee.jpg"
   },
   {
-    id: "oc-06",
-    name: "Retro-Future Boxy Tee",
-    price: 599,
-    category: "boxy-fits",
-    fit: "Boxy Fit",
-    description: "Retro-themed typography on a stark black box-cut profile. Clean, bold, and high-energy.",
-    details: ["Retro-futuristic screen-print front", "Thick 1.2 inch neck ribbing", "Wide sleeves"],
+    id: "kpd-06",
+    name: "KAPDOLOGY® Retro Graphic Tee",
+    slug: "kapdology-retro-graphic-tee",
+    price: 1299,
+    category: "OVERSIZED T-SHIRTS",
+    collection: "CHAOS",
+    drop: "DROP 001",
+    fit: "Boxy Oversized Fit",
+    description: "Futuristic typographic graphic profile on stark black box-cut profile.",
+    details: [
+      "220 GSM Combed Cotton",
+      "Futuristic Typography Print",
+      "1.2 Inch Thick Neck Ribbing",
+      "Wide Sleeve Opening"
+    ],
+    fabric: "100% Combed Cotton",
+    gsm: "220 GSM",
+    care: "Machine wash cold, do not bleach",
     image: "/images/retro-boxy.jpg"
   },
   {
-    id: "oc-07",
-    name: "Chrome Liquid Drop Tee",
-    price: 649,
-    category: "new-drops",
-    fit: "Oversized Fit",
-    description: "Limited drops with mirror-finish chrome print lettering. Stands out day or night.",
-    details: ["Mirror-effect foil screenprint", "Heavyweight 240 GSM luxury cotton", "Exclusive drop sticker pack included"],
+    id: "kpd-07",
+    name: "KAPDOLOGY® Liquid Chrome Graphic Tee",
+    slug: "kapdology-liquid-chrome-graphic-tee",
+    price: 1499,
+    compareAtPrice: 1799,
+    category: "OVERSIZED T-SHIRTS",
+    collection: "RESTRICTED",
+    drop: "DROP 001",
+    fit: "Signature Oversized Fit",
+    description: "Limited drop featuring liquid chrome mirror-finish KAPDOLOGY graphic artwork.",
+    details: [
+      "240 GSM Luxury Heavy Cotton",
+      "Mirror-Effect Chrome Foil Print",
+      "Limited Drop Edition",
+      "KAPDOLOGY Drop Certificate Included"
+    ],
+    fabric: "100% Heavy Luxury Cotton",
+    gsm: "240 GSM",
+    care: "Hand wash cold inside out, lay flat to dry",
     image: "/images/chrome-tee.jpg",
-    isNew: true
-  },
-  {
-    id: "oc-08",
-    name: "Mansarovar Everyday Street Cargos",
-    price: 899,
-    category: "casual-fits",
-    fit: "Relaxed Straight-Leg Fit",
-    description: "Premium streetwear utility pants with adjustable drawstrings at the ankle to transition from cargos to joggers.",
-    details: ["Durable cotton ripstop weave", "Adjustable ankle cuffs", "6-pocket modular design"],
-    image: "/images/cargos.jpg",
-    isPopular: true
+    isNew: true,
+    featured: true
   }
 ];
