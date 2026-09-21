@@ -1,211 +1,208 @@
 "use client";
 
-import { useState, useEffect, Suspense } from "react";
+import React, { useState, useEffect, Suspense, useMemo } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { productsData } from "@/data/products";
-import { collectionsData } from "@/data/collections";
-import { ShoppingBag, SlidersHorizontal, Sparkles } from "lucide-react";
+import { ArrowRight, SlidersHorizontal, Sparkles } from "lucide-react";
+import { designFamilies, DesignFamily } from "@/data/collections";
+import { productsData, Product } from "@/data/products";
 
 function CollectionsContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
-  
-  // State for active collection selection
-  const [activeCollection, setActiveCollection] = useState<string>("all");
 
-  // Read initial filter from URL search params on mount
+  const [activeFamily, setActiveFamily] = useState<string>("all");
+
   useEffect(() => {
-    const categoryQuery = searchParams.get("category");
-    if (categoryQuery) {
-      const isValid = collectionsData.some((c) => c.slug === categoryQuery);
-      if (isValid) {
-        setActiveCollection(categoryQuery);
+    const familyQuery = searchParams.get("family") || searchParams.get("category");
+    if (familyQuery) {
+      const exists = designFamilies.some(
+        (f) => f.slug.toLowerCase() === familyQuery.toLowerCase()
+      );
+      if (exists) {
+        setActiveFamily(familyQuery.toLowerCase());
       }
     }
   }, [searchParams]);
 
-  // Handle collection button click
-  const handleCollectionSelect = (slug: string) => {
-    setActiveCollection(slug);
+  const handleFamilySelect = (slug: string) => {
+    setActiveFamily(slug);
     if (slug === "all") {
       router.push("/collections");
     } else {
-      router.push(`/collections?category=${slug}`);
+      router.push(`/collections?family=${slug}`);
     }
   };
 
-  // Filter products based on active collection family
-  const filteredProducts = productsData.filter((product) => {
-    if (activeCollection === "all") return true;
-    return product.collection.toLowerCase() === activeCollection.toLowerCase();
-  });
+  const filteredProducts = useMemo(() => {
+    if (activeFamily === "all") return productsData;
+    return productsData.filter(
+      (p) => p.designFamily.toLowerCase() === activeFamily.toLowerCase()
+    );
+  }, [activeFamily]);
+
+  const activeFamilyData = designFamilies.find(
+    (f) => f.slug.toLowerCase() === activeFamily.toLowerCase()
+  );
 
   return (
-    <div className="max-w-7xl mx-auto px-4 md:px-8 py-12">
+    <div className="max-w-7xl mx-auto px-4 md:px-8 py-12 select-none">
       
-      {/* Editorial Header */}
+      {/* Page Header */}
       <div className="mb-12 text-left">
-        <span className="text-xs font-black uppercase tracking-widest text-electric-blue block mb-2">
-          KAPDOLOGY® / DROP 001
-        </span>
-        <h1 className="font-black text-4xl md:text-6xl uppercase tracking-tight text-text-black">
-          THE COLLECTIONS
+        <div className="flex items-center gap-2 mb-2">
+          <span className="h-2 w-2 rounded-full bg-[#FF3B00]" />
+          <span className="font-mono text-[10px] md:text-[11px] font-black uppercase tracking-widest text-[#FF3B00]">
+            DESIGN ARCHITECTURE
+          </span>
+        </div>
+        <h1 className="font-black text-4xl sm:text-5xl md:text-6xl tracking-tight uppercase leading-[0.92] text-[#111111]">
+          THE DESIGN FAMILIES
         </h1>
-        <p className="text-sm md:text-base font-semibold text-text-black/70 mt-2 max-w-xl leading-relaxed">
-          Not just clothes. It&apos;s a mood. Explore our official Drop 001 heavy structured oversized fits.
+        <p className="text-sm md:text-base font-medium text-[#111111]/70 mt-2 max-w-xl leading-relaxed">
+          Kapdology groups garments into six conceptual Design Families representing specific silhouettes, wash treatments, and visual attitudes.
         </p>
       </div>
 
-      {/* Filter controls */}
-      <div className="mb-10 pb-6 border-b-2 border-text-black/10 flex flex-col md:flex-row md:items-center justify-between gap-6">
-        {/* Buttons List */}
-        <div className="flex flex-wrap gap-2.5">
+      {/* Design Families Selector Bar */}
+      <div className="mb-10 pb-6 border-b-2 border-[#111111]/15 space-y-4">
+        <div className="flex flex-wrap items-center gap-2">
           <button
-            onClick={() => handleCollectionSelect("all")}
-            className={`px-4 py-2 text-xs font-black uppercase tracking-wider border-2 border-text-black transition-all ${
-              activeCollection === "all"
-                ? "bg-text-black text-white shadow-[2px_2px_0px_#FF3B00]"
-                : "bg-white text-text-black hover:bg-chrome-silver"
+            onClick={() => handleFamilySelect("all")}
+            className={`px-4 py-2 text-xs font-mono font-bold uppercase border-2 border-[#111111] transition-all cursor-pointer ${
+              activeFamily === "all"
+                ? "bg-[#111111] text-[#FAF7F2] shadow-[2px_2px_0px_#FF3B00]"
+                : "bg-white text-[#111111] hover:bg-gray-100"
             }`}
           >
-            ALL DROPS
+            ALL FAMILIES ({productsData.length})
           </button>
-          {collectionsData.map((item) => (
-            <button
-              key={item.id}
-              onClick={() => handleCollectionSelect(item.slug)}
-              className={`px-4 py-2 text-xs font-black uppercase tracking-wider border-2 border-text-black transition-all ${
-                activeCollection === item.slug
-                  ? "bg-text-black text-white shadow-[2px_2px_0px_#FF3B00]"
-                  : "bg-white text-text-black hover:bg-chrome-silver"
-              }`}
-            >
-              {item.name}
-            </button>
-          ))}
-        </div>
 
-        {/* Count indicators */}
-        <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-text-black/60 shrink-0">
-          <SlidersHorizontal className="h-4.5 w-4.5" />
-          <span>Showing {filteredProducts.length} items</span>
-        </div>
-      </div>
+          {designFamilies.map((fam) => {
+            const count = productsData.filter(
+              (p) => p.designFamily.toLowerCase() === fam.slug.toLowerCase()
+            ).length;
 
-      {/* Drop Alert Disclaimer */}
-      <div className="w-full mb-10 bg-white border-2 border-text-black p-4 flex items-center justify-between gap-3 shadow-[3px_3px_0px_#111111]">
-        <div className="flex items-center gap-2.5">
-          <Sparkles className="h-5 w-5 text-hot-pink shrink-0" />
-          <span className="text-xs md:text-sm font-black uppercase tracking-wide text-text-black">
-            DROP 001 / 2026 — HEAVYWEIGHT 200–220 GSM OVERSIZED FITS
-          </span>
-        </div>
-        <span className="hidden md:inline-block text-xs font-bold uppercase tracking-widest text-electric-blue">
-          WEAR THE CULTURE
-        </span>
-      </div>
-
-      {/* Products Catalog Grid */}
-      {filteredProducts.length > 0 ? (
-        <motion.div
-          layout
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
-        >
-          <AnimatePresence mode="popLayout">
-            {filteredProducts.map((product) => (
-              <motion.div
-                layout
-                key={product.id}
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.4 }}
-                className="group relative flex flex-col bg-white border-2 border-text-black shadow-[4px_4px_0px_#111111] hover:shadow-[8px_8px_0px_#111111] hover:translate-x-[-4px] hover:translate-y-[-4px] transition-all duration-300 overflow-hidden"
+            return (
+              <button
+                key={fam.id}
+                onClick={() => handleFamilySelect(fam.slug)}
+                className={`px-4 py-2 text-xs font-mono font-bold uppercase border-2 border-[#111111] transition-all cursor-pointer ${
+                  activeFamily === fam.slug
+                    ? "bg-[#111111] text-[#FAF7F2] shadow-[2px_2px_0px_#FF3B00]"
+                    : "bg-white text-[#111111] hover:bg-gray-100"
+                }`}
               >
-                {/* Visual Cover */}
-                <div className="relative w-full h-[320px] bg-chrome-silver overflow-hidden">
-                  <Image
-                    src={product.image}
-                    alt={`${product.name} - KAPDOLOGY Drop 001`}
-                    fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                    className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute top-3 left-3 flex flex-col gap-1.5 z-20">
-                    <span className="bg-electric-blue text-white text-[9px] font-black uppercase tracking-widest px-2 py-0.5 border border-text-black shadow-[1px_1px_0px_#111111]">
-                      {product.drop}
-                    </span>
-                    {product.featured && (
-                      <span className="bg-hot-pink text-white text-[9px] font-black uppercase tracking-widest px-2 py-0.5 border border-text-black shadow-[1px_1px_0px_#111111]">
-                        FEATURED
-                      </span>
-                    )}
-                  </div>
-                  <div className="absolute bottom-3 right-3 bg-white text-text-black text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 border border-text-black">
-                    {product.gsm} • {product.fit}
-                  </div>
-                </div>
-
-                {/* Details */}
-                <div className="p-4 flex-grow flex flex-col justify-between border-t border-text-black bg-white">
-                  <div className="mb-4">
-                    <div className="text-[10px] font-black uppercase tracking-widest text-text-black/50 mb-1">
-                      {product.collection} FAMILY
-                    </div>
-                    <h3 className="font-black uppercase text-sm tracking-wide text-text-black line-clamp-1 group-hover:text-electric-blue transition-colors">
-                      {product.name}
-                    </h3>
-                    <p className="text-xs text-text-black/60 font-medium line-clamp-2 mt-1 mb-2 leading-relaxed">
-                      {product.description}
-                    </p>
-                    <div className="flex items-baseline gap-2">
-                      <span className="font-black text-base text-text-black">
-                        ₹{product.price}
-                      </span>
-                      {product.compareAtPrice && (
-                        <span className="text-xs font-semibold text-text-black/40 line-through">
-                          ₹{product.compareAtPrice}
-                        </span>
-                      )}
-                    </div>
-                  </div>
-
-                  {/* Action */}
-                  <Link
-                    href={`/product/${product.slug}`}
-                    className="flex items-center justify-center gap-2 w-full py-2.5 text-xs font-black uppercase tracking-wider border-2 border-text-black bg-electric-blue text-white hover:bg-text-black transition-colors duration-300 shadow-[2px_2px_0px_#111111]"
-                  >
-                    <ShoppingBag className="h-3.5 w-3.5" />
-                    <span>VIEW PRODUCT</span>
-                  </Link>
-                </div>
-              </motion.div>
-            ))}
-          </AnimatePresence>
-        </motion.div>
-      ) : (
-        <div className="w-full py-20 border-2 border-dashed border-text-black/20 text-center bg-white flex flex-col items-center justify-center">
-          <h3 className="font-extrabold uppercase text-lg mb-1">No items found</h3>
-          <p className="text-sm font-semibold text-text-black/50">
-            More items dropping soon under KAPDOLOGY® Drop 001.
-          </p>
+                {fam.name} ({count})
+              </button>
+            );
+          })}
         </div>
-      )}
+
+        {/* Active Family Narrative Banner (if specific family selected) */}
+        {activeFamilyData && (
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="p-5 bg-white border-2 border-[#111111] shadow-[3px_3px_0px_#111111] flex flex-col md:flex-row md:items-center justify-between gap-4 mt-4"
+          >
+            <div className="space-y-1">
+              <div className="flex items-center gap-2">
+                <span className="bg-[#111111] text-white text-[9px] font-mono font-bold uppercase px-2 py-0.5">
+                  {activeFamilyData.tag}
+                </span>
+                <span className="font-mono text-xs text-[#FF3B00] font-bold">
+                  {activeFamilyData.subtitle}
+                </span>
+              </div>
+              <p className="text-xs sm:text-sm font-medium text-[#111111]/80 max-w-2xl leading-relaxed">
+                {activeFamilyData.description}
+              </p>
+            </div>
+
+            <div className="flex flex-wrap gap-1.5 shrink-0">
+              {activeFamilyData.features.map((feat) => (
+                <span
+                  key={feat}
+                  className="px-2 py-1 bg-[#FAF7F2] border border-[#111111]/30 font-mono text-[10px] uppercase font-bold text-[#111111]"
+                >
+                  {feat}
+                </span>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </div>
+
+      {/* Garments Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {filteredProducts.map((product) => (
+          <Link
+            key={product.id}
+            href={`/product/${product.slug}`}
+            className="group relative flex flex-col bg-white border-2 border-[#111111] shadow-[4px_4px_0px_#111111] hover:shadow-[8px_8px_0px_#111111] hover:translate-x-[-3px] hover:translate-y-[-3px] transition-all duration-300"
+          >
+            <div className="relative w-full aspect-[4/5] bg-gray-100 overflow-hidden">
+              <Image
+                src={product.image}
+                alt={product.name}
+                fill
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute top-3 left-3 bg-[#111111] text-white font-mono text-[9px] font-black uppercase tracking-widest px-2 py-0.5 border border-white/20 z-10">
+                {product.designFamily}
+              </div>
+              <div className="absolute bottom-3 right-3 bg-white/95 text-[#111111] text-[9px] font-mono font-bold uppercase px-2 py-0.5 border border-[#111111]">
+                {product.gsm}
+              </div>
+            </div>
+
+            <div className="p-4 flex-grow flex flex-col justify-between border-t border-[#111111] bg-white">
+              <div>
+                <div className="text-[9px] font-mono uppercase text-[#111111]/50 mb-1">
+                  {product.category}
+                </div>
+                <h3 className="font-black uppercase text-xs md:text-sm tracking-tight text-[#111111] group-hover:text-[#FF3B00] transition-colors line-clamp-1 mb-2">
+                  {product.name}
+                </h3>
+                <div className="flex items-baseline gap-2">
+                  <span className="font-mono font-black text-sm text-[#111111]">
+                    ₹{product.price}
+                  </span>
+                  {product.compareAtPrice && (
+                    <span className="font-mono text-xs text-[#111111]/40 line-through">
+                      ₹{product.compareAtPrice}
+                    </span>
+                  )}
+                </div>
+              </div>
+
+              <div className="mt-4 pt-2 border-t border-[#111111]/10 flex items-center justify-between text-xs font-black uppercase text-[#111111] group-hover:text-[#FF3B00]">
+                <span>VIEW PIECE</span>
+                <ArrowRight className="h-3.5 w-3.5 group-hover:translate-x-1 transition-transform" />
+              </div>
+            </div>
+          </Link>
+        ))}
+      </div>
+
     </div>
   );
 }
 
 export default function CollectionsPage() {
   return (
-    <div className="w-full bg-base-cream min-h-screen">
-      <Suspense fallback={
-        <div className="w-full py-20 text-center font-bold uppercase tracking-widest text-text-black/60">
-          Loading catalog...
-        </div>
-      }>
+    <div className="w-full bg-[#FAF7F2] min-h-screen">
+      <Suspense
+        fallback={
+          <div className="w-full py-24 text-center font-mono text-xs font-black uppercase tracking-widest text-[#111111]/60">
+            LOADING DESIGN FAMILIES...
+          </div>
+        }
+      >
         <CollectionsContent />
       </Suspense>
     </div>

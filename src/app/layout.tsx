@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { CartProvider } from "@/context/CartContext";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import CartDrawer from "@/components/CartDrawer";
 import CustomCursor from "@/components/ui/CustomCursor";
 import KapdologyVideoPreloader from "@/components/KapdologyVideoPreloader";
 
@@ -16,7 +18,7 @@ export const metadata: Metadata = {
     title: "KAPDOLOGY® — Not Just Clothes. It's a Mood.",
     description:
       "Kapdology is a Jaipur-born Gen-Z streetwear brand built around identity, graphics, attitude and culture.",
-    url: "https://kapdology.com",
+    url: "https://kapdology.store",
     siteName: "KAPDOLOGY®",
     type: "website",
   },
@@ -39,7 +41,7 @@ export default function RootLayout({
               "name": "KAPDOLOGY®",
               "description":
                 "Independent Indian Gen-Z streetwear brand offering luxury oversized fits, graphic tees, and raw streetwear silhouettes.",
-              "url": "https://kapdology.com",
+              "url": "https://kapdology.store",
               "priceRange": "$$",
               "sameAs": ["https://www.instagram.com/kapdology/"],
             }),
@@ -47,25 +49,30 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-full flex flex-col bg-base-cream text-text-black selection:bg-[#FF3B00] selection:text-white relative">
-        {/* KAPDOLOGY Full-screen Video Preloader */}
-        <KapdologyVideoPreloader />
+        <CartProvider>
+          {/* KAPDOLOGY Full-screen Video Preloader */}
+          <KapdologyVideoPreloader />
 
-        {/* Grain Overlay */}
-        <div className="noise-overlay" />
+          {/* Grain Overlay */}
+          <div className="noise-overlay" />
 
-        {/* Custom Cursor */}
-        <CustomCursor />
+          {/* Custom Cursor */}
+          <CustomCursor />
 
-        {/* Navigation Header */}
-        <Navbar />
+          {/* Navigation Header */}
+          <Navbar />
 
-        {/* Main Content Area */}
-        <main className="flex-grow flex flex-col relative z-10">
-          {children}
-        </main>
+          {/* Global Slide-over Cart Drawer */}
+          <CartDrawer />
 
-        {/* Footer */}
-        <Footer />
+          {/* Main Content Area */}
+          <main className="flex-grow flex flex-col relative z-10">
+            {children}
+          </main>
+
+          {/* Footer */}
+          <Footer />
+        </CartProvider>
       </body>
     </html>
   );

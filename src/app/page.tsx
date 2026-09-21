@@ -1,38 +1,50 @@
 import HeroSection from "@/components/HeroSection";
-import BrandSnapshot from "@/components/BrandSnapshot";
-import CollectionGrid from "@/components/CollectionGrid";
-import LookbookGrid from "@/components/LookbookGrid";
-import WhyKapdology from "@/components/WhyKapdology";
-import KapdologyConcierge from "@/components/KapdologyConcierge";
-import InstagramFeed from "@/components/InstagramFeed";
-import CTASection from "@/components/CTASection";
+import DropIntro from "@/components/home/DropIntro";
+import CategorySection from "@/components/home/CategorySection";
+import FeaturedDesigns from "@/components/home/FeaturedDesigns";
+import WhyKapdology from "@/components/home/WhyKapdology";
+import LookbookSection from "@/components/home/LookbookSection";
+import DesignProcess from "@/components/home/DesignProcess";
+import BrandStorySection from "@/components/home/BrandStorySection";
+import JaipurIndiaSection from "@/components/home/JaipurIndiaSection";
+import CommunitySection from "@/components/home/CommunitySection";
+import FinalShopCTA from "@/components/home/FinalShopCTA";
 
 export default function Home() {
   return (
     <>
-      {/* Section 1: Hero Campaign */}
+      {/* LOCKED APPROVED HERO (DO NOT REDESIGN) */}
       <HeroSection />
 
-      {/* Section 2: Value Propositions & Brand Snapshot */}
-      <BrandSnapshot />
+      {/* SECTION 1 — DROP 001 INTRODUCTION */}
+      <DropIntro />
 
-      {/* Section 3: Collection Cards Grid */}
-      <CollectionGrid />
+      {/* SECTION 2 — SHOP BY CATEGORY (5-6 GARMENT CATEGORIES) */}
+      <CategorySection />
 
-      {/* Section 4: Lookbook Grid / Featured Products */}
-      <LookbookGrid />
+      {/* SECTION 3 — FEATURED DESIGNS */}
+      <FeaturedDesigns />
 
-      {/* Section 5: Brand Manifesto / Statement */}
+      {/* SECTION 4 — WHY KAPDOLOGY */}
       <WhyKapdology />
 
-      {/* Section 6: Online Concierge & Support */}
-      <KapdologyConcierge />
+      {/* SECTION 5 — LOOKBOOK / CAMPAIGN */}
+      <LookbookSection />
 
-      {/* Section 7: Social Proof Feed */}
-      <InstagramFeed />
+      {/* SECTION 6 — FROM IDEA → GARMENT (DESIGN PROCESS) */}
+      <DesignProcess />
 
-      {/* Section 8: Final Call to Action */}
-      <CTASection />
+      {/* SECTION 7 — WHAT IS KAPDOLOGY? (FOUNDER & BRAND STORY) */}
+      <BrandStorySection />
+
+      {/* SECTION 8 — JAIPUR → INDIA (ORIGIN & AMBITION) */}
+      <JaipurIndiaSection />
+
+      {/* SECTION 9 — COMMUNITY / WEAR THE CULTURE */}
+      <CommunitySection />
+
+      {/* SECTION 10 — FINAL SHOP CTA */}
+      <FinalShopCTA />
     </>
   );
 }
