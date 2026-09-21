@@ -1,11 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { CartProvider } from "@/context/CartContext";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import CartDrawer from "@/components/CartDrawer";
-import CustomCursor from "@/components/ui/CustomCursor";
-import KapdologyVideoPreloader from "@/components/KapdologyVideoPreloader";
+import { StorefrontProvider } from "@/context/StorefrontContext";
+import StorefrontChrome from "@/components/StorefrontChrome";
 
 export const metadata: Metadata = {
   title: "KAPDOLOGY® — Not Just Clothes. It's a Mood.",
@@ -30,7 +27,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="h-full antialiased scroll-smooth">
+    <html lang="en" className="h-full antialiased scroll-smooth" data-scroll-behavior="smooth">
       <head>
         <script
           type="application/ld+json"
@@ -49,30 +46,11 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-full flex flex-col bg-base-cream text-text-black selection:bg-[#FF3B00] selection:text-white relative">
-        <CartProvider>
-          {/* KAPDOLOGY Full-screen Video Preloader */}
-          <KapdologyVideoPreloader />
-
-          {/* Grain Overlay */}
-          <div className="noise-overlay" />
-
-          {/* Custom Cursor */}
-          <CustomCursor />
-
-          {/* Navigation Header */}
-          <Navbar />
-
-          {/* Global Slide-over Cart Drawer */}
-          <CartDrawer />
-
-          {/* Main Content Area */}
-          <main className="flex-grow flex flex-col relative z-10">
-            {children}
-          </main>
-
-          {/* Footer */}
-          <Footer />
-        </CartProvider>
+        <StorefrontProvider>
+          <CartProvider>
+            <StorefrontChrome>{children}</StorefrontChrome>
+          </CartProvider>
+        </StorefrontProvider>
       </body>
     </html>
   );

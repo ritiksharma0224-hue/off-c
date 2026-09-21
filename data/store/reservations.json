@@ -1,0 +1,19 @@
+[
+  {
+    "id": "res-1790007852806-1402",
+    "reservationNumber": "#RES-1402",
+    "productId": "kpd-01",
+    "productName": "Signature Oversized Box Tee",
+    "variantId": "var-kpd-01-l",
+    "size": "L",
+    "color": "Off-White / Cream",
+    "quantity": 1,
+    "customerName": "Aarav Sharma",
+    "customerEmail": "aarav@example.com",
+    "customerPhone": "+919876543210",
+    "status": "PENDING",
+    "notes": "Verification reservation test",
+    "createdAt": "2026-09-21T16:24:12.817Z",
+    "updatedAt": "2026-09-21T16:24:12.817Z"
+  }
+]

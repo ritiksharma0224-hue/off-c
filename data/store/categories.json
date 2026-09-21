@@ -1,0 +1,74 @@
+[
+  {
+    "id": "oversized-tees",
+    "name": "OVERSIZED T-SHIRTS",
+    "slug": "oversized-tees",
+    "displayNumber": "01",
+    "shortDescription": "Heavyweight drop-shoulder silhouettes in 240 GSM organic cotton.",
+    "fullDescription": "Built with structured shoulder drops and heavy cotton canvases that hold architectural shape without clinging.",
+    "image": "/images/hero.png",
+    "fitNote": "Signature Oversized Cut",
+    "sortOrder": 1,
+    "status": "ACTIVE"
+  },
+  {
+    "id": "boxy-tees",
+    "name": "BOXY / RELAXED TEES",
+    "slug": "boxy-tees",
+    "displayNumber": "02",
+    "shortDescription": "Wide drape with tight neck collars and modern streetwear box cuts.",
+    "fullDescription": "Clean boxy proportions designed for relaxed layering with high-density ribbed necklines.",
+    "image": "/images/slate-boxy.jpg",
+    "fitNote": "Structured Boxy Fit",
+    "sortOrder": 2,
+    "status": "ACTIVE"
+  },
+  {
+    "id": "graphic-tees",
+    "name": "GRAPHIC TEES",
+    "slug": "graphic-tees",
+    "displayNumber": "03",
+    "shortDescription": "High-definition DTF prints celebrating subculture, cyber graphics, and typography.",
+    "fullDescription": "Statement artwork engineered directly into heavy cotton fabrics using fade-resistant graphic inks.",
+    "image": "/images/cyber-tee.jpg",
+    "fitNote": "Oversized Graphic Cut",
+    "sortOrder": 3,
+    "status": "ACTIVE"
+  },
+  {
+    "id": "shirts",
+    "name": "SHIRTS",
+    "slug": "shirts",
+    "displayNumber": "04",
+    "shortDescription": "Technical cropped button-downs with modular utility pockets and structured hems.",
+    "fullDescription": "Functional utility shirts constructed with durable cotton twill and industrial snap hardware.",
+    "image": "/images/cropped-shirt.jpg",
+    "fitNote": "Relaxed Cropped Hem",
+    "sortOrder": 4,
+    "status": "ACTIVE"
+  },
+  {
+    "id": "bottoms",
+    "name": "BOTTOMS",
+    "slug": "bottoms",
+    "displayNumber": "05",
+    "shortDescription": "Everyday street cargos and utility trousers built to pair with our boxy tops.",
+    "fullDescription": "Reinforced ripstop canvas pants featuring modular storage and adjustable ankle silhouettes.",
+    "image": "/images/cargos.jpg",
+    "fitNote": "Relaxed Straight Cut",
+    "sortOrder": 5,
+    "status": "ACTIVE"
+  },
+  {
+    "id": "hoodies",
+    "name": "HOODIES / SWEATSHIRTS",
+    "slug": "hoodies",
+    "displayNumber": "06",
+    "shortDescription": "Heavyweight terry fleece essentials crafted for structured layering.",
+    "fullDescription": "400+ GSM loopback French terry silhouettes designed with oversized hoods and ribbed hems. Pre-release preview for upcoming drops.",
+    "image": "/images/vintage-wash.jpg",
+    "fitNote": "Heavyweight Boxy Fleece",
+    "sortOrder": 6,
+    "status": "ACTIVE"
+  }
+]

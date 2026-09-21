@@ -5,8 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { Search, X, ArrowRight, Sparkles } from "lucide-react";
-import { productsData, Product } from "@/data/products";
-import { garmentCategories } from "@/data/categories";
+import { useStorefront } from "@/context/StorefrontContext";
 
 interface SearchModalProps {
   isOpen: boolean;
@@ -16,6 +15,7 @@ interface SearchModalProps {
 const RECENT_SEARCHES = ["OVERSIZED", "DROP 001", "BOXY FIT", "GRAPHIC", "240 GSM", "CROPPED SHIRT"];
 
 export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
+  const { products, categories } = useStorefront();
   const [query, setQuery] = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -43,22 +43,23 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [isOpen, onClose]);
 
-  // Live filter results
+  // Live filter results against single source of truth
   const trimmed = query.trim().toLowerCase();
   const matchedProducts = trimmed
-    ? productsData.filter(
+    ? (products || []).filter(
         (p) =>
-          p.name.toLowerCase().includes(trimmed) ||
-          p.category.toLowerCase().includes(trimmed) ||
-          p.designFamily.toLowerCase().includes(trimmed) ||
-          p.fit.toLowerCase().includes(trimmed) ||
-          p.gsm.toLowerCase().includes(trimmed) ||
-          p.description.toLowerCase().includes(trimmed)
+          p.status === "ACTIVE" &&
+          (p.name.toLowerCase().includes(trimmed) ||
+            (p.categoryName || (p as unknown as { category?: string }).category || "").toLowerCase().includes(trimmed) ||
+            (p.designFamilyName || (p as unknown as { designFamily?: string }).designFamily || "").toLowerCase().includes(trimmed) ||
+            p.fit.toLowerCase().includes(trimmed) ||
+            p.gsm.toLowerCase().includes(trimmed) ||
+            (p.shortDescription || p.fullDescription || (p as unknown as { description?: string }).description || "").toLowerCase().includes(trimmed))
       )
     : [];
 
   const matchedCategories = trimmed
-    ? garmentCategories.filter(
+    ? (categories || []).filter(
         (c) =>
           c.name.toLowerCase().includes(trimmed) ||
           c.shortDescription.toLowerCase().includes(trimmed)
@@ -203,7 +204,7 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
                                       </span>
                                       <span className="text-[#111111]/20">•</span>
                                       <span className="text-[9px] font-mono font-bold uppercase text-[#111111]/50 truncate">
-                                        {product.category}
+                                        {product.categoryName || (product as unknown as { category?: string }).category || "STREETWEAR"}
                                       </span>
                                     </div>
                                     <h4 className="font-black uppercase text-xs text-[#111111] group-hover:text-[#FF3B00] transition-colors line-clamp-1">
@@ -256,7 +257,7 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
                     <span>FEATURED PICKS FROM DROP 001</span>
                   </div>
                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-                    {productsData.slice(0, 4).map((p) => (
+                    {(products || []).filter((p) => p.status === "ACTIVE" && (p.featured || p.isPopular)).slice(0, 4).map((p) => (
                       <Link
                         key={p.id}
                         href={`/product/${p.slug}`}

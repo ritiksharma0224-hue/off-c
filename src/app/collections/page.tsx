@@ -6,26 +6,26 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, SlidersHorizontal, Sparkles } from "lucide-react";
-import { designFamilies, DesignFamily } from "@/data/collections";
-import { productsData, Product } from "@/data/products";
+import { useStorefront } from "@/context/StorefrontContext";
 
 function CollectionsContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
+  const { products, designFamilies } = useStorefront();
 
   const [activeFamily, setActiveFamily] = useState<string>("all");
 
   useEffect(() => {
     const familyQuery = searchParams.get("family") || searchParams.get("category");
     if (familyQuery) {
-      const exists = designFamilies.some(
+      const exists = (designFamilies || []).some(
         (f) => f.slug.toLowerCase() === familyQuery.toLowerCase()
       );
       if (exists) {
         setActiveFamily(familyQuery.toLowerCase());
       }
     }
-  }, [searchParams]);
+  }, [searchParams, designFamilies]);
 
   const handleFamilySelect = (slug: string) => {
     setActiveFamily(slug);
@@ -36,14 +36,19 @@ function CollectionsContent() {
     }
   };
 
-  const filteredProducts = useMemo(() => {
-    if (activeFamily === "all") return productsData;
-    return productsData.filter(
-      (p) => p.designFamily.toLowerCase() === activeFamily.toLowerCase()
-    );
-  }, [activeFamily]);
+  const activeProducts = useMemo(() => {
+    return (products || []).filter((p) => p.status === "ACTIVE" || p.status === "PREORDER" || p.status === "RESERVATION OPEN");
+  }, [products]);
 
-  const activeFamilyData = designFamilies.find(
+  const filteredProducts = useMemo(() => {
+    if (activeFamily === "all") return activeProducts;
+    return activeProducts.filter((p) => {
+      const fam = p.designFamilyId || p.designFamilyName?.toLowerCase() || (p as unknown as { designFamily?: string }).designFamily?.toLowerCase();
+      return fam === activeFamily.toLowerCase();
+    });
+  }, [activeFamily, activeProducts]);
+
+  const activeFamilyData = (designFamilies || []).find(
     (f) => f.slug.toLowerCase() === activeFamily.toLowerCase()
   );
 
@@ -77,13 +82,14 @@ function CollectionsContent() {
                 : "bg-white text-[#111111] hover:bg-gray-100"
             }`}
           >
-            ALL FAMILIES ({productsData.length})
+            ALL FAMILIES ({activeProducts.length})
           </button>
 
-          {designFamilies.map((fam) => {
-            const count = productsData.filter(
-              (p) => p.designFamily.toLowerCase() === fam.slug.toLowerCase()
-            ).length;
+          {(designFamilies || []).map((fam) => {
+            const count = activeProducts.filter((p) => {
+              const f = p.designFamilyId || p.designFamilyName?.toLowerCase() || (p as unknown as { designFamily?: string }).designFamily?.toLowerCase();
+              return f === fam.slug.toLowerCase();
+            }).length;
 
             return (
               <button
@@ -153,7 +159,7 @@ function CollectionsContent() {
                 className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
               />
               <div className="absolute top-3 left-3 bg-[#111111] text-white font-mono text-[9px] font-black uppercase tracking-widest px-2 py-0.5 border border-white/20 z-10">
-                {product.designFamily}
+                {product.designFamilyName || (product as unknown as { designFamily?: string }).designFamily || "GLOBAL"}
               </div>
               <div className="absolute bottom-3 right-3 bg-white/95 text-[#111111] text-[9px] font-mono font-bold uppercase px-2 py-0.5 border border-[#111111]">
                 {product.gsm}
@@ -163,7 +169,7 @@ function CollectionsContent() {
             <div className="p-4 flex-grow flex flex-col justify-between border-t border-[#111111] bg-white">
               <div>
                 <div className="text-[9px] font-mono uppercase text-[#111111]/50 mb-1">
-                  {product.category}
+                  {product.categoryName || (product as unknown as { category?: string }).category || "STREETWEAR"}
                 </div>
                 <h3 className="font-black uppercase text-xs md:text-sm tracking-tight text-[#111111] group-hover:text-[#FF3B00] transition-colors line-clamp-1 mb-2">
                   {product.name}

@@ -1,0 +1,14 @@
+[
+  {
+    "id": "cust-1790007824865",
+    "fullName": "Priya Patel",
+    "email": "priya@example.com",
+    "phone": "+919876500000",
+    "totalOrders": 1,
+    "totalReservations": 0,
+    "totalPreorders": 0,
+    "totalSpent": 0,
+    "lastActivityAt": "2026-09-21T16:23:44.865Z",
+    "createdAt": "2026-09-21T16:23:44.865Z"
+  }
+]

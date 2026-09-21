@@ -1,0 +1,92 @@
+[
+  {
+    "id": "audit-1790009209233-451",
+    "admin": "admin@kapdology.store",
+    "action": "MEDIA_UPLOADED",
+    "targetType": "MEDIA",
+    "targetId": "med-1790009209219",
+    "targetName": "kpd-1790009209181-chatgpt-image-sep-20-2026-11-0.png",
+    "details": "Uploaded asset kpd-1790009209181-chatgpt-image-sep-20-2026-11-0.png (/uploads/kpd-1790009209181-chatgpt-image-sep-20-2026-11-0.png)",
+    "timestamp": "2026-09-21T16:46:49.233Z"
+  },
+  {
+    "id": "audit-1790007869019-130",
+    "admin": "admin@kapdology.store",
+    "action": "PRODUCT_UPDATED",
+    "targetType": "PRODUCT",
+    "targetId": "kpd-866810",
+    "targetName": "Acid Grid Oversized Heavy Tee [UPDATED]",
+    "details": "Updated product fields: status",
+    "timestamp": "2026-09-21T16:24:29.019Z"
+  },
+  {
+    "id": "audit-1790007868919-312",
+    "admin": "admin@kapdology.store",
+    "action": "PRODUCT_UPDATED",
+    "targetType": "PRODUCT",
+    "targetId": "kpd-866810",
+    "targetName": "Acid Grid Oversized Heavy Tee [UPDATED]",
+    "details": "Updated product fields: price, name",
+    "timestamp": "2026-09-21T16:24:28.919Z"
+  },
+  {
+    "id": "audit-1790007866817-878",
+    "admin": "admin@kapdology.store",
+    "action": "PRODUCT_CREATED",
+    "targetType": "PRODUCT",
+    "targetId": "kpd-866810",
+    "targetName": "Acid Grid Oversized Heavy Tee",
+    "details": "Created new product Acid Grid Oversized Heavy Tee at ₹799",
+    "timestamp": "2026-09-21T16:24:26.817Z"
+  },
+  {
+    "id": "audit-1790007853219-848",
+    "admin": "Customer / Storefront",
+    "action": "PREORDER_CREATED",
+    "targetType": "PREORDER",
+    "targetId": "pre-1790007853197-7559",
+    "targetName": "#PRE-7559 - Signature Oversized Box Tee",
+    "details": "Maya Verma preordered M (1 unit) for ₹599",
+    "timestamp": "2026-09-21T16:24:13.220Z"
+  },
+  {
+    "id": "audit-1790007853205-25",
+    "admin": "System Admin",
+    "action": "PRODUCT_UPDATED",
+    "targetType": "PRODUCT",
+    "targetId": "kpd-01",
+    "targetName": "Signature Oversized Box Tee",
+    "details": "Updated product fields: variants",
+    "timestamp": "2026-09-21T16:24:13.206Z"
+  },
+  {
+    "id": "audit-1790007852823-770",
+    "admin": "Customer / Storefront",
+    "action": "RESERVATION_CREATED",
+    "targetType": "RESERVATION",
+    "targetId": "res-1790007852806-1402",
+    "targetName": "#RES-1402 - Signature Oversized Box Tee",
+    "details": "Aarav Sharma reserved size L (1 unit)",
+    "timestamp": "2026-09-21T16:24:12.823Z"
+  },
+  {
+    "id": "audit-1790007852814-451",
+    "admin": "System Admin",
+    "action": "PRODUCT_UPDATED",
+    "targetType": "PRODUCT",
+    "targetId": "kpd-01",
+    "targetName": "Signature Oversized Box Tee",
+    "details": "Updated product fields: variants",
+    "timestamp": "2026-09-21T16:24:12.814Z"
+  },
+  {
+    "id": "audit-1790007824877-931",
+    "admin": "Customer / Checkout",
+    "action": "ORDER_PLACED",
+    "targetType": "ORDER",
+    "targetId": "order-1790007824850-6123",
+    "targetName": "#KPD-6123",
+    "details": "Order placed for ₹698 by Priya Patel (priya@example.com)",
+    "timestamp": "2026-09-21T16:23:44.877Z"
+  }
+]

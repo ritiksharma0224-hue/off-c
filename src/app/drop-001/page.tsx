@@ -4,10 +4,14 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Sparkles, ShieldCheck } from "lucide-react";
-import { productsData } from "@/data/products";
+import { useStorefront } from "@/context/StorefrontContext";
 
 export default function Drop001Page() {
-  const dropProducts = productsData.filter((p) => p.drop === "DROP 001");
+  const { products } = useStorefront();
+  const dropProducts = (products || []).filter(
+    (p) => (p.drop === "DROP 001" || p.collectionId === "drop-001") &&
+      (p.status === "ACTIVE" || p.status === "PREORDER" || p.status === "RESERVATION OPEN")
+  );
 
   return (
     <div className="w-full bg-[#FAF7F2] min-h-screen pb-24 select-none">
@@ -115,7 +119,7 @@ export default function Drop001Page() {
               <div className="p-4 flex-grow flex flex-col justify-between border-t border-[#111111] bg-white">
                 <div>
                   <div className="text-[9px] font-mono uppercase text-[#111111]/50 mb-1">
-                    {product.category}
+                    {product.categoryName || (product as unknown as { category?: string }).category || "OVERSIZED TEES"}
                   </div>
                   <h3 className="font-black uppercase text-xs md:text-sm tracking-tight text-[#111111] group-hover:text-[#FF3B00] transition-colors line-clamp-1 mb-2">
                     {product.name}

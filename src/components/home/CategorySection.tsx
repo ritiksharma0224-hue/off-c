@@ -5,9 +5,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
-import { garmentCategories } from "@/data/categories";
+import { useStorefront } from "@/context/StorefrontContext";
 
 export default function CategorySection() {
+  const { categories } = useStorefront();
+
   return (
     <section className="w-full py-20 md:py-28 bg-[#FAF7F2] border-b-2 border-[#111111] relative select-none">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
@@ -37,7 +39,7 @@ export default function CategorySection() {
 
         {/* 5-6 Garment Categories Editorial Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {garmentCategories.map((category, index) => (
+          {(categories || []).map((category, index) => (
             <motion.div
               key={category.id}
               initial={{ opacity: 0, y: 25 }}

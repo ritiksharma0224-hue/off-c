@@ -6,15 +6,15 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { SlidersHorizontal, ArrowUpDown, ShoppingBag, ArrowRight, Check } from "lucide-react";
-import { productsData, Product } from "@/data/products";
-import { garmentCategories } from "@/data/categories";
-import { designFamilies } from "@/data/collections";
+import { MasterProduct } from "@/lib/db/types";
+import { useStorefront } from "@/context/StorefrontContext";
 import { useCart } from "@/context/CartContext";
 
 function ShopContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const { addToCart } = useCart();
+  const { products, categories, designFamilies } = useStorefront();
 
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const [selectedFamily, setSelectedFamily] = useState<string>("all");
@@ -38,13 +38,17 @@ function ShopContent() {
     }
   };
 
-  // Filter and sort products
+  // Filter and sort products from Master Single Source of Truth
   const filteredProducts = useMemo(() => {
-    let result = productsData.filter((p) => {
-      const matchesCat =
-        selectedCategory === "all" || p.categorySlug === selectedCategory;
-      const matchesFamily =
-        selectedFamily === "all" || p.designFamily.toLowerCase() === selectedFamily.toLowerCase();
+    let result = (products || []).filter((p) => {
+      // Show active, preorder, or reservation open garments
+      if (p.status !== "ACTIVE" && p.status !== "PREORDER" && p.status !== "RESERVATION OPEN") {
+        return false;
+      }
+      const catSlug = p.categorySlug || "";
+      const familySlug = p.designFamilyId || p.designFamilyName?.toLowerCase() || (p as unknown as { designFamily?: string }).designFamily?.toLowerCase() || "";
+      const matchesCat = selectedCategory === "all" || catSlug === selectedCategory;
+      const matchesFamily = selectedFamily === "all" || familySlug === selectedFamily.toLowerCase();
       return matchesCat && matchesFamily;
     });
 
@@ -65,10 +69,13 @@ function ShopContent() {
     }
 
     return result;
-  }, [selectedCategory, selectedFamily, sortBy]);
+  }, [products, selectedCategory, selectedFamily, sortBy]);
 
-  const handleQuickAdd = (product: Product) => {
-    const defaultSize = product.sizes[0] || "L";
+  const handleQuickAdd = (product: MasterProduct) => {
+    const productSizes = product.availableSizes?.length
+      ? product.availableSizes
+      : (product as unknown as { sizes?: string[] }).sizes || ["L"];
+    const defaultSize = productSizes[0] || "L";
     addToCart(product, defaultSize, 1);
     setAddedId(product.id);
     setTimeout(() => setAddedId(null), 1800);
@@ -111,7 +118,7 @@ function ShopContent() {
           >
             ALL CATEGORIES
           </button>
-          {garmentCategories.map((cat) => (
+          {(categories || []).map((cat) => (
             <button
               key={cat.id}
               onClick={() => handleCategorySelect(cat.slug)}
@@ -143,7 +150,7 @@ function ShopContent() {
             >
               ALL
             </button>
-            {designFamilies.map((fam) => (
+            {(designFamilies || []).map((fam) => (
               <button
                 key={fam.id}
                 onClick={() => setSelectedFamily(fam.slug)}
@@ -228,6 +235,16 @@ function ShopContent() {
 
                     {/* Top Badge */}
                     <div className="absolute top-3 left-3 flex flex-col gap-1 z-20 pointer-events-none">
+                      {product.status === "RESERVATION OPEN" && (
+                        <span className="bg-[#D97706] text-white font-mono text-[9px] font-black uppercase tracking-widest px-2 py-0.5 border border-white/20">
+                          RESERVATION
+                        </span>
+                      )}
+                      {product.status === "PREORDER" && (
+                        <span className="bg-[#2563EB] text-white font-mono text-[9px] font-black uppercase tracking-widest px-2 py-0.5 border border-white/20">
+                          PREORDER
+                        </span>
+                      )}
                       {product.badge && (
                         <span className="bg-[#111111] text-white font-mono text-[9px] font-black uppercase tracking-widest px-2 py-0.5 border border-white/20">
                           {product.badge}
@@ -245,8 +262,8 @@ function ShopContent() {
                   <div className="p-4 flex-grow flex flex-col justify-between border-t border-[#111111] bg-white">
                     <div>
                       <div className="flex items-center justify-between text-[9px] font-mono uppercase tracking-wider text-[#111111]/50 mb-1">
-                        <span>{product.category}</span>
-                        <span>{product.designFamily}</span>
+                        <span>{product.categoryName || (product as unknown as { category?: string }).category || "STREETWEAR"}</span>
+                        <span>{product.designFamilyName || (product as unknown as { designFamily?: string }).designFamily || "GLOBAL"}</span>
                       </div>
 
                       <Link
@@ -293,7 +310,7 @@ function ShopContent() {
                         ) : (
                           <>
                             <ShoppingBag className="h-3 w-3" />
-                            <span>ADD ({product.sizes[0] || "L"})</span>
+                            <span>ADD ({(product.availableSizes?.[0] || (product as unknown as { sizes?: string[] }).sizes?.[0] || "L")})</span>
                           </>
                         )}
                       </button>

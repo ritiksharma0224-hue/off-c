@@ -5,10 +5,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, Sparkles } from "lucide-react";
-import { productsData } from "@/data/products";
+import { useStorefront } from "@/context/StorefrontContext";
 
 export default function DropIntro() {
-  const dropProducts = productsData.filter((p) => p.drop === "DROP 001");
+  const { products } = useStorefront();
+  const dropProducts = (products || []).filter(
+    (p) => (p.drop === "DROP 001" || p.collectionId === "drop-001") && p.status === "ACTIVE"
+  );
   const totalCount = dropProducts.length;
 
   return (

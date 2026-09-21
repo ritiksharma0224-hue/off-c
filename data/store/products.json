@@ -1,0 +1,1777 @@
+[
+  {
+    "id": "kpd-866810",
+    "name": "Acid Grid Oversized Heavy Tee [UPDATED]",
+    "slug": "acid-grid-oversized-heavy-tee",
+    "shortDescription": "",
+    "fullDescription": "",
+    "price": 899,
+    "compareAtPrice": 1199,
+    "discountPercentage": 33,
+    "categoryId": "oversized-tees",
+    "categoryName": "OVERSIZED T-SHIRTS",
+    "categorySlug": "oversized-tees",
+    "designFamilyId": "chaos",
+    "designFamilyName": "CHAOS",
+    "collectionId": "drop-001",
+    "collectionName": "DROP 001",
+    "drop": "DROP 001",
+    "tags": [
+      "streetwear"
+    ],
+    "fabric": "100% Combed Slub Cotton",
+    "gsm": "250 GSM",
+    "fit": "Boxy Heavyweight Drop Cut",
+    "printMethod": "Acid Wash Discharge Stencil",
+    "care": "Machine wash cold inside-out. Hang dry.",
+    "details": [
+      "Heavyweight Construction",
+      "Drop Shoulder Drape"
+    ],
+    "gender": "UNISEX",
+    "image": "/images/vintage-wash.jpg",
+    "images": [
+      "/images/vintage-wash.jpg"
+    ],
+    "imageSlots": [
+      {
+        "id": "img-kpd-866810-1",
+        "url": "/images/vintage-wash.jpg",
+        "alt": "Acid Grid Oversized Heavy Tee - View 1",
+        "slot": "PRIMARY",
+        "isPrimary": true,
+        "isHover": false,
+        "position": 1
+      }
+    ],
+    "availableSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "Standard Black"
+    ],
+    "variants": [
+      {
+        "id": "var-kpd-866810-s",
+        "productId": "kpd-866810",
+        "size": "S",
+        "color": "Standard Black",
+        "sku": "KPD-KPD-866810-S",
+        "physicalStock": 10,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 10
+      },
+      {
+        "id": "var-kpd-866810-m",
+        "productId": "kpd-866810",
+        "size": "M",
+        "color": "Standard Black",
+        "sku": "KPD-KPD-866810-M",
+        "physicalStock": 10,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 10
+      },
+      {
+        "id": "var-kpd-866810-l",
+        "productId": "kpd-866810",
+        "size": "L",
+        "color": "Standard Black",
+        "sku": "KPD-KPD-866810-L",
+        "physicalStock": 10,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 10
+      },
+      {
+        "id": "var-kpd-866810-xl",
+        "productId": "kpd-866810",
+        "size": "XL",
+        "color": "Standard Black",
+        "sku": "KPD-KPD-866810-XL",
+        "physicalStock": 10,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 10
+      }
+    ],
+    "totalPhysicalStock": 40,
+    "totalReservedStock": 0,
+    "totalPreorderedStock": 0,
+    "totalAvailableStock": 40,
+    "lowStockThreshold": 5,
+    "status": "ARCHIVED",
+    "badge": "NEW DROP",
+    "isNew": true,
+    "isPopular": false,
+    "featured": false,
+    "reservationEnabled": false,
+    "reservationLimitPerCustomer": 2,
+    "reservationAllowedSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "reservationAllowedColors": [
+      "Standard Black"
+    ],
+    "reservationCtaText": "RESERVE YOUR SIZE",
+    "preorderEnabled": false,
+    "preorderAllowedSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "preorderAllowedColors": [
+      "Standard Black"
+    ],
+    "preorderCtaText": "PREORDER NOW →",
+    "showPreorderCapacity": false,
+    "createdAt": "2026-09-21T16:24:26.811Z",
+    "updatedAt": "2026-09-21T16:24:29.010Z"
+  },
+  {
+    "id": "kpd-01",
+    "name": "Signature Oversized Box Tee",
+    "slug": "signature-oversized-box-tee",
+    "shortDescription": "The core anchor of Kapdology Drop 001. Built with 240 GSM organic combed cotton, featuring a structured drop-shoulder drape and reinforced collar.",
+    "fullDescription": "The core anchor of Kapdology Drop 001. Built with 240 GSM organic combed cotton, featuring a structured drop-shoulder drape and reinforced collar.",
+    "price": 599,
+    "compareAtPrice": 899,
+    "discountPercentage": 33,
+    "categoryId": "oversized-tees",
+    "categoryName": "OVERSIZED T-SHIRTS",
+    "categorySlug": "oversized-tees",
+    "designFamilyId": "global",
+    "designFamilyName": "GLOBAL",
+    "collectionId": "drop-001",
+    "collectionName": "DROP 001",
+    "drop": "DROP 001",
+    "tags": [
+      "oversized-tees",
+      "global",
+      "drop-001"
+    ],
+    "fabric": "100% Combed Cotton",
+    "gsm": "240 GSM",
+    "fit": "Signature Oversized Box Cut",
+    "printMethod": "Direct-to-Fabric Minimal Stencil",
+    "care": "Machine wash cold inside-out. Do not iron directly on graphics. Hang dry in shade.",
+    "details": [
+      "240 GSM 100% Combed Heavyweight Cotton",
+      "Signature Drop-Shoulder Box Cut",
+      "1.2-inch Thick High-Rib Neckband",
+      "Pre-Shrunk & Colorfast Wash Finished",
+      "Tailored In Jaipur, India"
+    ],
+    "gender": "UNISEX",
+    "image": "/images/hero.png",
+    "images": [
+      "/images/hero.png",
+      "/images/slate-boxy.jpg"
+    ],
+    "imageSlots": [
+      {
+        "id": "img-kpd-01-1",
+        "url": "/images/hero.png",
+        "alt": "Signature Oversized Box Tee - View 1",
+        "slot": "PRIMARY",
+        "isPrimary": true,
+        "isHover": false,
+        "position": 1
+      },
+      {
+        "id": "img-kpd-01-2",
+        "url": "/images/slate-boxy.jpg",
+        "alt": "Signature Oversized Box Tee - View 2",
+        "slot": "SECONDARY",
+        "isPrimary": false,
+        "isHover": true,
+        "position": 2
+      }
+    ],
+    "availableSizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Off-White / Cream",
+      "Phantom Black"
+    ],
+    "variants": [
+      {
+        "id": "var-kpd-01-s",
+        "productId": "kpd-01",
+        "size": "S",
+        "color": "Off-White / Cream",
+        "sku": "KPD-KPD-01-S-1",
+        "physicalStock": 15,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 15
+      },
+      {
+        "id": "var-kpd-01-m",
+        "productId": "kpd-01",
+        "size": "M",
+        "color": "Off-White / Cream",
+        "sku": "KPD-KPD-01-M-2",
+        "physicalStock": 15,
+        "reservedStock": 0,
+        "preorderedStock": 1,
+        "allocatedStock": 0,
+        "availableStock": 15
+      },
+      {
+        "id": "var-kpd-01-l",
+        "productId": "kpd-01",
+        "size": "L",
+        "color": "Off-White / Cream",
+        "sku": "KPD-KPD-01-L-3",
+        "physicalStock": 15,
+        "reservedStock": 1,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 14
+      },
+      {
+        "id": "var-kpd-01-xl",
+        "productId": "kpd-01",
+        "size": "XL",
+        "color": "Off-White / Cream",
+        "sku": "KPD-KPD-01-XL-4",
+        "physicalStock": 15,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 15
+      },
+      {
+        "id": "var-kpd-01-xxl",
+        "productId": "kpd-01",
+        "size": "XXL",
+        "color": "Off-White / Cream",
+        "sku": "KPD-KPD-01-XXL-5",
+        "physicalStock": 15,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 15
+      }
+    ],
+    "totalPhysicalStock": 75,
+    "totalReservedStock": 1,
+    "totalPreorderedStock": 1,
+    "totalAvailableStock": 74,
+    "lowStockThreshold": 5,
+    "status": "ACTIVE",
+    "badge": "DROP 001",
+    "isNew": true,
+    "isPopular": true,
+    "featured": true,
+    "reservationEnabled": false,
+    "reservationAllowedSizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "reservationAllowedColors": [
+      "Off-White / Cream",
+      "Phantom Black"
+    ],
+    "reservationCtaText": "RESERVE YOUR SIZE",
+    "preorderEnabled": false,
+    "preorderAllowedSizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "preorderAllowedColors": [
+      "Off-White / Cream",
+      "Phantom Black"
+    ],
+    "preorderCtaText": "PREORDER NOW →",
+    "showPreorderCapacity": false,
+    "createdAt": "2026-09-21T16:23:42.618Z",
+    "updatedAt": "2026-09-21T16:24:13.198Z"
+  },
+  {
+    "id": "kpd-02",
+    "name": "Vintage Distressed Acid Wash Tee",
+    "slug": "vintage-distressed-acid-wash-tee",
+    "shortDescription": "Custom acid wash process creating an authentic worn-in texture on heavy terry cotton. Each garment is individually treated for a distinct vintage patina.",
+    "fullDescription": "Custom acid wash process creating an authentic worn-in texture on heavy terry cotton. Each garment is individually treated for a distinct vintage patina.",
+    "price": 1399,
+    "compareAtPrice": 1699,
+    "discountPercentage": 18,
+    "categoryId": "oversized-tees",
+    "categoryName": "OVERSIZED T-SHIRTS",
+    "categorySlug": "oversized-tees",
+    "designFamilyId": "chaos",
+    "designFamilyName": "CHAOS",
+    "collectionId": "drop-001",
+    "collectionName": "DROP 001",
+    "drop": "DROP 001",
+    "tags": [
+      "oversized-tees",
+      "chaos",
+      "drop-001"
+    ],
+    "fabric": "100% Heavy Terry Cotton",
+    "gsm": "240 GSM",
+    "fit": "Oversized Drop Shoulder",
+    "printMethod": "Mineral Washed Vintage Discharge",
+    "care": "Wash cold separately with mild detergent. Do not bleach. Tumble dry low or line dry.",
+    "details": [
+      "240 GSM Heavy Terry Cloth Cotton",
+      "Hand-Curated Acid Mineral Wash Finish",
+      "Raw Distress Edge Detailing on Ribbing",
+      "Reinforced Double-Stitch Shoulder Taping",
+      "Subtle Hand-Washed Handfeel"
+    ],
+    "gender": "UNISEX",
+    "image": "/images/vintage-wash.jpg",
+    "images": [
+      "/images/vintage-wash.jpg",
+      "/images/hero.png"
+    ],
+    "imageSlots": [
+      {
+        "id": "img-kpd-02-1",
+        "url": "/images/vintage-wash.jpg",
+        "alt": "Vintage Distressed Acid Wash Tee - View 1",
+        "slot": "PRIMARY",
+        "isPrimary": true,
+        "isHover": false,
+        "position": 1
+      },
+      {
+        "id": "img-kpd-02-2",
+        "url": "/images/hero.png",
+        "alt": "Vintage Distressed Acid Wash Tee - View 2",
+        "slot": "SECONDARY",
+        "isPrimary": false,
+        "isHover": true,
+        "position": 2
+      }
+    ],
+    "availableSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "Mineral Washed Grey",
+      "Acid Slate"
+    ],
+    "variants": [
+      {
+        "id": "var-kpd-02-s",
+        "productId": "kpd-02",
+        "size": "S",
+        "color": "Mineral Washed Grey",
+        "sku": "KPD-KPD-02-S-1",
+        "physicalStock": 15,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 15
+      },
+      {
+        "id": "var-kpd-02-m",
+        "productId": "kpd-02",
+        "size": "M",
+        "color": "Mineral Washed Grey",
+        "sku": "KPD-KPD-02-M-2",
+        "physicalStock": 15,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 15
+      },
+      {
+        "id": "var-kpd-02-l",
+        "productId": "kpd-02",
+        "size": "L",
+        "color": "Mineral Washed Grey",
+        "sku": "KPD-KPD-02-L-3",
+        "physicalStock": 15,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 15
+      },
+      {
+        "id": "var-kpd-02-xl",
+        "productId": "kpd-02",
+        "size": "XL",
+        "color": "Mineral Washed Grey",
+        "sku": "KPD-KPD-02-XL-4",
+        "physicalStock": 15,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 15
+      }
+    ],
+    "totalPhysicalStock": 60,
+    "totalReservedStock": 0,
+    "totalPreorderedStock": 0,
+    "totalAvailableStock": 60,
+    "lowStockThreshold": 5,
+    "status": "ACTIVE",
+    "badge": "LIMITED",
+    "isNew": true,
+    "isPopular": false,
+    "featured": true,
+    "reservationEnabled": false,
+    "reservationAllowedSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "reservationAllowedColors": [
+      "Mineral Washed Grey",
+      "Acid Slate"
+    ],
+    "reservationCtaText": "RESERVE YOUR SIZE",
+    "preorderEnabled": false,
+    "preorderAllowedSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "preorderAllowedColors": [
+      "Mineral Washed Grey",
+      "Acid Slate"
+    ],
+    "preorderCtaText": "PREORDER NOW →",
+    "showPreorderCapacity": false,
+    "createdAt": "2026-09-21T16:23:42.619Z",
+    "updatedAt": "2026-09-21T16:23:42.619Z"
+  },
+  {
+    "id": "kpd-03",
+    "name": "Minimalist Slate Boxy Tee",
+    "slug": "minimalist-slate-boxy-tee",
+    "shortDescription": "Architectural minimalism in garment form. Shorter body length with an expanded chest width creates the definitive modern streetwear proportion.",
+    "fullDescription": "Architectural minimalism in garment form. Shorter body length with an expanded chest width creates the definitive modern streetwear proportion.",
+    "price": 1199,
+    "compareAtPrice": 1499,
+    "discountPercentage": 20,
+    "categoryId": "boxy-tees",
+    "categoryName": "BOXY / RELAXED TEES",
+    "categorySlug": "boxy-tees",
+    "designFamilyId": "minimal",
+    "designFamilyName": "MINIMAL",
+    "collectionId": "drop-001",
+    "collectionName": "DROP 001",
+    "drop": "DROP 001",
+    "tags": [
+      "boxy-tees",
+      "minimal",
+      "drop-001"
+    ],
+    "fabric": "100% High-Twist Combed Cotton",
+    "gsm": "220 GSM",
+    "fit": "Structured Boxy Fit",
+    "printMethod": "Clean Monochrome Screenprint",
+    "care": "Machine wash cold with similar shades. Cool iron on reverse. Lay flat to dry.",
+    "details": [
+      "220 GSM High-Twist Combed Cotton",
+      "High Mock Rib Collar (1.4-inch height)",
+      "Square Body Drape with Clean Blind Hems",
+      "Minimalist Kapdology Monogram at Hem",
+      "Zero Fabric Cling"
+    ],
+    "gender": "UNISEX",
+    "image": "/images/slate-boxy.jpg",
+    "images": [
+      "/images/slate-boxy.jpg",
+      "/images/retro-boxy.jpg"
+    ],
+    "imageSlots": [
+      {
+        "id": "img-kpd-03-1",
+        "url": "/images/slate-boxy.jpg",
+        "alt": "Minimalist Slate Boxy Tee - View 1",
+        "slot": "PRIMARY",
+        "isPrimary": true,
+        "isHover": false,
+        "position": 1
+      },
+      {
+        "id": "img-kpd-03-2",
+        "url": "/images/retro-boxy.jpg",
+        "alt": "Minimalist Slate Boxy Tee - View 2",
+        "slot": "SECONDARY",
+        "isPrimary": false,
+        "isHover": true,
+        "position": 2
+      }
+    ],
+    "availableSizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Slate Charcoal",
+      "Raw Chalk"
+    ],
+    "variants": [
+      {
+        "id": "var-kpd-03-s",
+        "productId": "kpd-03",
+        "size": "S",
+        "color": "Slate Charcoal",
+        "sku": "KPD-KPD-03-S-1",
+        "physicalStock": 15,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 15
+      },
+      {
+        "id": "var-kpd-03-m",
+        "productId": "kpd-03",
+        "size": "M",
+        "color": "Slate Charcoal",
+        "sku": "KPD-KPD-03-M-2",
+        "physicalStock": 15,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 15
+      },
+      {
+        "id": "var-kpd-03-l",
+        "productId": "kpd-03",
+        "size": "L",
+        "color": "Slate Charcoal",
+        "sku": "KPD-KPD-03-L-3",
+        "physicalStock": 15,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 15
+      },
+      {
+        "id": "var-kpd-03-xl",
+        "productId": "kpd-03",
+        "size": "XL",
+        "color": "Slate Charcoal",
+        "sku": "KPD-KPD-03-XL-4",
+        "physicalStock": 15,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 15
+      },
+      {
+        "id": "var-kpd-03-xxl",
+        "productId": "kpd-03",
+        "size": "XXL",
+        "color": "Slate Charcoal",
+        "sku": "KPD-KPD-03-XXL-5",
+        "physicalStock": 15,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 15
+      }
+    ],
+    "totalPhysicalStock": 75,
+    "totalReservedStock": 0,
+    "totalPreorderedStock": 0,
+    "totalAvailableStock": 75,
+    "lowStockThreshold": 5,
+    "status": "ACTIVE",
+    "badge": "ESSENTIAL",
+    "isNew": false,
+    "isPopular": true,
+    "featured": true,
+    "reservationEnabled": false,
+    "reservationAllowedSizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "reservationAllowedColors": [
+      "Slate Charcoal",
+      "Raw Chalk"
+    ],
+    "reservationCtaText": "RESERVE YOUR SIZE",
+    "preorderEnabled": false,
+    "preorderAllowedSizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "preorderAllowedColors": [
+      "Slate Charcoal",
+      "Raw Chalk"
+    ],
+    "preorderCtaText": "PREORDER NOW →",
+    "showPreorderCapacity": false,
+    "createdAt": "2026-09-21T16:23:42.619Z",
+    "updatedAt": "2026-09-21T16:23:42.619Z"
+  },
+  {
+    "id": "kpd-04",
+    "name": "Retro-Future Graphic Boxy Tee",
+    "slug": "retro-future-graphic-boxy-tee",
+    "shortDescription": "Stark monochrome graphic profile on dense combed cotton. Bold typographic tension inspired by futuristic street typography and subcultural zines.",
+    "fullDescription": "Stark monochrome graphic profile on dense combed cotton. Bold typographic tension inspired by futuristic street typography and subcultural zines.",
+    "price": 1299,
+    "categoryId": "boxy-tees",
+    "categoryName": "BOXY / RELAXED TEES",
+    "categorySlug": "boxy-tees",
+    "designFamilyId": "chaos",
+    "designFamilyName": "CHAOS",
+    "collectionId": "drop-001",
+    "collectionName": "DROP 001",
+    "drop": "DROP 001",
+    "tags": [
+      "boxy-tees",
+      "chaos",
+      "drop-001"
+    ],
+    "fabric": "100% Combed Cotton",
+    "gsm": "220 GSM",
+    "fit": "Boxy Relaxed Cut",
+    "printMethod": "High-Density Screenprint",
+    "care": "Machine wash cold inside-out. Do not iron directly on print. Line dry.",
+    "details": [
+      "220 GSM Combed Cotton Canvas",
+      "High-Density Plastisol Typography Artwork",
+      "Seamless Sleeve Openings for Broad Fit",
+      "Pre-Shrunk to Preserve Proportions",
+      "Signature Jaipur Production Batch Tag"
+    ],
+    "gender": "UNISEX",
+    "image": "/images/retro-boxy.jpg",
+    "images": [
+      "/images/retro-boxy.jpg",
+      "/images/slate-boxy.jpg"
+    ],
+    "imageSlots": [
+      {
+        "id": "img-kpd-04-1",
+        "url": "/images/retro-boxy.jpg",
+        "alt": "Retro-Future Graphic Boxy Tee - View 1",
+        "slot": "PRIMARY",
+        "isPrimary": true,
+        "isHover": false,
+        "position": 1
+      },
+      {
+        "id": "img-kpd-04-2",
+        "url": "/images/slate-boxy.jpg",
+        "alt": "Retro-Future Graphic Boxy Tee - View 2",
+        "slot": "SECONDARY",
+        "isPrimary": false,
+        "isHover": true,
+        "position": 2
+      }
+    ],
+    "availableSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "Pitch Black",
+      "Steel Grey"
+    ],
+    "variants": [
+      {
+        "id": "var-kpd-04-s",
+        "productId": "kpd-04",
+        "size": "S",
+        "color": "Pitch Black",
+        "sku": "KPD-KPD-04-S-1",
+        "physicalStock": 15,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 15
+      },
+      {
+        "id": "var-kpd-04-m",
+        "productId": "kpd-04",
+        "size": "M",
+        "color": "Pitch Black",
+        "sku": "KPD-KPD-04-M-2",
+        "physicalStock": 15,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 15
+      },
+      {
+        "id": "var-kpd-04-l",
+        "productId": "kpd-04",
+        "size": "L",
+        "color": "Pitch Black",
+        "sku": "KPD-KPD-04-L-3",
+        "physicalStock": 15,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 15
+      },
+      {
+        "id": "var-kpd-04-xl",
+        "productId": "kpd-04",
+        "size": "XL",
+        "color": "Pitch Black",
+        "sku": "KPD-KPD-04-XL-4",
+        "physicalStock": 15,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 15
+      }
+    ],
+    "totalPhysicalStock": 60,
+    "totalReservedStock": 0,
+    "totalPreorderedStock": 0,
+    "totalAvailableStock": 60,
+    "lowStockThreshold": 5,
+    "status": "ACTIVE",
+    "isNew": false,
+    "isPopular": true,
+    "featured": false,
+    "reservationEnabled": false,
+    "reservationAllowedSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "reservationAllowedColors": [
+      "Pitch Black",
+      "Steel Grey"
+    ],
+    "reservationCtaText": "RESERVE YOUR SIZE",
+    "preorderEnabled": false,
+    "preorderAllowedSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "preorderAllowedColors": [
+      "Pitch Black",
+      "Steel Grey"
+    ],
+    "preorderCtaText": "PREORDER NOW →",
+    "showPreorderCapacity": false,
+    "createdAt": "2026-09-21T16:23:42.619Z",
+    "updatedAt": "2026-09-21T16:23:42.619Z"
+  },
+  {
+    "id": "kpd-05",
+    "name": "Cyber Culture Oversized Graphic Tee",
+    "slug": "cyber-culture-oversized-graphic-tee",
+    "shortDescription": "The visual embodiment of 'Not Just Clothes. It's a Mood.' High-definition graphic-driven DTF printing capturing intricate cyber and digital subculture motifs.",
+    "fullDescription": "The visual embodiment of 'Not Just Clothes. It's a Mood.' High-definition graphic-driven DTF printing capturing intricate cyber and digital subculture motifs.",
+    "price": 1299,
+    "compareAtPrice": 1599,
+    "discountPercentage": 19,
+    "categoryId": "graphic-tees",
+    "categoryName": "GRAPHIC TEES",
+    "categorySlug": "graphic-tees",
+    "designFamilyId": "identity",
+    "designFamilyName": "IDENTITY",
+    "collectionId": "drop-001",
+    "collectionName": "DROP 001",
+    "drop": "DROP 001",
+    "tags": [
+      "graphic-tees",
+      "identity",
+      "drop-001"
+    ],
+    "fabric": "100% Organic Heavy Cotton",
+    "gsm": "240 GSM",
+    "fit": "Oversized Drop Shoulder",
+    "printMethod": "High-Density Multi-Layer DTF",
+    "care": "Gentle wash cold inside-out. Iron on reverse only. Hang dry in shade.",
+    "details": [
+      "240 GSM Luxury Organic Cotton",
+      "High-Resolution Multi-Pass DTF Graphics",
+      "Full Back Graphic Artwork + Front Chest Tag",
+      "Drop Shoulder Tailoring with Ribbed Neckline",
+      "Fade-Resistant Print Chemistry"
+    ],
+    "gender": "UNISEX",
+    "image": "/images/cyber-tee.jpg",
+    "images": [
+      "/images/cyber-tee.jpg",
+      "/images/puff-tee.jpg"
+    ],
+    "imageSlots": [
+      {
+        "id": "img-kpd-05-1",
+        "url": "/images/cyber-tee.jpg",
+        "alt": "Cyber Culture Oversized Graphic Tee - View 1",
+        "slot": "PRIMARY",
+        "isPrimary": true,
+        "isHover": false,
+        "position": 1
+      },
+      {
+        "id": "img-kpd-05-2",
+        "url": "/images/puff-tee.jpg",
+        "alt": "Cyber Culture Oversized Graphic Tee - View 2",
+        "slot": "SECONDARY",
+        "isPrimary": false,
+        "isHover": true,
+        "position": 2
+      }
+    ],
+    "availableSizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Core Black",
+      "Acid Washed Black"
+    ],
+    "variants": [
+      {
+        "id": "var-kpd-05-s",
+        "productId": "kpd-05",
+        "size": "S",
+        "color": "Core Black",
+        "sku": "KPD-KPD-05-S-1",
+        "physicalStock": 15,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 15
+      },
+      {
+        "id": "var-kpd-05-m",
+        "productId": "kpd-05",
+        "size": "M",
+        "color": "Core Black",
+        "sku": "KPD-KPD-05-M-2",
+        "physicalStock": 15,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 15
+      },
+      {
+        "id": "var-kpd-05-l",
+        "productId": "kpd-05",
+        "size": "L",
+        "color": "Core Black",
+        "sku": "KPD-KPD-05-L-3",
+        "physicalStock": 15,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 15
+      },
+      {
+        "id": "var-kpd-05-xl",
+        "productId": "kpd-05",
+        "size": "XL",
+        "color": "Core Black",
+        "sku": "KPD-KPD-05-XL-4",
+        "physicalStock": 15,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 15
+      },
+      {
+        "id": "var-kpd-05-xxl",
+        "productId": "kpd-05",
+        "size": "XXL",
+        "color": "Core Black",
+        "sku": "KPD-KPD-05-XXL-5",
+        "physicalStock": 15,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 15
+      }
+    ],
+    "totalPhysicalStock": 75,
+    "totalReservedStock": 0,
+    "totalPreorderedStock": 0,
+    "totalAvailableStock": 75,
+    "lowStockThreshold": 5,
+    "status": "ACTIVE",
+    "badge": "BEST SELLER",
+    "isNew": false,
+    "isPopular": true,
+    "featured": true,
+    "reservationEnabled": false,
+    "reservationAllowedSizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "reservationAllowedColors": [
+      "Core Black",
+      "Acid Washed Black"
+    ],
+    "reservationCtaText": "RESERVE YOUR SIZE",
+    "preorderEnabled": false,
+    "preorderAllowedSizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "preorderAllowedColors": [
+      "Core Black",
+      "Acid Washed Black"
+    ],
+    "preorderCtaText": "PREORDER NOW →",
+    "showPreorderCapacity": false,
+    "createdAt": "2026-09-21T16:23:42.619Z",
+    "updatedAt": "2026-09-21T16:23:42.619Z"
+  },
+  {
+    "id": "kpd-06",
+    "name": "Subculture Puff Graphic Tee",
+    "slug": "subculture-puff-graphic-tee",
+    "shortDescription": "Tactile graphic experience featuring 3D puff print lettering that rises off the garment. Bold street attitude tailored for everyday rotation.",
+    "fullDescription": "Tactile graphic experience featuring 3D puff print lettering that rises off the garment. Bold street attitude tailored for everyday rotation.",
+    "price": 1299,
+    "categoryId": "graphic-tees",
+    "categoryName": "GRAPHIC TEES",
+    "categorySlug": "graphic-tees",
+    "designFamilyId": "identity",
+    "designFamilyName": "IDENTITY",
+    "collectionId": "drop-001",
+    "collectionName": "DROP 001",
+    "drop": "DROP 001",
+    "tags": [
+      "graphic-tees",
+      "identity",
+      "drop-001"
+    ],
+    "fabric": "100% Cotton Single Jersey",
+    "gsm": "220 GSM",
+    "fit": "Oversized Fit",
+    "printMethod": "Dimensional 3D Puff Screenprint",
+    "care": "Machine wash cold inside-out on gentle cycle. Do not iron puff elements.",
+    "details": [
+      "220 GSM Breathable Summer Heavyweight Cotton",
+      "3D Tactile Puff Print Typography",
+      "Side Seam Reinforced Stitching",
+      "Crewneck Collar with Elastic Recovery",
+      "Custom Woven Neck Ribbon"
+    ],
+    "gender": "UNISEX",
+    "image": "/images/puff-tee.jpg",
+    "images": [
+      "/images/puff-tee.jpg",
+      "/images/cyber-tee.jpg"
+    ],
+    "imageSlots": [
+      {
+        "id": "img-kpd-06-1",
+        "url": "/images/puff-tee.jpg",
+        "alt": "Subculture Puff Graphic Tee - View 1",
+        "slot": "PRIMARY",
+        "isPrimary": true,
+        "isHover": false,
+        "position": 1
+      },
+      {
+        "id": "img-kpd-06-2",
+        "url": "/images/cyber-tee.jpg",
+        "alt": "Subculture Puff Graphic Tee - View 2",
+        "slot": "SECONDARY",
+        "isPrimary": false,
+        "isHover": true,
+        "position": 2
+      }
+    ],
+    "availableSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "Washed Phantom",
+      "Bone White"
+    ],
+    "variants": [
+      {
+        "id": "var-kpd-06-s",
+        "productId": "kpd-06",
+        "size": "S",
+        "color": "Washed Phantom",
+        "sku": "KPD-KPD-06-S-1",
+        "physicalStock": 15,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 15
+      },
+      {
+        "id": "var-kpd-06-m",
+        "productId": "kpd-06",
+        "size": "M",
+        "color": "Washed Phantom",
+        "sku": "KPD-KPD-06-M-2",
+        "physicalStock": 15,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 15
+      },
+      {
+        "id": "var-kpd-06-l",
+        "productId": "kpd-06",
+        "size": "L",
+        "color": "Washed Phantom",
+        "sku": "KPD-KPD-06-L-3",
+        "physicalStock": 15,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 15
+      },
+      {
+        "id": "var-kpd-06-xl",
+        "productId": "kpd-06",
+        "size": "XL",
+        "color": "Washed Phantom",
+        "sku": "KPD-KPD-06-XL-4",
+        "physicalStock": 15,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 15
+      }
+    ],
+    "totalPhysicalStock": 60,
+    "totalReservedStock": 0,
+    "totalPreorderedStock": 0,
+    "totalAvailableStock": 60,
+    "lowStockThreshold": 5,
+    "status": "ACTIVE",
+    "isNew": true,
+    "isPopular": false,
+    "featured": false,
+    "reservationEnabled": false,
+    "reservationAllowedSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "reservationAllowedColors": [
+      "Washed Phantom",
+      "Bone White"
+    ],
+    "reservationCtaText": "RESERVE YOUR SIZE",
+    "preorderEnabled": false,
+    "preorderAllowedSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "preorderAllowedColors": [
+      "Washed Phantom",
+      "Bone White"
+    ],
+    "preorderCtaText": "PREORDER NOW →",
+    "showPreorderCapacity": false,
+    "createdAt": "2026-09-21T16:23:42.619Z",
+    "updatedAt": "2026-09-21T16:23:42.619Z"
+  },
+  {
+    "id": "kpd-07",
+    "name": "Liquid Chrome Limited Graphic Tee",
+    "slug": "liquid-chrome-limited-graphic-tee",
+    "shortDescription": "Limited collector edition featuring liquid chrome foil typography that reflects light with metallic clarity. Delivered with numbered packaging.",
+    "fullDescription": "Limited collector edition featuring liquid chrome foil typography that reflects light with metallic clarity. Delivered with numbered packaging.",
+    "price": 1499,
+    "compareAtPrice": 1799,
+    "discountPercentage": 17,
+    "categoryId": "graphic-tees",
+    "categoryName": "GRAPHIC TEES",
+    "categorySlug": "graphic-tees",
+    "designFamilyId": "restricted",
+    "designFamilyName": "RESTRICTED",
+    "collectionId": "drop-001",
+    "collectionName": "DROP 001",
+    "drop": "DROP 001",
+    "tags": [
+      "graphic-tees",
+      "restricted",
+      "drop-001"
+    ],
+    "fabric": "100% Luxury Heavy Cotton",
+    "gsm": "240 GSM",
+    "fit": "Signature Oversized Silhouette",
+    "printMethod": "Hot-Stamp Mirror Chrome Foil",
+    "care": "Hand wash cold inside-out. Do not wring or twist foil. Lay flat to dry.",
+    "details": [
+      "240 GSM Luxury Dense Cotton Jersey",
+      "Mirror-Finish Liquid Chrome Foil Imprint",
+      "Numbered Batch Certificate Included",
+      "Drop-Shoulder Box Silhouette",
+      "Limited Drop Edition"
+    ],
+    "gender": "UNISEX",
+    "image": "/images/chrome-tee.jpg",
+    "images": [
+      "/images/chrome-tee.jpg",
+      "/images/cyber-tee.jpg"
+    ],
+    "imageSlots": [
+      {
+        "id": "img-kpd-07-1",
+        "url": "/images/chrome-tee.jpg",
+        "alt": "Liquid Chrome Limited Graphic Tee - View 1",
+        "slot": "PRIMARY",
+        "isPrimary": true,
+        "isHover": false,
+        "position": 1
+      },
+      {
+        "id": "img-kpd-07-2",
+        "url": "/images/cyber-tee.jpg",
+        "alt": "Liquid Chrome Limited Graphic Tee - View 2",
+        "slot": "SECONDARY",
+        "isPrimary": false,
+        "isHover": true,
+        "position": 2
+      }
+    ],
+    "availableSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "Deep Carbon",
+      "Pure Slate"
+    ],
+    "variants": [
+      {
+        "id": "var-kpd-07-s",
+        "productId": "kpd-07",
+        "size": "S",
+        "color": "Deep Carbon",
+        "sku": "KPD-KPD-07-S-1",
+        "physicalStock": 15,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 15
+      },
+      {
+        "id": "var-kpd-07-m",
+        "productId": "kpd-07",
+        "size": "M",
+        "color": "Deep Carbon",
+        "sku": "KPD-KPD-07-M-2",
+        "physicalStock": 15,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 15
+      },
+      {
+        "id": "var-kpd-07-l",
+        "productId": "kpd-07",
+        "size": "L",
+        "color": "Deep Carbon",
+        "sku": "KPD-KPD-07-L-3",
+        "physicalStock": 15,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 15
+      },
+      {
+        "id": "var-kpd-07-xl",
+        "productId": "kpd-07",
+        "size": "XL",
+        "color": "Deep Carbon",
+        "sku": "KPD-KPD-07-XL-4",
+        "physicalStock": 15,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 15
+      }
+    ],
+    "totalPhysicalStock": 60,
+    "totalReservedStock": 0,
+    "totalPreorderedStock": 0,
+    "totalAvailableStock": 60,
+    "lowStockThreshold": 5,
+    "status": "ACTIVE",
+    "badge": "RESTRICTED",
+    "isNew": true,
+    "isPopular": false,
+    "featured": true,
+    "reservationEnabled": false,
+    "reservationAllowedSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "reservationAllowedColors": [
+      "Deep Carbon",
+      "Pure Slate"
+    ],
+    "reservationCtaText": "RESERVE YOUR SIZE",
+    "preorderEnabled": false,
+    "preorderAllowedSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "preorderAllowedColors": [
+      "Deep Carbon",
+      "Pure Slate"
+    ],
+    "preorderCtaText": "PREORDER NOW →",
+    "showPreorderCapacity": false,
+    "createdAt": "2026-09-21T16:23:42.619Z",
+    "updatedAt": "2026-09-21T16:23:42.619Z"
+  },
+  {
+    "id": "kpd-08",
+    "name": "Urban Utility Cropped Shirt",
+    "slug": "urban-utility-cropped-shirt",
+    "shortDescription": "Street-forward cropped utility button-down featuring dual cargo chest pockets, structured square hemline, and matte black industrial snap buttons.",
+    "fullDescription": "Street-forward cropped utility button-down featuring dual cargo chest pockets, structured square hemline, and matte black industrial snap buttons.",
+    "price": 1499,
+    "compareAtPrice": 1899,
+    "discountPercentage": 21,
+    "categoryId": "shirts",
+    "categoryName": "SHIRTS",
+    "categorySlug": "shirts",
+    "designFamilyId": "technical",
+    "designFamilyName": "TECHNICAL",
+    "collectionId": "drop-001",
+    "collectionName": "DROP 001",
+    "drop": "DROP 001",
+    "tags": [
+      "shirts",
+      "technical",
+      "drop-001"
+    ],
+    "fabric": "100% Cotton Twill",
+    "gsm": "200 GSM",
+    "fit": "Relaxed Cropped Hem",
+    "printMethod": "Technical Utility Construction",
+    "care": "Machine wash cold with like colors. Hang dry. Warm iron if needed.",
+    "details": [
+      "200 GSM Durable Cotton Twill Weave",
+      "Industrial Matte Snap Fasteners",
+      "Dual Gusseted Utility Pockets with Flaps",
+      "Square-Cut Cropped Waistline",
+      "Relaxed Box Shoulders for Layering"
+    ],
+    "gender": "UNISEX",
+    "image": "/images/cropped-shirt.jpg",
+    "images": [
+      "/images/cropped-shirt.jpg",
+      "/images/hero.png"
+    ],
+    "imageSlots": [
+      {
+        "id": "img-kpd-08-1",
+        "url": "/images/cropped-shirt.jpg",
+        "alt": "Urban Utility Cropped Shirt - View 1",
+        "slot": "PRIMARY",
+        "isPrimary": true,
+        "isHover": false,
+        "position": 1
+      },
+      {
+        "id": "img-kpd-08-2",
+        "url": "/images/hero.png",
+        "alt": "Urban Utility Cropped Shirt - View 2",
+        "slot": "SECONDARY",
+        "isPrimary": false,
+        "isHover": true,
+        "position": 2
+      }
+    ],
+    "availableSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "Tactical Stone",
+      "Raw Olive"
+    ],
+    "variants": [
+      {
+        "id": "var-kpd-08-s",
+        "productId": "kpd-08",
+        "size": "S",
+        "color": "Tactical Stone",
+        "sku": "KPD-KPD-08-S-1",
+        "physicalStock": 15,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 15
+      },
+      {
+        "id": "var-kpd-08-m",
+        "productId": "kpd-08",
+        "size": "M",
+        "color": "Tactical Stone",
+        "sku": "KPD-KPD-08-M-2",
+        "physicalStock": 15,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 15
+      },
+      {
+        "id": "var-kpd-08-l",
+        "productId": "kpd-08",
+        "size": "L",
+        "color": "Tactical Stone",
+        "sku": "KPD-KPD-08-L-3",
+        "physicalStock": 15,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 15
+      },
+      {
+        "id": "var-kpd-08-xl",
+        "productId": "kpd-08",
+        "size": "XL",
+        "color": "Tactical Stone",
+        "sku": "KPD-KPD-08-XL-4",
+        "physicalStock": 15,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 15
+      }
+    ],
+    "totalPhysicalStock": 60,
+    "totalReservedStock": 0,
+    "totalPreorderedStock": 0,
+    "totalAvailableStock": 60,
+    "lowStockThreshold": 5,
+    "status": "ACTIVE",
+    "badge": "UTILITY",
+    "isNew": true,
+    "isPopular": false,
+    "featured": true,
+    "reservationEnabled": false,
+    "reservationAllowedSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "reservationAllowedColors": [
+      "Tactical Stone",
+      "Raw Olive"
+    ],
+    "reservationCtaText": "RESERVE YOUR SIZE",
+    "preorderEnabled": false,
+    "preorderAllowedSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "preorderAllowedColors": [
+      "Tactical Stone",
+      "Raw Olive"
+    ],
+    "preorderCtaText": "PREORDER NOW →",
+    "showPreorderCapacity": false,
+    "createdAt": "2026-09-21T16:23:42.619Z",
+    "updatedAt": "2026-09-21T16:23:42.619Z"
+  },
+  {
+    "id": "kpd-09",
+    "name": "Modular Street Cargo Pants",
+    "slug": "modular-street-cargo-pants",
+    "shortDescription": "Engineered to balance our oversized tops. Built from durable cotton ripstop with 6 deep utility pockets and concealed ankle bungees to toggle between straight-leg and tapered fits.",
+    "fullDescription": "Engineered to balance our oversized tops. Built from durable cotton ripstop with 6 deep utility pockets and concealed ankle bungees to toggle between straight-leg and tapered fits.",
+    "price": 1699,
+    "compareAtPrice": 2099,
+    "discountPercentage": 19,
+    "categoryId": "bottoms",
+    "categoryName": "BOTTOMS",
+    "categorySlug": "bottoms",
+    "designFamilyId": "technical",
+    "designFamilyName": "TECHNICAL",
+    "collectionId": "drop-001",
+    "collectionName": "DROP 001",
+    "drop": "DROP 001",
+    "tags": [
+      "bottoms",
+      "technical",
+      "drop-001"
+    ],
+    "fabric": "100% Cotton Ripstop",
+    "gsm": "280 GSM",
+    "fit": "Relaxed Straight-Leg with Ankle Adjuster",
+    "printMethod": "Technical Garment Construction",
+    "care": "Machine wash cold. Do not bleach. Tumble dry low or line dry.",
+    "details": [
+      "280 GSM Cotton Ripstop Weave",
+      "6-Pocket Modular Utility Layout",
+      "Concealed Elastic Ankle Cinch Bungees",
+      "Articulated Knee Pleats for Mobility",
+      "Reinforced Seat & Inseam Stitching"
+    ],
+    "gender": "UNISEX",
+    "image": "/images/cargos.jpg",
+    "images": [
+      "/images/cargos.jpg",
+      "/images/cropped-shirt.jpg"
+    ],
+    "imageSlots": [
+      {
+        "id": "img-kpd-09-1",
+        "url": "/images/cargos.jpg",
+        "alt": "Modular Street Cargo Pants - View 1",
+        "slot": "PRIMARY",
+        "isPrimary": true,
+        "isHover": false,
+        "position": 1
+      },
+      {
+        "id": "img-kpd-09-2",
+        "url": "/images/cropped-shirt.jpg",
+        "alt": "Modular Street Cargo Pants - View 2",
+        "slot": "SECONDARY",
+        "isPrimary": false,
+        "isHover": true,
+        "position": 2
+      }
+    ],
+    "availableSizes": [
+      "28",
+      "30",
+      "32",
+      "34",
+      "36"
+    ],
+    "colors": [
+      "Utility Washed Black",
+      "Combat Olive"
+    ],
+    "variants": [
+      {
+        "id": "var-kpd-09-28",
+        "productId": "kpd-09",
+        "size": "28",
+        "color": "Utility Washed Black",
+        "sku": "KPD-KPD-09-28-1",
+        "physicalStock": 15,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 15
+      },
+      {
+        "id": "var-kpd-09-30",
+        "productId": "kpd-09",
+        "size": "30",
+        "color": "Utility Washed Black",
+        "sku": "KPD-KPD-09-30-2",
+        "physicalStock": 15,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 15
+      },
+      {
+        "id": "var-kpd-09-32",
+        "productId": "kpd-09",
+        "size": "32",
+        "color": "Utility Washed Black",
+        "sku": "KPD-KPD-09-32-3",
+        "physicalStock": 15,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 15
+      },
+      {
+        "id": "var-kpd-09-34",
+        "productId": "kpd-09",
+        "size": "34",
+        "color": "Utility Washed Black",
+        "sku": "KPD-KPD-09-34-4",
+        "physicalStock": 15,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 15
+      },
+      {
+        "id": "var-kpd-09-36",
+        "productId": "kpd-09",
+        "size": "36",
+        "color": "Utility Washed Black",
+        "sku": "KPD-KPD-09-36-5",
+        "physicalStock": 15,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 15
+      }
+    ],
+    "totalPhysicalStock": 75,
+    "totalReservedStock": 0,
+    "totalPreorderedStock": 0,
+    "totalAvailableStock": 75,
+    "lowStockThreshold": 5,
+    "status": "ACTIVE",
+    "badge": "CORE",
+    "isNew": false,
+    "isPopular": true,
+    "featured": false,
+    "reservationEnabled": false,
+    "reservationAllowedSizes": [
+      "28",
+      "30",
+      "32",
+      "34",
+      "36"
+    ],
+    "reservationAllowedColors": [
+      "Utility Washed Black",
+      "Combat Olive"
+    ],
+    "reservationCtaText": "RESERVE YOUR SIZE",
+    "preorderEnabled": false,
+    "preorderAllowedSizes": [
+      "28",
+      "30",
+      "32",
+      "34",
+      "36"
+    ],
+    "preorderAllowedColors": [
+      "Utility Washed Black",
+      "Combat Olive"
+    ],
+    "preorderCtaText": "PREORDER NOW →",
+    "showPreorderCapacity": false,
+    "createdAt": "2026-09-21T16:23:42.619Z",
+    "updatedAt": "2026-09-21T16:23:42.619Z"
+  },
+  {
+    "id": "kpd-10",
+    "name": "Raw French Terry Boxy Hoodie",
+    "slug": "raw-french-terry-boxy-hoodie",
+    "shortDescription": "420 GSM unbrushed loopback French terry fleece. A structured, heavy silhouette with a double-layered hood without drawstrings for a clean architectural aesthetic.",
+    "fullDescription": "420 GSM unbrushed loopback French terry fleece. A structured, heavy silhouette with a double-layered hood without drawstrings for a clean architectural aesthetic.",
+    "price": 1899,
+    "compareAtPrice": 2399,
+    "discountPercentage": 21,
+    "categoryId": "hoodies",
+    "categoryName": "HOODIES / SWEATSHIRTS",
+    "categorySlug": "hoodies",
+    "designFamilyId": "chaos",
+    "designFamilyName": "CHAOS",
+    "collectionId": "drop-001",
+    "collectionName": "DROP 001",
+    "drop": "DROP 001",
+    "tags": [
+      "hoodies",
+      "chaos",
+      "drop-001"
+    ],
+    "fabric": "100% Loopback French Terry",
+    "gsm": "420 GSM",
+    "fit": "Boxy Heavyweight Drop-Shoulder",
+    "printMethod": "Discharge & Subtle Tonal Stencil",
+    "care": "Machine wash cold inside-out. Do not tumble dry. Reshape and dry flat.",
+    "details": [
+      "420 GSM 100% Loopback French Terry Cotton",
+      "Seamless Double-Layer Ergonomic Hood",
+      "Hidden Kangaroo Pocket with Reinforced Bar-Tacks",
+      "Pre-Shrunk Heavyweight Knit",
+      "Drop-Shoulder Box Cut Silhouette"
+    ],
+    "gender": "UNISEX",
+    "image": "/images/vintage-wash.jpg",
+    "images": [
+      "/images/vintage-wash.jpg",
+      "/images/hero.png"
+    ],
+    "imageSlots": [
+      {
+        "id": "img-kpd-10-1",
+        "url": "/images/vintage-wash.jpg",
+        "alt": "Raw French Terry Boxy Hoodie - View 1",
+        "slot": "PRIMARY",
+        "isPrimary": true,
+        "isHover": false,
+        "position": 1
+      },
+      {
+        "id": "img-kpd-10-2",
+        "url": "/images/hero.png",
+        "alt": "Raw French Terry Boxy Hoodie - View 2",
+        "slot": "SECONDARY",
+        "isPrimary": false,
+        "isHover": true,
+        "position": 2
+      }
+    ],
+    "availableSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "Washed Ash Grey",
+      "Heavy Charcoal"
+    ],
+    "variants": [
+      {
+        "id": "var-kpd-10-s",
+        "productId": "kpd-10",
+        "size": "S",
+        "color": "Washed Ash Grey",
+        "sku": "KPD-KPD-10-S-1",
+        "physicalStock": 15,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 15
+      },
+      {
+        "id": "var-kpd-10-m",
+        "productId": "kpd-10",
+        "size": "M",
+        "color": "Washed Ash Grey",
+        "sku": "KPD-KPD-10-M-2",
+        "physicalStock": 15,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 15
+      },
+      {
+        "id": "var-kpd-10-l",
+        "productId": "kpd-10",
+        "size": "L",
+        "color": "Washed Ash Grey",
+        "sku": "KPD-KPD-10-L-3",
+        "physicalStock": 15,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 15
+      },
+      {
+        "id": "var-kpd-10-xl",
+        "productId": "kpd-10",
+        "size": "XL",
+        "color": "Washed Ash Grey",
+        "sku": "KPD-KPD-10-XL-4",
+        "physicalStock": 15,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 15
+      }
+    ],
+    "totalPhysicalStock": 60,
+    "totalReservedStock": 0,
+    "totalPreorderedStock": 0,
+    "totalAvailableStock": 60,
+    "lowStockThreshold": 5,
+    "status": "ACTIVE",
+    "badge": "PREVIEW",
+    "isNew": true,
+    "isPopular": false,
+    "featured": false,
+    "reservationEnabled": false,
+    "reservationAllowedSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "reservationAllowedColors": [
+      "Washed Ash Grey",
+      "Heavy Charcoal"
+    ],
+    "reservationCtaText": "RESERVE YOUR SIZE",
+    "preorderEnabled": false,
+    "preorderAllowedSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "preorderAllowedColors": [
+      "Washed Ash Grey",
+      "Heavy Charcoal"
+    ],
+    "preorderCtaText": "PREORDER NOW →",
+    "showPreorderCapacity": false,
+    "createdAt": "2026-09-21T16:23:42.620Z",
+    "updatedAt": "2026-09-21T16:23:42.620Z"
+  }
+]

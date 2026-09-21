@@ -1,0 +1,21 @@
+[
+  {
+    "id": "pre-1790007853197-7559",
+    "preorderNumber": "#PRE-7559",
+    "productId": "kpd-01",
+    "productName": "Signature Oversized Box Tee",
+    "variantId": "var-kpd-01-m",
+    "size": "M",
+    "color": "Off-White / Cream",
+    "quantity": 1,
+    "unitPrice": 599,
+    "totalPrice": 599,
+    "customerName": "Maya Verma",
+    "customerEmail": "maya@example.com",
+    "customerPhone": "+919876543219",
+    "status": "PENDING",
+    "notes": "Preorder allocation test",
+    "createdAt": "2026-09-21T16:24:13.213Z",
+    "updatedAt": "2026-09-21T16:24:13.213Z"
+  }
+]

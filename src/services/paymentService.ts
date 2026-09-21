@@ -69,11 +69,49 @@ export function generateOrderId(): string {
  * pending future payment webhook activation.
  */
 export async function createPaymentOrder(order: OrderPayload): Promise<PaymentInitResult> {
-  const generatedId = order.orderId || generateOrderId();
-  
+  let finalOrderId = order.orderId || generateOrderId();
+
+  try {
+    const res = await fetch("/api/orders", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        customer: order.customer,
+        shippingAddress: order.shippingAddress,
+        items: order.items.map((i) => ({
+          productId: i.productId,
+          variantId: `var-${i.productId}-${i.size.toLowerCase()}`,
+          name: i.productName,
+          slug: i.slug,
+          size: i.size,
+          color: "Standard",
+          quantity: i.quantity,
+          unitPrice: i.unitPrice,
+          totalPrice: i.totalPrice,
+          image: i.image,
+        })),
+        subtotal: order.subtotal,
+        shipping: order.shipping,
+        discount: order.discount,
+        total: order.total,
+        paymentMethod: order.paymentMethod || "GATEWAY_PREORDER",
+        notes: "Storefront pre-release order placement",
+      }),
+    });
+
+    if (res.ok) {
+      const data = await res.json();
+      if (data.success && data.order) {
+        finalOrderId = data.order.orderNumber;
+      }
+    }
+  } catch (err) {
+    console.error("Master order persistence error:", err);
+  }
+
   const finalOrder: OrderPayload = {
     ...order,
-    orderId: generatedId,
+    orderId: finalOrderId,
     status: "PAYMENT_PENDING",
     createdAt: new Date().toISOString(),
   };
@@ -86,17 +124,13 @@ export async function createPaymentOrder(order: OrderPayload): Promise<PaymentIn
     // Session storage fallback
   }
 
-  // Future integration point:
-  // e.g. const res = await fetch("/api/payment/create-order", { method: "POST", body: JSON.stringify(finalOrder) });
-  // return await res.json();
-
   return {
     success: true,
-    orderId: generatedId,
+    orderId: finalOrderId,
     orderStatus: "PAYMENT_PENDING",
     message: "Pre-order reservation placed successfully. Payment gateway will be connected soon.",
     gatewayAvailable: false,
-    redirectUrl: `/order-confirmation?orderId=${generatedId}`,
+    redirectUrl: `/order-confirmation?orderId=${finalOrderId}`,
   };
 }
 

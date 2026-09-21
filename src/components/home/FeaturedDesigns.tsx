@@ -4,13 +4,18 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ShoppingBag, ArrowRight, Check, Sparkles } from "lucide-react";
-import { productsData, Product } from "@/data/products";
+import { ShoppingBag, ArrowRight, Check } from "lucide-react";
+import { MasterProduct } from "@/lib/db/types";
+import { useStorefront } from "@/context/StorefrontContext";
 import { useCart } from "@/context/CartContext";
 
 export default function FeaturedDesigns() {
   const { addToCart } = useCart();
-  const featured = productsData.filter((p) => p.featured || p.isPopular).slice(0, 4);
+  const { products } = useStorefront();
+
+  const featured = (products || [])
+    .filter((p) => p.status === "ACTIVE" && (p.featured || p.isPopular))
+    .slice(0, 4);
 
   // Track quick-size selections per card
   const [selectedSizes, setSelectedSizes] = useState<{ [productId: string]: string }>({});
@@ -20,8 +25,11 @@ export default function FeaturedDesigns() {
     setSelectedSizes((prev) => ({ ...prev, [productId]: size }));
   };
 
-  const handleQuickAdd = (product: Product) => {
-    const chosenSize = selectedSizes[product.id] || product.sizes[0] || "L";
+  const handleQuickAdd = (product: MasterProduct) => {
+    const availableSizes = product.availableSizes?.length
+      ? product.availableSizes
+      : (product as unknown as { sizes?: string[] }).sizes || ["L"];
+    const chosenSize = selectedSizes[product.id] || availableSizes[0] || "L";
     addToCart(product, chosenSize, 1);
     setAddedNotice(product.id);
     setTimeout(() => setAddedNotice(null), 2000);
@@ -57,8 +65,13 @@ export default function FeaturedDesigns() {
         {/* Featured Product Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {featured.map((product, index) => {
-            const currentSize = selectedSizes[product.id] || product.sizes[0] || "L";
+            const productSizes = product.availableSizes?.length
+              ? product.availableSizes
+              : (product as unknown as { sizes?: string[] }).sizes || ["S", "M", "L", "XL"];
+            const currentSize = selectedSizes[product.id] || productSizes[0] || "L";
             const isAdded = addedNotice === product.id;
+            const categoryLabel = product.categoryName || (product as unknown as { category?: string }).category || "STREETWEAR";
+            const familyLabel = product.designFamilyName || (product as unknown as { designFamily?: string }).designFamily || "GLOBAL";
 
             return (
               <motion.div
@@ -117,8 +130,8 @@ export default function FeaturedDesigns() {
                 <div className="p-4 flex-grow flex flex-col justify-between border-t border-[#111111] bg-white">
                   <div>
                     <div className="flex items-center justify-between text-[9px] font-mono uppercase tracking-wider text-[#111111]/50 mb-1">
-                      <span>{product.category}</span>
-                      <span>{product.designFamily}</span>
+                      <span>{categoryLabel}</span>
+                      <span>{familyLabel}</span>
                     </div>
 
                     <Link
@@ -145,7 +158,7 @@ export default function FeaturedDesigns() {
                       <span className="text-[9px] font-mono font-bold text-[#111111]/60 uppercase mr-1">
                         SIZE:
                       </span>
-                      {product.sizes.map((s) => (
+                      {productSizes.map((s) => (
                         <button
                           key={s}
                           onClick={() => handleSizeChange(product.id, s)}

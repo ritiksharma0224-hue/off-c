@@ -2,10 +2,18 @@
 
 import React, { createContext, useContext, useState, useEffect, ReactNode } from "react";
 import { Product } from "@/data/products";
+import { MasterProduct } from "@/lib/db/types";
 import { brandData } from "@/data/brand";
+import { useStorefront } from "./StorefrontContext";
+
+export type UnifiedProduct = (Product | MasterProduct) & {
+  category?: string;
+  sizes?: string[];
+  collection?: string;
+};
 
 export interface CartItem {
-  product: Product;
+  product: UnifiedProduct;
   size: string;
   quantity: number;
 }
@@ -22,7 +30,7 @@ interface CartContextType {
   openCart: () => void;
   closeCart: () => void;
   toggleCart: () => void;
-  addToCart: (product: Product, size: string, quantity?: number) => void;
+  addToCart: (product: UnifiedProduct, size: string, quantity?: number) => void;
   removeFromCart: (productId: string, size: string) => void;
   updateQuantity: (productId: string, size: string, quantity: number) => void;
   clearCart: () => void;
@@ -36,6 +44,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
   const [items, setItems] = useState<CartItem[]>([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
+  const { products } = useStorefront();
 
   // Load cart from localStorage on mount
   useEffect(() => {
@@ -53,6 +62,50 @@ export function CartProvider({ children }: { children: ReactNode }) {
     }
   }, []);
 
+  // Synchronize cart items with live master products (Single Source of Truth)
+  useEffect(() => {
+    if (!isMounted || !products || products.length === 0) return;
+    setItems((prevItems) => {
+      let hasChanges = false;
+      const updated = prevItems.map((item) => {
+        const live = products.find(
+          (p) => p.id === item.product.id || p.slug === item.product.slug
+        );
+        if (live) {
+          const liveName = live.name;
+          const livePrice = live.price;
+          const liveImage = live.image;
+          const liveCompare = live.compareAtPrice;
+
+          if (
+            item.product.name !== liveName ||
+            item.product.price !== livePrice ||
+            item.product.image !== liveImage ||
+            item.product.compareAtPrice !== liveCompare
+          ) {
+            hasChanges = true;
+            return {
+              ...item,
+              product: {
+                ...item.product,
+                name: liveName,
+                price: livePrice,
+                compareAtPrice: liveCompare,
+                image: liveImage,
+                images: live.images || item.product.images,
+                category: live.categoryName || (item.product as Product).category,
+                fit: live.fit || item.product.fit,
+                gsm: live.gsm || item.product.gsm,
+              },
+            };
+          }
+        }
+        return item;
+      });
+      return hasChanges ? updated : prevItems;
+    });
+  }, [products, isMounted]);
+
   // Save cart to localStorage whenever items change
   useEffect(() => {
     if (!isMounted) return;
@@ -67,7 +120,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
   const closeCart = () => setIsCartOpen(false);
   const toggleCart = () => setIsCartOpen((prev) => !prev);
 
-  const addToCart = (product: Product, size: string, quantity = 1) => {
+  const addToCart = (product: UnifiedProduct, size: string, quantity = 1) => {
     setItems((prevItems) => {
       const existingIndex = prevItems.findIndex(
         (item) => item.product.id === product.id && item.size === size

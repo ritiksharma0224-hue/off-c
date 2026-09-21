@@ -1,0 +1,42 @@
+[
+  {
+    "orderNumber": "#KPD-6123",
+    "customer": {
+      "fullName": "Priya Patel",
+      "email": "priya@example.com",
+      "phone": "+919876500000"
+    },
+    "shippingAddress": {
+      "addressLine1": "42 C-Scheme",
+      "city": "Jaipur",
+      "state": "Rajasthan",
+      "pincode": "302001",
+      "country": "India"
+    },
+    "items": [
+      {
+        "productId": "kpd-01",
+        "variantId": "var-kpd-01-m",
+        "name": "Signature Oversized Box Tee",
+        "slug": "signature-oversized-box-tee",
+        "size": "M",
+        "color": "Standard",
+        "quantity": 1,
+        "unitPrice": 599,
+        "totalPrice": 599,
+        "image": "/images/hero.png"
+      }
+    ],
+    "subtotal": 599,
+    "shipping": 99,
+    "discount": 0,
+    "total": 698,
+    "deliveryMethod": "Standard Pan-India Delivery",
+    "paymentMethod": "GATEWAY_PREORDER",
+    "paymentStatus": "PAYMENT_NOT_INTEGRATED",
+    "fulfillmentStatus": "UNFULFILLED",
+    "id": "order-1790007824850-6123",
+    "createdAt": "2026-09-21T16:23:44.850Z",
+    "updatedAt": "2026-09-21T16:23:44.850Z"
+  }
+]
