@@ -6,6 +6,7 @@ import {
   CustomerProfile,
 } from "./types";
 import { recordAuditLog } from "./audit";
+import { getDbProductById, updateDbProduct } from "./products";
 
 const ORDERS_TABLE = "orders";
 const CUSTOMERS_TABLE = "customers";
@@ -55,6 +56,31 @@ export async function createDbOrder(payload: Omit<MasterOrder, "id" | "orderNumb
   orders.unshift(newOrder);
   await writeTable(ORDERS_TABLE, orders);
 
+  // Allocate stock for each item in the order
+  for (const item of newOrder.items) {
+    try {
+      const product = await getDbProductById(item.productId);
+      if (product && product.variants && product.variants.length > 0) {
+        const vIndex = product.variants.findIndex(
+          (v) => v.size.toUpperCase() === item.size.toUpperCase()
+        );
+        if (vIndex !== -1) {
+          const v = product.variants[vIndex];
+          const newAllocated = (v.allocatedStock || 0) + item.quantity;
+          const updatedVariants = [...product.variants];
+          updatedVariants[vIndex] = {
+            ...v,
+            allocatedStock: newAllocated,
+            availableStock: Math.max(0, v.physicalStock - (v.reservedStock || 0) - newAllocated),
+          };
+          await updateDbProduct(product.id, { variants: updatedVariants }, "System (Stock Allocation)");
+        }
+      }
+    } catch {
+      // Non-blocking stock allocation
+    }
+  }
+
   // Update or create customer profile
   await updateCustomerFromOrder(newOrder);
 
@@ -71,6 +97,66 @@ export async function createDbOrder(payload: Omit<MasterOrder, "id" | "orderNumb
 }
 
 /**
+ * Release allocated inventory when an order is cancelled
+ */
+async function releaseOrderAllocatedStock(order: MasterOrder, admin = "System Admin") {
+  for (const item of order.items) {
+    try {
+      const product = await getDbProductById(item.productId);
+      if (product && product.variants) {
+        const vIndex = product.variants.findIndex(
+          (v) => v.size.toUpperCase() === item.size.toUpperCase()
+        );
+        if (vIndex !== -1) {
+          const v = product.variants[vIndex];
+          const newAllocated = Math.max(0, (v.allocatedStock || 0) - item.quantity);
+          const updatedVariants = [...product.variants];
+          updatedVariants[vIndex] = {
+            ...v,
+            allocatedStock: newAllocated,
+            availableStock: Math.max(0, v.physicalStock - (v.reservedStock || 0) - newAllocated),
+          };
+          await updateDbProduct(product.id, { variants: updatedVariants }, admin);
+        }
+      }
+    } catch {
+      // Non-blocking
+    }
+  }
+}
+
+/**
+ * Deduct physical inventory when an order is shipped
+ */
+async function deductOrderShippedStock(order: MasterOrder, admin = "System Admin") {
+  for (const item of order.items) {
+    try {
+      const product = await getDbProductById(item.productId);
+      if (product && product.variants) {
+        const vIndex = product.variants.findIndex(
+          (v) => v.size.toUpperCase() === item.size.toUpperCase()
+        );
+        if (vIndex !== -1) {
+          const v = product.variants[vIndex];
+          const newAllocated = Math.max(0, (v.allocatedStock || 0) - item.quantity);
+          const newPhysical = Math.max(0, (v.physicalStock || 0) - item.quantity);
+          const updatedVariants = [...product.variants];
+          updatedVariants[vIndex] = {
+            ...v,
+            physicalStock: newPhysical,
+            allocatedStock: newAllocated,
+            availableStock: Math.max(0, newPhysical - (v.reservedStock || 0) - newAllocated),
+          };
+          await updateDbProduct(product.id, { variants: updatedVariants }, admin);
+        }
+      }
+    } catch {
+      // Non-blocking
+    }
+  }
+}
+
+/**
  * Update payment status
  */
 export async function updateOrderPaymentStatus(
@@ -84,6 +170,11 @@ export async function updateOrderPaymentStatus(
 
   const current = orders[index];
   const oldStatus = current.paymentStatus;
+
+  // If order is cancelled, release allocated stock if not already cancelled
+  if (paymentStatus === "CANCELLED" && oldStatus !== "CANCELLED" && current.fulfillmentStatus !== "CANCELLED") {
+    await releaseOrderAllocatedStock(current, admin);
+  }
 
   orders[index] = {
     ...current,
@@ -120,6 +211,17 @@ export async function updateOrderFulfillmentStatus(
 
   const current = orders[index];
   const oldStatus = current.fulfillmentStatus;
+
+  // Handle inventory state transitions
+  if (fulfillmentStatus === "CANCELLED" && oldStatus !== "CANCELLED") {
+    await releaseOrderAllocatedStock(current, admin);
+  } else if (
+    (fulfillmentStatus === "SHIPPED" || fulfillmentStatus === "DELIVERED") &&
+    oldStatus !== "SHIPPED" &&
+    oldStatus !== "DELIVERED"
+  ) {
+    await deductOrderShippedStock(current, admin);
+  }
 
   orders[index] = {
     ...current,

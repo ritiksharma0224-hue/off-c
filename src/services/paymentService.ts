@@ -39,6 +39,7 @@ export interface OrderPayload {
   subtotal: number;
   shipping: number;
   discount: number;
+  discountCode?: string;
   total: number;
   deliveryMethod: string;
   paymentMethod: "GATEWAY_PREORDER" | "UPI" | "CARD" | "NETBANKING" | "COD";
@@ -70,6 +71,7 @@ export function generateOrderId(): string {
  */
 export async function createPaymentOrder(order: OrderPayload): Promise<PaymentInitResult> {
   let finalOrderId = order.orderId || generateOrderId();
+  let authoritativeOrder = { ...order };
 
   try {
     const res = await fetch("/api/orders", {
@@ -93,6 +95,7 @@ export async function createPaymentOrder(order: OrderPayload): Promise<PaymentIn
         subtotal: order.subtotal,
         shipping: order.shipping,
         discount: order.discount,
+        discountCode: order.discountCode,
         total: order.total,
         paymentMethod: order.paymentMethod || "GATEWAY_PREORDER",
         notes: "Storefront pre-release order placement",
@@ -103,6 +106,14 @@ export async function createPaymentOrder(order: OrderPayload): Promise<PaymentIn
       const data = await res.json();
       if (data.success && data.order) {
         finalOrderId = data.order.orderNumber;
+        authoritativeOrder = {
+          ...order,
+          orderId: data.order.orderNumber,
+          subtotal: data.order.subtotal,
+          shipping: data.order.shipping,
+          discount: data.order.discount,
+          total: data.order.total,
+        };
       }
     }
   } catch (err) {
@@ -110,7 +121,7 @@ export async function createPaymentOrder(order: OrderPayload): Promise<PaymentIn
   }
 
   const finalOrder: OrderPayload = {
-    ...order,
+    ...authoritativeOrder,
     orderId: finalOrderId,
     status: "PAYMENT_PENDING",
     createdAt: new Date().toISOString(),

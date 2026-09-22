@@ -1,0 +1,11 @@
+{
+  "lowStockThreshold": 5,
+  "currency": "INR",
+  "currencySymbol": "₹",
+  "freeShippingThreshold": 1999,
+  "standardShippingFee": 99,
+  "storeEmail": "contact@kapdology.store",
+  "paymentGatewayStatus": "PRE_RELEASE_INACTIVE",
+  "reservationNotice": "Drop inventory reserved directly with studio concierge.",
+  "preorderNotice": "Pre-order reservation confirmed. Dispatched upon drop completion."
+}

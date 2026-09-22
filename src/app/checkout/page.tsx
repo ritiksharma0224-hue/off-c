@@ -111,6 +111,7 @@ export default function CheckoutPage() {
       subtotal,
       shipping,
       discount: appliedDiscount,
+      discountCode: appliedDiscount > 0 ? discountCode.trim() : undefined,
       total: finalTotal,
       deliveryMethod: "Standard Pan-India Delivery (3-5 Business Days)",
       paymentMethod: "GATEWAY_PREORDER",

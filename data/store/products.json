@@ -233,8 +233,8 @@
         "physicalStock": 15,
         "reservedStock": 0,
         "preorderedStock": 1,
-        "allocatedStock": 0,
-        "availableStock": 15
+        "allocatedStock": 1,
+        "availableStock": 14
       },
       {
         "id": "var-kpd-01-l",
@@ -276,7 +276,7 @@
     "totalPhysicalStock": 75,
     "totalReservedStock": 1,
     "totalPreorderedStock": 1,
-    "totalAvailableStock": 74,
+    "totalAvailableStock": 73,
     "lowStockThreshold": 5,
     "status": "ACTIVE",
     "badge": "DROP 001",
@@ -311,7 +311,7 @@
     "preorderCtaText": "PREORDER NOW →",
     "showPreorderCapacity": false,
     "createdAt": "2026-09-21T16:23:42.618Z",
-    "updatedAt": "2026-09-21T16:24:13.198Z"
+    "updatedAt": "2026-09-21T17:13:50.106Z"
   },
   {
     "id": "kpd-02",

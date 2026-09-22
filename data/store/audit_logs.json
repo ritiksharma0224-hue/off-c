@@ -1,5 +1,45 @@
 [
   {
+    "id": "audit-1790010878436-947",
+    "admin": "admin@kapdology.store",
+    "action": "MEDIA_UPLOADED",
+    "targetType": "MEDIA",
+    "targetId": "med-1790010878427",
+    "targetName": "kpd-1790010878421-test-valid.png",
+    "details": "Uploaded asset kpd-1790010878421-test-valid.png (/uploads/kpd-1790010878421-test-valid.png)",
+    "timestamp": "2026-09-21T17:14:38.436Z"
+  },
+  {
+    "id": "audit-1790010830123-801",
+    "admin": "Customer / Checkout",
+    "action": "ORDER_PLACED",
+    "targetType": "ORDER",
+    "targetId": "order-1790010830100-8742",
+    "targetName": "#KPD-8742",
+    "details": "Order placed for ₹698 by Test Tamperer (tamperer@example.com)",
+    "timestamp": "2026-09-21T17:13:50.123Z"
+  },
+  {
+    "id": "audit-1790010830113-122",
+    "admin": "System (Stock Allocation)",
+    "action": "PRODUCT_UPDATED",
+    "targetType": "PRODUCT",
+    "targetId": "kpd-01",
+    "targetName": "Signature Oversized Box Tee",
+    "details": "Updated product fields: variants",
+    "timestamp": "2026-09-21T17:13:50.113Z"
+  },
+  {
+    "id": "audit-1790010630716-127",
+    "admin": "Customer / Checkout",
+    "action": "ORDER_PLACED",
+    "targetType": "ORDER",
+    "targetId": "order-1790010630687-6656",
+    "targetName": "#KPD-6656",
+    "details": "Order placed for ₹1 by Attacker (attacker@test.com)",
+    "timestamp": "2026-09-21T17:10:30.716Z"
+  },
+  {
     "id": "audit-1790009209233-451",
     "admin": "admin@kapdology.store",
     "action": "MEDIA_UPLOADED",

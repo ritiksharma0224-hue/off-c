@@ -10,5 +10,29 @@
     "totalSpent": 0,
     "lastActivityAt": "2026-09-21T16:23:44.865Z",
     "createdAt": "2026-09-21T16:23:44.865Z"
+  },
+  {
+    "id": "cust-1790010630703",
+    "fullName": "Attacker",
+    "email": "attacker@test.com",
+    "phone": "1234567890",
+    "totalOrders": 1,
+    "totalReservations": 0,
+    "totalPreorders": 0,
+    "totalSpent": 0,
+    "lastActivityAt": "2026-09-21T17:10:30.703Z",
+    "createdAt": "2026-09-21T17:10:30.703Z"
+  },
+  {
+    "id": "cust-1790010830118",
+    "fullName": "Test Tamperer",
+    "email": "tamperer@example.com",
+    "phone": "+919999999999",
+    "totalOrders": 1,
+    "totalReservations": 0,
+    "totalPreorders": 0,
+    "totalSpent": 0,
+    "lastActivityAt": "2026-09-21T17:13:50.118Z",
+    "createdAt": "2026-09-21T17:13:50.118Z"
   }
 ]
