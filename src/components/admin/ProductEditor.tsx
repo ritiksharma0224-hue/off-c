@@ -86,6 +86,7 @@ export default function ProductEditor({ initialProduct, isNew = false }: Product
   const [primaryImage, setPrimaryImage] = useState<string>(initialProduct?.image || images[0]);
   const [hoverImage, setHoverImage] = useState<string>(images[1] || images[0]);
   const [uploadingImage, setUploadingImage] = useState(false);
+  const [uploadProgressText, setUploadProgressText] = useState<string | null>(null);
 
   // Sizes & Variants
   const [availableSizes, setAvailableSizes] = useState<string[]>(
@@ -206,16 +207,24 @@ export default function ProductEditor({ initialProduct, isNew = false }: Product
     }
   };
 
-  // Handle Image Upload
+  // Handle Multiple or Single Image Upload
   const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (!file) return;
+    const fileList = e.target.files;
+    if (!fileList || fileList.length === 0) return;
 
+    const filesToUpload = Array.from(fileList);
     setUploadingImage(true);
     setSaveError(null);
+    setUploadProgressText(
+      filesToUpload.length > 1
+        ? `UPLOADING (${filesToUpload.length})...`
+        : "UPLOADING..."
+    );
 
     const formData = new FormData();
-    formData.append("file", file);
+    filesToUpload.forEach((file) => {
+      formData.append("files", file);
+    });
 
     try {
       const res = await fetch("/api/media/upload", {
@@ -224,18 +233,27 @@ export default function ProductEditor({ initialProduct, isNew = false }: Product
       });
 
       const data = await res.json();
-      if (data.success && data.url) {
-        const newImages = [...images, data.url];
-        setImages(newImages);
-        if (!primaryImage) setPrimaryImage(data.url);
-        markDirty();
+      if (data.success) {
+        const uploadedUrls: string[] = data.urls || (data.url ? [data.url] : []);
+        if (uploadedUrls.length > 0) {
+          const newImages = [...images, ...uploadedUrls];
+          setImages(newImages);
+          if (!primaryImage) {
+            setPrimaryImage(uploadedUrls[0]);
+          }
+          if (!hoverImage && uploadedUrls.length > 1) {
+            setHoverImage(uploadedUrls[1]);
+          }
+          markDirty();
+        }
       } else {
-        setSaveError(data.error || "Failed to upload image");
+        setSaveError(data.error || "Failed to upload images");
       }
     } catch {
-      setSaveError("Error uploading image");
+      setSaveError("Error uploading images");
     } finally {
       setUploadingImage(false);
+      setUploadProgressText(null);
       if (fileInputRef.current) fileInputRef.current.value = "";
     }
   };
@@ -512,6 +530,7 @@ export default function ProductEditor({ initialProduct, isNew = false }: Product
               ref={fileInputRef}
               onChange={handleImageUpload}
               accept="image/*"
+              multiple
               className="hidden"
             />
             <button
@@ -521,7 +540,7 @@ export default function ProductEditor({ initialProduct, isNew = false }: Product
               className="px-3 py-1.5 bg-[#FF3B00] text-white font-bold text-[10px] uppercase rounded hover:bg-[#e03400] transition-colors flex items-center gap-1 cursor-pointer disabled:opacity-50"
             >
               <Upload className="h-3 w-3" />
-              <span>{uploadingImage ? "UPLOADING..." : "UPLOAD"}</span>
+              <span>{uploadingImage ? uploadProgressText || "UPLOADING..." : "UPLOAD"}</span>
             </button>
           </div>
 

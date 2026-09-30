@@ -44,14 +44,17 @@ export default function AdminMediaPage() {
   }, []);
 
   const handleUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (!file) return;
+    const fileList = e.target.files;
+    if (!fileList || fileList.length === 0) return;
 
+    const filesToUpload = Array.from(fileList);
     setUploading(true);
     setErrorNotice(null);
 
     const formData = new FormData();
-    formData.append("file", file);
+    filesToUpload.forEach((file) => {
+      formData.append("files", file);
+    });
 
     try {
       const res = await fetch("/api/media/upload", {
@@ -60,7 +63,8 @@ export default function AdminMediaPage() {
       });
       const data = await res.json();
       if (data.success) {
-        setNotice(`Uploaded ${data.asset.filename}`);
+        const count = data.count || (data.assets ? data.assets.length : 1);
+        setNotice(count > 1 ? `Successfully uploaded ${count} assets` : `Uploaded ${data.asset.filename}`);
         setTimeout(() => setNotice(null), 3000);
         fetchMedia();
       } else {
@@ -137,6 +141,7 @@ export default function AdminMediaPage() {
             ref={fileInputRef}
             onChange={handleUpload}
             accept="image/*"
+            multiple
             className="hidden"
           />
           <button
