@@ -1,0 +1,14 @@
+[
+  {
+    "id": "adm-01",
+    "name": "Master Super Admin",
+    "email": "admin@kapdology.store",
+    "passwordHash": "6c32ff340632330ba9f379f3f52b1067c73f95688db6b69ff28186367eb492c3839ec3bc1d7d2d87dfbf50d558654e05d16eaa6c0a74899a8b70311d70f411fc",
+    "salt": "kapdology_salt_2026",
+    "role": "SUPER_ADMIN",
+    "status": "ACTIVE",
+    "createdAt": "2026-09-01T00:00:00.000Z",
+    "createdBy": "System Bootstrap",
+    "lastLoginAt": "2026-09-30T16:56:41.521Z"
+  }
+]

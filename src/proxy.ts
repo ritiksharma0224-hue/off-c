@@ -3,7 +3,7 @@ import type { NextRequest } from "next/server";
 
 export const ADMIN_COOKIE_NAME = "kapdology_admin_token";
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   // Protect /admin routes, excluding /admin/login
@@ -18,8 +18,7 @@ export function middleware(request: NextRequest) {
 
     try {
       const [encodedPayload] = token.split(".");
-      // Decode base64url payload
-      const payloadStr = atob(encodedPayload.replace(/-/g, "+").replace(/_/g, "/"));
+      const payloadStr = Buffer.from(encodedPayload, "base64url").toString("utf-8");
       const payload = JSON.parse(payloadStr);
 
       if (!payload.expiresAt || Date.now() > payload.expiresAt) {

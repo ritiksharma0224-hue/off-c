@@ -1,5 +1,25 @@
 [
   {
+    "id": "audit-1790787401524-365",
+    "admin": "Master Super Admin",
+    "action": "ADMIN_LOGIN",
+    "targetType": "AUTH",
+    "targetId": "adm-01",
+    "targetName": "Master Super Admin",
+    "details": "Admin Master Super Admin (admin@kapdology.store) logged in with role [SUPER_ADMIN]",
+    "timestamp": "2026-09-30T16:56:41.524Z"
+  },
+  {
+    "id": "audit-1790787391286-54",
+    "admin": "Master Super Admin",
+    "action": "ADMIN_LOGIN",
+    "targetType": "AUTH",
+    "targetId": "adm-01",
+    "targetName": "Master Super Admin",
+    "details": "Admin Master Super Admin (admin@kapdology.store) logged in with role [SUPER_ADMIN]",
+    "timestamp": "2026-09-30T16:56:31.286Z"
+  },
+  {
     "id": "audit-1790786880583-398",
     "admin": "admin@kapdology.store",
     "action": "PRODUCT_UPDATED",

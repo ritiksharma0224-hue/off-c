@@ -22,40 +22,156 @@ import {
   ExternalLink,
   Menu,
   X,
-  ShieldCheck,
-  AlertTriangle,
+  Shield,
+  Crown,
 } from "lucide-react";
+import { AdminRole } from "@/lib/db/admins";
+
+interface AdminUserSession {
+  id: string;
+  name: string;
+  email: string;
+  role: AdminRole;
+}
 
 interface NavItem {
   label: string;
   href: string;
   icon: React.ElementType;
   badge?: string;
+  allowedRoles?: AdminRole[];
 }
 
 const NAV_ITEMS: NavItem[] = [
   { label: "Dashboard", href: "/admin", icon: LayoutDashboard },
-  { label: "Products", href: "/admin/products", icon: Package },
-  { label: "Inventory", href: "/admin/inventory", icon: Boxes },
-  { label: "Reservations", href: "/admin/reservations", icon: CalendarCheck },
-  { label: "Preorders", href: "/admin/preorders", icon: Clock },
-  { label: "Orders", href: "/admin/orders", icon: ShoppingBag },
-  { label: "Categories", href: "/admin/categories", icon: Layers },
-  { label: "Design Families", href: "/admin/design-families", icon: Sparkles },
-  { label: "Collections", href: "/admin/collections", icon: FolderTree },
-  { label: "Customers", href: "/admin/customers", icon: Users },
-  { label: "Media Library", href: "/admin/media", icon: ImageIcon },
-  { label: "Demand Analytics", href: "/admin/analytics", icon: BarChart3 },
-  { label: "Store Settings", href: "/admin/settings", icon: Settings },
-  { label: "Audit Logs", href: "/admin/audit-logs", icon: History },
+  {
+    label: "Products",
+    href: "/admin/products",
+    icon: Package,
+    allowedRoles: ["SUPER_ADMIN", "STORE_MANAGER", "CATALOG_EDITOR"],
+  },
+  {
+    label: "Inventory",
+    href: "/admin/inventory",
+    icon: Boxes,
+    allowedRoles: ["SUPER_ADMIN", "STORE_MANAGER", "ORDER_OPERATOR"],
+  },
+  {
+    label: "Reservations",
+    href: "/admin/reservations",
+    icon: CalendarCheck,
+    allowedRoles: ["SUPER_ADMIN", "STORE_MANAGER", "ORDER_OPERATOR"],
+  },
+  {
+    label: "Preorders",
+    href: "/admin/preorders",
+    icon: Clock,
+    allowedRoles: ["SUPER_ADMIN", "STORE_MANAGER", "ORDER_OPERATOR"],
+  },
+  {
+    label: "Orders",
+    href: "/admin/orders",
+    icon: ShoppingBag,
+    allowedRoles: ["SUPER_ADMIN", "STORE_MANAGER", "ORDER_OPERATOR"],
+  },
+  {
+    label: "Categories",
+    href: "/admin/categories",
+    icon: Layers,
+    allowedRoles: ["SUPER_ADMIN", "STORE_MANAGER", "CATALOG_EDITOR"],
+  },
+  {
+    label: "Design Families",
+    href: "/admin/design-families",
+    icon: Sparkles,
+    allowedRoles: ["SUPER_ADMIN", "STORE_MANAGER", "CATALOG_EDITOR"],
+  },
+  {
+    label: "Collections",
+    href: "/admin/collections",
+    icon: FolderTree,
+    allowedRoles: ["SUPER_ADMIN", "STORE_MANAGER", "CATALOG_EDITOR"],
+  },
+  {
+    label: "Customers",
+    href: "/admin/customers",
+    icon: Users,
+    allowedRoles: ["SUPER_ADMIN", "STORE_MANAGER", "ORDER_OPERATOR"],
+  },
+  {
+    label: "Media Library",
+    href: "/admin/media",
+    icon: ImageIcon,
+    allowedRoles: ["SUPER_ADMIN", "STORE_MANAGER", "CATALOG_EDITOR"],
+  },
+  {
+    label: "Demand Analytics",
+    href: "/admin/analytics",
+    icon: BarChart3,
+    allowedRoles: ["SUPER_ADMIN", "STORE_MANAGER"],
+  },
+  {
+    label: "Admins & Roles",
+    href: "/admin/admins",
+    icon: Shield,
+    allowedRoles: ["SUPER_ADMIN"],
+  },
+  {
+    label: "Store Settings",
+    href: "/admin/settings",
+    icon: Settings,
+    allowedRoles: ["SUPER_ADMIN"],
+  },
+  {
+    label: "Audit Logs",
+    href: "/admin/audit-logs",
+    icon: History,
+    allowedRoles: ["SUPER_ADMIN"],
+  },
 ];
+
+const ROLE_BADGE: Record<
+  string,
+  { label: string; color: string; border: string; bg: string }
+> = {
+  SUPER_ADMIN: {
+    label: "SUPER ADMIN",
+    color: "text-amber-400",
+    border: "border-amber-500/30",
+    bg: "bg-amber-500/15",
+  },
+  ADMIN: {
+    label: "SUPER ADMIN",
+    color: "text-amber-400",
+    border: "border-amber-500/30",
+    bg: "bg-amber-500/15",
+  },
+  STORE_MANAGER: {
+    label: "STORE MANAGER",
+    color: "text-purple-400",
+    border: "border-purple-500/30",
+    bg: "bg-purple-500/15",
+  },
+  ORDER_OPERATOR: {
+    label: "ORDER OPERATOR",
+    color: "text-blue-400",
+    border: "border-blue-500/30",
+    bg: "bg-blue-500/15",
+  },
+  CATALOG_EDITOR: {
+    label: "CATALOG EDITOR",
+    color: "text-emerald-400",
+    border: "border-emerald-500/30",
+    bg: "bg-emerald-500/15",
+  },
+};
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const router = useRouter();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [checkingAuth, setCheckingAuth] = useState(true);
-  const [userEmail, setUserEmail] = useState<string | null>(null);
+  const [user, setUser] = useState<AdminUserSession | null>(null);
 
   const isLoginPage = pathname === "/admin/login";
 
@@ -69,14 +185,18 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       try {
         const res = await fetch("/api/admin/auth/me");
         if (!res.ok) {
-          router.replace("/admin/login");
+          router.replace(`/admin/login?from=${encodeURIComponent(pathname)}`);
         } else {
           const data = await res.json();
-          setUserEmail(data.user?.email || "admin@kapdology.store");
-          setCheckingAuth(false);
+          if (data.authenticated && data.user) {
+            setUser(data.user);
+            setCheckingAuth(false);
+          } else {
+            router.replace(`/admin/login?from=${encodeURIComponent(pathname)}`);
+          }
         }
       } catch {
-        router.replace("/admin/login");
+        router.replace(`/admin/login?from=${encodeURIComponent(pathname)}`);
       }
     }
 
@@ -98,11 +218,21 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 
   if (checkingAuth) {
     return (
-      <div className="min-h-screen bg-[#0E1015] flex items-center justify-center font-mono text-xs text-white/70 uppercase tracking-widest">
-        VERIFYING ADMIN PRIVILEGES...
+      <div className="min-h-screen bg-[#0E1015] flex flex-col items-center justify-center font-mono text-xs text-white/70 space-y-3">
+        <div className="w-8 h-8 rounded-full border-2 border-[#FF3B00] border-t-transparent animate-spin" />
+        <span className="uppercase tracking-widest text-[#7B828F]">VERIFYING CREDENTIALS & POWERS...</span>
       </div>
     );
   }
+
+  const roleMeta =
+    (user?.role && ROLE_BADGE[user.role]) ? ROLE_BADGE[user.role] : ROLE_BADGE.SUPER_ADMIN;
+
+  const visibleNavItems = NAV_ITEMS.filter((item) => {
+    if (!user) return true;
+    if (!item.allowedRoles) return true;
+    return item.allowedRoles.includes(user.role);
+  });
 
   return (
     <div className="min-h-screen bg-[#0E1015] text-[#E4E6EB] flex font-sans select-none antialiased">
@@ -130,9 +260,9 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           </span>
         </div>
 
-        {/* Navigation Links */}
+        {/* Navigation Links (Filtered by Role) */}
         <nav className="flex-1 px-3 py-4 space-y-1 overflow-y-auto">
-          {NAV_ITEMS.map((item) => {
+          {visibleNavItems.map((item) => {
             const Icon = item.icon;
             const isActive =
               item.href === "/admin"
@@ -172,17 +302,21 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 
           <div className="flex items-center justify-between px-3 py-2 bg-[#1A1E27] rounded border border-[#262B36]">
             <div className="truncate pr-2">
-              <span className="block text-[10px] font-mono text-[#7B828F] truncate uppercase">
-                {userEmail}
+              <span className="block text-xs font-bold text-white truncate">
+                {user?.name || "Admin"}
               </span>
-              <span className="text-[10px] font-bold text-emerald-400 font-mono">
-                AUTHENTICATED
-              </span>
+              <div className="flex items-center gap-1.5 mt-0.5">
+                <span
+                  className={`text-[9px] font-mono font-bold px-1.5 py-0.5 rounded border ${roleMeta.bg} ${roleMeta.color} ${roleMeta.border}`}
+                >
+                  {roleMeta.label}
+                </span>
+              </div>
             </div>
             <button
               onClick={handleLogout}
               title="Logout"
-              className="text-[#9AA0A6] hover:text-[#FF3B00] transition-colors p-1"
+              className="text-[#9AA0A6] hover:text-[#FF3B00] transition-colors p-1 cursor-pointer"
             >
               <LogOut className="h-4 w-4" />
             </button>
@@ -213,66 +347,87 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           </div>
 
           <div className="flex items-center gap-3">
-            <div className="hidden sm:flex items-center gap-2 px-3 py-1 bg-[#1A1E27] border border-[#262B36] rounded font-mono text-[11px]">
-              <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
-              <span className="text-[#9AA0A6]">GATEWAY:</span>
-              <span className="font-bold text-[#FF3B00]">PRE-RELEASE MODE</span>
-            </div>
-            <a
+            {user && (
+              <div
+                className={`hidden md:flex items-center gap-1.5 px-2.5 py-1 rounded border text-[11px] font-mono font-bold ${roleMeta.bg} ${roleMeta.color} ${roleMeta.border}`}
+              >
+                <Crown className="h-3 w-3" />
+                <span>{roleMeta.label}</span>
+              </div>
+            )}
+
+            <Link
               href="/"
               target="_blank"
-              rel="noopener noreferrer"
-              className="px-3 py-1.5 bg-[#FF3B00] text-white text-xs font-bold uppercase tracking-wider rounded hover:bg-[#e03400] transition-colors flex items-center gap-1.5"
+              className="px-3 py-1.5 bg-[#FF3B00] text-white font-bold text-xs uppercase tracking-wider rounded hover:bg-[#e03400] transition-colors flex items-center gap-1.5 shadow-[2px_2px_0px_#000]"
             >
               <span>VIEW STORE</span>
               <ExternalLink className="h-3 w-3" />
-            </a>
+            </Link>
           </div>
         </header>
 
         {/* Mobile Navigation Drawer */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden bg-[#14171F] border-b border-[#262B36] p-4 space-y-1">
-            {NAV_ITEMS.map((item) => {
-              const Icon = item.icon;
-              const isActive =
-                item.href === "/admin"
-                  ? pathname === "/admin"
-                  : pathname.startsWith(item.href);
-
-              return (
-                <Link
-                  key={item.href}
-                  href={item.href}
+          <div className="lg:hidden fixed inset-0 z-40 bg-black/80 backdrop-blur-sm">
+            <div className="w-64 h-full bg-[#14171F] border-r border-[#262B36] flex flex-col p-4">
+              <div className="flex items-center justify-between pb-4 border-b border-[#262B36] mb-4">
+                <span className="font-bold text-white text-sm">KAPDOLOGY ADMIN</span>
+                <button
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className={`flex items-center gap-3 px-3 py-2.5 rounded text-xs font-semibold ${
-                    isActive ? "bg-[#FF3B00] text-white" : "text-[#9AA0A6] hover:bg-[#1E232E]"
-                  }`}
+                  className="p-1 text-[#7B828F] hover:text-white"
                 >
-                  <Icon className="h-4 w-4" />
-                  <span>{item.label}</span>
-                </Link>
-              );
-            })}
-            <div className="pt-3 border-t border-[#262B36] flex justify-between items-center">
-              <span className="text-xs font-mono text-[#7B828F]">{userEmail}</span>
+                  <X className="h-5 w-5" />
+                </button>
+              </div>
+
+              <div className="mb-4 p-2.5 bg-[#1A1E27] rounded border border-[#262B36]">
+                <div className="text-xs font-bold text-white truncate">{user?.name}</div>
+                <div className={`text-[9px] font-mono font-bold mt-1 inline-block px-1.5 py-0.5 rounded border ${roleMeta.bg} ${roleMeta.color} ${roleMeta.border}`}>
+                  {roleMeta.label}
+                </div>
+              </div>
+
+              <nav className="flex-1 space-y-1 overflow-y-auto">
+                {visibleNavItems.map((item) => {
+                  const Icon = item.icon;
+                  const isActive = pathname === item.href;
+
+                  return (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className={`flex items-center gap-3 px-3 py-2 rounded text-xs font-semibold ${
+                        isActive
+                          ? "bg-[#FF3B00] text-white"
+                          : "text-[#9AA0A6] hover:bg-[#1E232E] hover:text-white"
+                      }`}
+                    >
+                      <Icon className="h-4 w-4" />
+                      <span>{item.label}</span>
+                    </Link>
+                  );
+                })}
+              </nav>
+
               <button
                 onClick={handleLogout}
-                className="text-xs font-mono font-bold text-[#FF3B00] uppercase"
+                className="w-full mt-4 py-2 bg-red-600/20 text-red-400 border border-red-500/30 text-xs font-bold uppercase rounded flex items-center justify-center gap-2"
               >
-                LOGOUT
+                <LogOut className="h-4 w-4" />
+                <span>LOGOUT</span>
               </button>
             </div>
           </div>
         )}
 
-        {/* Page Content Viewport */}
-        <main className="flex-1 p-4 md:p-8 overflow-y-auto bg-[#0E1015]">
+        {/* Child Pages Container */}
+        <main className="flex-1 p-4 md:p-8 overflow-x-hidden">
           {children}
         </main>
 
       </div>
-
     </div>
   );
 }
