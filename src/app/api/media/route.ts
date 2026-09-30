@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getDbMedia, deleteDbMedia } from "@/lib/db/media";
-import { validateAdminRequest } from "@/lib/auth";
+import { validateAdminRequest, hasPermission } from "@/lib/auth";
 
 export const dynamic = "force-dynamic";
 
@@ -32,8 +32,18 @@ export async function GET(request: NextRequest) {
 export async function DELETE(request: NextRequest) {
   try {
     const auth = validateAdminRequest(request);
-    if (!auth.authenticated) {
+    if (!auth.authenticated || !auth.user) {
       return NextResponse.json({ success: false, error: "Unauthorized" }, { status: 401 });
+    }
+
+    const canDelete =
+      hasPermission(auth.role, "canManageProducts") ||
+      hasPermission(auth.role, "canManageContent");
+    if (!canDelete) {
+      return NextResponse.json(
+        { success: false, error: "Forbidden: insufficient permissions to manage media." },
+        { status: 403 }
+      );
     }
 
     const searchParams = request.nextUrl.searchParams;

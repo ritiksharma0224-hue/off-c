@@ -21,7 +21,11 @@ import {
   Clock,
   Boxes,
   Eye,
+  Crop,
+  ChevronLeft,
+  ChevronRight,
 } from "lucide-react";
+import ImageCropModal from "./ImageCropModal";
 import {
   MasterProduct,
   ProductStatus,
@@ -40,6 +44,13 @@ interface ProductEditorProps {
 export default function ProductEditor({ initialProduct, isNew = false }: ProductEditorProps) {
   const router = useRouter();
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const cropFileInputRef = useRef<HTMLInputElement>(null);
+
+  // Image Cropping State
+  const [cropModalOpen, setCropModalOpen] = useState(false);
+  const [cropImageSrc, setCropImageSrc] = useState<string | null>(null);
+  const [cropTargetIndex, setCropTargetIndex] = useState<number | null>(null);
+  const [cropModalTitle, setCropModalTitle] = useState("CROP PRODUCT IMAGE");
 
   // Categories, Families, Collections options
   const [categories, setCategories] = useState<GarmentCategoryEntity[]>([]);
@@ -274,7 +285,96 @@ export default function ProductEditor({ initialProduct, isNew = false }: Product
     if (primaryImage === url && filtered.length > 0) {
       setPrimaryImage(filtered[0]);
     }
+    if (hoverImage === url) {
+      setHoverImage(filtered.length > 1 ? filtered[1] : filtered[0] || "");
+    }
     markDirty();
+  };
+
+  // Reorder gallery assets
+  const handleMoveImage = (fromIdx: number, toIdx: number) => {
+    if (toIdx < 0 || toIdx >= images.length) return;
+    const newImages = [...images];
+    const [moved] = newImages.splice(fromIdx, 1);
+    newImages.splice(toIdx, 0, moved);
+    setImages(newImages);
+    markDirty();
+  };
+
+  // Open crop modal for an existing gallery image
+  const handleStartCropExisting = (imgUrl: string, idx: number) => {
+    setCropImageSrc(imgUrl);
+    setCropTargetIndex(idx);
+    setCropModalTitle(`CROP GALLERY IMAGE #${idx + 1}`);
+    setCropModalOpen(true);
+  };
+
+  // Open crop modal for a newly selected local file
+  const handleCropFileSelected = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = (event) => {
+      if (typeof event.target?.result === "string") {
+        setCropImageSrc(event.target.result);
+        setCropTargetIndex(-1); // -1 signifies adding a new image
+        setCropModalTitle("CROP & ADD TO GALLERY");
+        setCropModalOpen(true);
+      }
+    };
+    reader.readAsDataURL(file);
+    if (cropFileInputRef.current) cropFileInputRef.current.value = "";
+  };
+
+  // Apply crop: upload cropped Blob and insert or replace in gallery
+  const handleApplyCroppedImage = async (blob: Blob) => {
+    setUploadingImage(true);
+    setUploadProgressText("UPLOADING CROPPED IMAGE...");
+    setSaveError(null);
+
+    try {
+      const file = new File([blob], `cropped-${Date.now()}.jpg`, { type: "image/jpeg" });
+      const formData = new FormData();
+      formData.append("files", file);
+
+      const res = await fetch("/api/media/upload", {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await res.json();
+      if (data.success && (data.urls?.[0] || data.url)) {
+        const uploadedUrl: string = data.urls?.[0] || data.url;
+
+        if (cropTargetIndex !== null && cropTargetIndex >= 0) {
+          // Replace existing image at target index
+          const oldUrl = images[cropTargetIndex];
+          const newImages = [...images];
+          newImages[cropTargetIndex] = uploadedUrl;
+          setImages(newImages);
+
+          if (primaryImage === oldUrl) setPrimaryImage(uploadedUrl);
+          if (hoverImage === oldUrl) setHoverImage(uploadedUrl);
+        } else {
+          // Append as new gallery image
+          const newImages = [...images, uploadedUrl];
+          setImages(newImages);
+          if (!primaryImage) {
+            setPrimaryImage(uploadedUrl);
+          } else if (!hoverImage && newImages.length > 1) {
+            setHoverImage(uploadedUrl);
+          }
+        }
+        markDirty();
+      } else {
+        setSaveError(data.error || "Failed to upload cropped image.");
+      }
+    } catch {
+      setSaveError("Network error while uploading cropped image.");
+    } finally {
+      setUploadingImage(false);
+      setUploadProgressText(null);
+    }
   };
 
   // Handle Dynamic Sizes
@@ -520,28 +620,53 @@ export default function ProductEditor({ initialProduct, isNew = false }: Product
         
         {/* Left Column: Visual Assets & Image Management */}
         <div className="lg:col-span-4 bg-[#14171F] border border-[#262B36] rounded-lg p-5 space-y-5">
-          <div className="flex items-center justify-between pb-3 border-b border-[#262B36]">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-3 border-b border-[#262B36] gap-2">
             <div>
               <h3 className="font-bold text-white uppercase text-xs">PRODUCT IMAGES</h3>
-              <p className="text-[10px] text-[#7B828F] font-mono">Upload, reorder, assign primary & hover</p>
+              <p className="text-[10px] text-[#7B828F] font-mono">Upload, crop, reorder, primary & hover</p>
             </div>
-            <input
-              type="file"
-              ref={fileInputRef}
-              onChange={handleImageUpload}
-              accept="image/*"
-              multiple
-              className="hidden"
-            />
-            <button
-              type="button"
-              onClick={() => fileInputRef.current?.click()}
-              disabled={uploadingImage}
-              className="px-3 py-1.5 bg-[#FF3B00] text-white font-bold text-[10px] uppercase rounded hover:bg-[#e03400] transition-colors flex items-center gap-1 cursor-pointer disabled:opacity-50"
-            >
-              <Upload className="h-3 w-3" />
-              <span>{uploadingImage ? uploadProgressText || "UPLOADING..." : "UPLOAD"}</span>
-            </button>
+            
+            <div className="flex items-center gap-1.5">
+              {/* Hidden file input for batch multi-upload */}
+              <input
+                type="file"
+                ref={fileInputRef}
+                onChange={handleImageUpload}
+                accept="image/*"
+                multiple
+                className="hidden"
+              />
+              {/* Hidden file input for crop-first flow */}
+              <input
+                type="file"
+                ref={cropFileInputRef}
+                onChange={handleCropFileSelected}
+                accept="image/*"
+                className="hidden"
+              />
+
+              <button
+                type="button"
+                onClick={() => cropFileInputRef.current?.click()}
+                disabled={uploadingImage}
+                title="Select image, adjust crop ratio & pan before adding"
+                className="px-2.5 py-1.5 bg-[#1E232E] border border-[#262B36] text-white font-bold text-[10px] uppercase rounded hover:border-[#FF3B00] hover:text-[#FF3B00] transition-colors flex items-center gap-1 cursor-pointer disabled:opacity-50"
+              >
+                <Crop className="h-3 w-3 text-[#FF3B00]" />
+                <span>CROP & ADD</span>
+              </button>
+
+              <button
+                type="button"
+                onClick={() => fileInputRef.current?.click()}
+                disabled={uploadingImage}
+                title="Upload multiple images at once"
+                className="px-2.5 py-1.5 bg-[#FF3B00] text-white font-bold text-[10px] uppercase rounded hover:bg-[#e03400] transition-colors flex items-center gap-1 cursor-pointer disabled:opacity-50"
+              >
+                <Upload className="h-3 w-3" />
+                <span>{uploadingImage ? uploadProgressText || "UPLOADING..." : "UPLOAD"}</span>
+              </button>
+            </div>
           </div>
 
           {/* Primary Image Big Preview */}
@@ -562,13 +687,28 @@ export default function ProductEditor({ initialProduct, isNew = false }: Product
             <div className="absolute top-2 left-2 bg-[#FF3B00] text-white font-mono text-[9px] font-bold uppercase px-2 py-0.5 rounded">
               PRIMARY (STOREFRONT CARD)
             </div>
+
+            {primaryImage && (
+              <button
+                type="button"
+                onClick={() => handleStartCropExisting(primaryImage, images.indexOf(primaryImage))}
+                className="absolute top-2 right-2 bg-[#14171F]/90 backdrop-blur border border-[#262B36] text-white hover:text-[#FF3B00] hover:border-[#FF3B00] px-2 py-0.5 rounded font-mono text-[9px] font-bold uppercase flex items-center gap-1 cursor-pointer transition-colors"
+              >
+                <Crop className="h-3 w-3 text-[#FF3B00]" />
+                <span>CROP</span>
+              </button>
+            )}
           </div>
 
           {/* Thumbnail Slots Grid */}
           <div className="space-y-2">
-            <span className="font-mono text-[10px] font-bold text-[#7B828F] uppercase block">
-              GALLERY ASSETS ({images.length})
-            </span>
+            <div className="flex items-center justify-between">
+              <span className="font-mono text-[10px] font-bold text-[#7B828F] uppercase block">
+                GALLERY ASSETS ({images.length})
+              </span>
+              <span className="text-[9px] font-mono text-[#525866]">Hover asset to crop or reorder</span>
+            </div>
+            
             <div className="grid grid-cols-3 gap-2">
               {images.map((imgUrl, idx) => {
                 const isPrimary = primaryImage === imgUrl;
@@ -590,34 +730,73 @@ export default function ProductEditor({ initialProduct, isNew = false }: Product
                     />
 
                     {/* Overlay Action Buttons */}
-                    <div className="absolute inset-0 bg-black/75 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center gap-1 p-1">
-                      {!isPrimary && (
-                        <button
-                          type="button"
-                          onClick={() => handleSetPrimary(imgUrl)}
-                          className="px-1.5 py-0.5 bg-[#FF3B00] text-white text-[8px] font-bold uppercase rounded w-full text-center hover:bg-white hover:text-[#111111]"
-                        >
-                          SET PRIMARY
-                        </button>
-                      )}
-                      {!isHover && (
-                        <button
-                          type="button"
-                          onClick={() => handleSetHover(imgUrl)}
-                          className="px-1.5 py-0.5 bg-[#1E232E] text-white text-[8px] font-bold uppercase rounded w-full text-center hover:bg-white hover:text-[#111111]"
-                        >
-                          SET HOVER
-                        </button>
-                      )}
-                      {images.length > 1 && (
-                        <button
-                          type="button"
-                          onClick={() => handleDeleteImage(imgUrl)}
-                          className="p-1 text-red-400 hover:text-red-300"
-                        >
-                          <Trash2 className="h-3 w-3" />
-                        </button>
-                      )}
+                    <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-between p-1.5">
+                      {/* Top Action Row: Reorder & Delete */}
+                      <div className="flex items-center justify-between w-full">
+                        <div className="flex items-center gap-0.5">
+                          <button
+                            type="button"
+                            disabled={idx === 0}
+                            onClick={() => handleMoveImage(idx, idx - 1)}
+                            title="Move Earlier"
+                            className="p-1 bg-[#1E232E] text-white rounded hover:bg-[#FF3B00] disabled:opacity-30 disabled:hover:bg-[#1E232E]"
+                          >
+                            <ChevronLeft className="h-2.5 w-2.5" />
+                          </button>
+                          <button
+                            type="button"
+                            disabled={idx === images.length - 1}
+                            onClick={() => handleMoveImage(idx, idx + 1)}
+                            title="Move Later"
+                            className="p-1 bg-[#1E232E] text-white rounded hover:bg-[#FF3B00] disabled:opacity-30 disabled:hover:bg-[#1E232E]"
+                          >
+                            <ChevronRight className="h-2.5 w-2.5" />
+                          </button>
+                        </div>
+
+                        {images.length > 1 && (
+                          <button
+                            type="button"
+                            onClick={() => handleDeleteImage(imgUrl)}
+                            title="Delete Image"
+                            className="p-1 text-red-400 hover:text-red-300 rounded hover:bg-red-500/20"
+                          >
+                            <Trash2 className="h-3 w-3" />
+                          </button>
+                        )}
+                      </div>
+
+                      {/* Middle: Crop Button */}
+                      <button
+                        type="button"
+                        onClick={() => handleStartCropExisting(imgUrl, idx)}
+                        className="px-2 py-0.5 bg-[#FF3B00] text-white text-[8px] font-bold uppercase rounded w-full text-center hover:bg-white hover:text-[#111111] flex items-center justify-center gap-1 transition-colors"
+                      >
+                        <Crop className="h-2.5 w-2.5" />
+                        <span>CROP</span>
+                      </button>
+
+                      {/* Bottom Action Row: Primary & Hover triggers */}
+                      <div className="w-full space-y-0.5">
+                        {!isPrimary && (
+                          <button
+                            type="button"
+                            onClick={() => handleSetPrimary(imgUrl)}
+                            className="px-1.5 py-0.5 bg-[#1E232E] text-white text-[7px] font-bold uppercase rounded w-full text-center hover:bg-emerald-600 transition-colors"
+                          >
+                            SET PRIMARY
+                          </button>
+                        )}
+                        {!isHover && (
+                          <button
+                            type="button"
+                            onClick={() => handleSetHover(imgUrl)}
+                            className="px-1.5 py-0.5 bg-[#1E232E] text-white text-[7px] font-bold uppercase rounded w-full text-center hover:bg-blue-600 transition-colors"
+                          >
+                            SET HOVER
+                          </button>
+                        )}
+                      </div>
                     </div>
 
                     {isPrimary && (
@@ -1264,6 +1443,22 @@ export default function ProductEditor({ initialProduct, isNew = false }: Product
         </div>
 
       </div>
+
+      {/* Interactive Canvas Image Cropping Modal */}
+      <ImageCropModal
+        isOpen={cropModalOpen}
+        imageSrc={cropImageSrc}
+        title={cropModalTitle}
+        defaultPreset="4:5"
+        onClose={() => {
+          setCropModalOpen(false);
+          setCropImageSrc(null);
+          setCropTargetIndex(null);
+        }}
+        onApplyCrop={async (blob) => {
+          await handleApplyCroppedImage(blob);
+        }}
+      />
 
     </div>
   );

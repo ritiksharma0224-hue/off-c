@@ -35,6 +35,7 @@ export async function POST(request: NextRequest) {
       success: true,
       message: `Welcome back, ${user.name}`,
       user,
+      token,
     });
 
     // Set secure HTTP-only cookie (7 days)

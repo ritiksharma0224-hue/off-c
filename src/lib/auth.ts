@@ -228,3 +228,58 @@ export function validateAdminRequest(request: NextRequest): {
     role: result.user?.role,
   };
 }
+
+/**
+ * Check if a given role has a specific permission
+ */
+export function hasPermission(
+  role: AdminRole | undefined,
+  permission: keyof (typeof ROLE_PERMISSIONS)[AdminRole]
+): boolean {
+  if (!role) return false;
+  const roleConfig = ROLE_PERMISSIONS[role];
+  return roleConfig ? Boolean(roleConfig[permission]) : false;
+}
+
+/**
+ * Strict RBAC permission validator for route handlers
+ */
+export function requireAdminPermission(
+  request: NextRequest,
+  permission?: keyof (typeof ROLE_PERMISSIONS)[AdminRole]
+): {
+  authorized: boolean;
+  status: 401 | 403 | 200;
+  error?: string;
+  user?: SessionUser;
+  email?: string;
+  role?: AdminRole;
+} {
+  const auth = validateAdminRequest(request);
+  if (!auth.authenticated || !auth.user) {
+    return {
+      authorized: false,
+      status: 401,
+      error: "Unauthorized: Admin authentication session required.",
+    };
+  }
+
+  if (permission && !hasPermission(auth.role, permission)) {
+    return {
+      authorized: false,
+      status: 403,
+      error: `Forbidden: Admin role '${auth.role}' is not authorized for '${permission}'.`,
+      user: auth.user,
+      email: auth.email,
+      role: auth.role,
+    };
+  }
+
+  return {
+    authorized: true,
+    status: 200,
+    user: auth.user,
+    email: auth.email,
+    role: auth.role,
+  };
+}

@@ -6,7 +6,7 @@ import {
   archiveDbProduct,
   duplicateDbProduct,
 } from "@/lib/db/products";
-import { validateAdminRequest } from "@/lib/auth";
+import { requireAdminPermission } from "@/lib/auth";
 
 export const dynamic = "force-dynamic";
 
@@ -41,9 +41,9 @@ export async function PUT(
   { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const auth = validateAdminRequest(request);
-    if (!auth.authenticated) {
-      return NextResponse.json({ success: false, error: "Unauthorized" }, { status: 401 });
+    const auth = requireAdminPermission(request, "canManageProducts");
+    if (!auth.authorized) {
+      return NextResponse.json({ success: false, error: auth.error }, { status: auth.status });
     }
 
     const { id } = await params;
@@ -72,9 +72,9 @@ export async function DELETE(
   { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const auth = validateAdminRequest(request);
-    if (!auth.authenticated) {
-      return NextResponse.json({ success: false, error: "Unauthorized" }, { status: 401 });
+    const auth = requireAdminPermission(request, "canManageProducts");
+    if (!auth.authorized) {
+      return NextResponse.json({ success: false, error: auth.error }, { status: auth.status });
     }
 
     const { id } = await params;
@@ -104,9 +104,9 @@ export async function POST(
   { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const auth = validateAdminRequest(request);
-    if (!auth.authenticated) {
-      return NextResponse.json({ success: false, error: "Unauthorized" }, { status: 401 });
+    const auth = requireAdminPermission(request, "canManageProducts");
+    if (!auth.authorized) {
+      return NextResponse.json({ success: false, error: auth.error }, { status: auth.status });
     }
 
     const { id } = await params;

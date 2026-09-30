@@ -4,7 +4,7 @@ import {
   createDbCollection,
   updateDbCollection,
 } from "@/lib/db/collections";
-import { validateAdminRequest } from "@/lib/auth";
+import { requireAdminPermission } from "@/lib/auth";
 
 export const dynamic = "force-dynamic";
 
@@ -22,9 +22,9 @@ export async function GET() {
 
 export async function POST(request: NextRequest) {
   try {
-    const auth = validateAdminRequest(request);
-    if (!auth.authenticated) {
-      return NextResponse.json({ success: false, error: "Unauthorized" }, { status: 401 });
+    const auth = requireAdminPermission(request, "canManageContent");
+    if (!auth.authorized) {
+      return NextResponse.json({ success: false, error: auth.error }, { status: auth.status });
     }
 
     const body = await request.json();
@@ -44,9 +44,9 @@ export async function POST(request: NextRequest) {
 
 export async function PUT(request: NextRequest) {
   try {
-    const auth = validateAdminRequest(request);
-    if (!auth.authenticated) {
-      return NextResponse.json({ success: false, error: "Unauthorized" }, { status: 401 });
+    const auth = requireAdminPermission(request, "canManageContent");
+    if (!auth.authorized) {
+      return NextResponse.json({ success: false, error: auth.error }, { status: auth.status });
     }
 
     const body = await request.json();

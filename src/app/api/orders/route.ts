@@ -9,7 +9,7 @@ import {
 import { getDbProductById } from "@/lib/db/products";
 import { getDbSettings } from "@/lib/db/settings";
 import { OrderItemRecord } from "@/lib/db/types";
-import { validateAdminRequest } from "@/lib/auth";
+import { requireAdminPermission } from "@/lib/auth";
 
 export const dynamic = "force-dynamic";
 
@@ -18,7 +18,6 @@ export const dynamic = "force-dynamic";
  */
 export async function GET(request: NextRequest) {
   try {
-    const auth = validateAdminRequest(request);
     const searchParams = request.nextUrl.searchParams;
     const orderId = searchParams.get("id") || searchParams.get("orderNumber");
 
@@ -30,8 +29,9 @@ export async function GET(request: NextRequest) {
       return NextResponse.json({ success: true, order });
     }
 
-    if (!auth.authenticated) {
-      return NextResponse.json({ success: false, error: "Unauthorized" }, { status: 401 });
+    const auth = requireAdminPermission(request, "canManageOrders");
+    if (!auth.authorized) {
+      return NextResponse.json({ success: false, error: auth.error }, { status: auth.status });
     }
 
     const orders = await getAllOrders();
@@ -252,9 +252,9 @@ export async function POST(request: NextRequest) {
  */
 export async function PATCH(request: NextRequest) {
   try {
-    const auth = validateAdminRequest(request);
-    if (!auth.authenticated) {
-      return NextResponse.json({ success: false, error: "Unauthorized" }, { status: 401 });
+    const auth = requireAdminPermission(request, "canManageOrders");
+    if (!auth.authorized) {
+      return NextResponse.json({ success: false, error: auth.error }, { status: auth.status });
     }
 
     const body = await request.json();

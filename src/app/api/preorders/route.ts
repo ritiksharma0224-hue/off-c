@@ -6,7 +6,7 @@ import {
   getPreorderDemandSummary,
 } from "@/lib/db/preorders";
 import { getDbProductById } from "@/lib/db/products";
-import { validateAdminRequest } from "@/lib/auth";
+import { requireAdminPermission } from "@/lib/auth";
 
 export const dynamic = "force-dynamic";
 
@@ -15,9 +15,9 @@ export const dynamic = "force-dynamic";
  */
 export async function GET(request: NextRequest) {
   try {
-    const auth = validateAdminRequest(request);
-    if (!auth.authenticated) {
-      return NextResponse.json({ success: false, error: "Unauthorized" }, { status: 401 });
+    const auth = requireAdminPermission(request, "canManageOrders");
+    if (!auth.authorized) {
+      return NextResponse.json({ success: false, error: auth.error }, { status: auth.status });
     }
 
     const searchParams = request.nextUrl.searchParams;
@@ -46,7 +46,9 @@ export async function POST(request: NextRequest) {
     const customerEmail = (body.customerEmail || body.email || "").trim().toLowerCase();
     const customerPhone = (body.customerPhone || body.phone || "").trim();
     const customerName = (body.customerName || body.name || "").trim();
-    const { productId, size, shippingAddress } = body;
+    const productId = body.productId;
+    const size = body.size || body.selectedSize;
+    const shippingAddress = body.shippingAddress;
 
     // 1. Basic presence checks
     if (!productId || !size || !customerName || !customerEmail || !customerPhone) {
@@ -147,9 +149,9 @@ export async function POST(request: NextRequest) {
  */
 export async function PATCH(request: NextRequest) {
   try {
-    const auth = validateAdminRequest(request);
-    if (!auth.authenticated) {
-      return NextResponse.json({ success: false, error: "Unauthorized" }, { status: 401 });
+    const auth = requireAdminPermission(request, "canManageOrders");
+    if (!auth.authorized) {
+      return NextResponse.json({ success: false, error: auth.error }, { status: auth.status });
     }
 
     const body = await request.json();

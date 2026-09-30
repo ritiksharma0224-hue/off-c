@@ -3,7 +3,7 @@ import fs from "fs/promises";
 import path from "path";
 import { put } from "@vercel/blob";
 import { addDbMedia } from "@/lib/db/media";
-import { validateAdminRequest } from "@/lib/auth";
+import { validateAdminRequest, hasPermission } from "@/lib/auth";
 
 export const dynamic = "force-dynamic";
 
@@ -59,8 +59,18 @@ function validateMagicBytes(buffer: Buffer, mimeType: string): boolean {
 export async function POST(request: NextRequest) {
   try {
     const auth = validateAdminRequest(request);
-    if (!auth.authenticated) {
+    if (!auth.authenticated || !auth.user) {
       return NextResponse.json({ success: false, error: "Unauthorized" }, { status: 401 });
+    }
+
+    const canUpload =
+      hasPermission(auth.role, "canManageProducts") ||
+      hasPermission(auth.role, "canManageContent");
+    if (!canUpload) {
+      return NextResponse.json(
+        { success: false, error: "Forbidden: insufficient permissions to upload media." },
+        { status: 403 }
+      );
     }
 
     const formData = await request.formData();
