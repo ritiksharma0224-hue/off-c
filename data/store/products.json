@@ -664,10 +664,10 @@
       "Zero Fabric Cling"
     ],
     "gender": "UNISEX",
-    "image": "/images/slate-boxy.jpg",
+    "image": "/uploads/kpd-1790786764376-751-crimson-eyed-shadow-wing-tee.png",
     "images": [
-      "/images/slate-boxy.jpg",
-      "/images/retro-boxy.jpg"
+      "/uploads/kpd-1790786764376-751-crimson-eyed-shadow-wing-tee.png",
+      "/uploads/kpd-1790786764385-857-gritty-charcoal-streetwear-gra.png"
     ],
     "imageSlots": [
       {
@@ -800,7 +800,8 @@
     "preorderCtaText": "PREORDER NOW →",
     "showPreorderCapacity": false,
     "createdAt": "2026-09-21T16:23:42.619Z",
-    "updatedAt": "2026-09-21T16:23:42.619Z"
+    "updatedAt": "2026-09-30T16:46:14.358Z",
+    "reservationLimitPerCustomer": 2
   },
   {
     "id": "kpd-04",
@@ -835,10 +836,10 @@
       "Signature Jaipur Production Batch Tag"
     ],
     "gender": "UNISEX",
-    "image": "/images/retro-boxy.jpg",
+    "image": "/uploads/kpd-1790786795031-233-distressed-streetwear-tee-back.png",
     "images": [
-      "/images/retro-boxy.jpg",
-      "/images/slate-boxy.jpg"
+      "/uploads/kpd-1790786795031-233-distressed-streetwear-tee-back.png",
+      "/uploads/kpd-1790786795007-187-distressed-japanese-warrior-t-.png"
     ],
     "imageSlots": [
       {
@@ -955,7 +956,8 @@
     "preorderCtaText": "PREORDER NOW →",
     "showPreorderCapacity": false,
     "createdAt": "2026-09-21T16:23:42.619Z",
-    "updatedAt": "2026-09-22T07:31:52.646Z"
+    "updatedAt": "2026-09-30T16:46:47.493Z",
+    "reservationLimitPerCustomer": 2
   },
   {
     "id": "kpd-05",
@@ -992,10 +994,10 @@
       "Fade-Resistant Print Chemistry"
     ],
     "gender": "UNISEX",
-    "image": "/images/cyber-tee.jpg",
+    "image": "/uploads/kpd-1790786833925-589-screenshot-2026-09-30-213617.png",
     "images": [
-      "/images/cyber-tee.jpg",
-      "/images/puff-tee.jpg"
+      "/uploads/kpd-1790786833925-589-screenshot-2026-09-30-213617.png",
+      "/uploads/kpd-1790786833916-791-screenshot-2026-09-30-213626.png"
     ],
     "imageSlots": [
       {
@@ -1128,7 +1130,8 @@
     "preorderCtaText": "PREORDER NOW →",
     "showPreorderCapacity": false,
     "createdAt": "2026-09-21T16:23:42.619Z",
-    "updatedAt": "2026-09-21T16:23:42.619Z"
+    "updatedAt": "2026-09-30T16:47:20.744Z",
+    "reservationLimitPerCustomer": 2
   },
   {
     "id": "kpd-06",
@@ -1163,10 +1166,10 @@
       "Custom Woven Neck Ribbon"
     ],
     "gender": "UNISEX",
-    "image": "/images/puff-tee.jpg",
+    "image": "/uploads/kpd-1790786854286-421-screenshot-2026-09-30-213739.png",
     "images": [
-      "/images/puff-tee.jpg",
-      "/images/cyber-tee.jpg"
+      "/uploads/kpd-1790786854286-421-screenshot-2026-09-30-213739.png",
+      "/uploads/kpd-1790786854277-427-screenshot-2026-09-30-213746.png"
     ],
     "imageSlots": [
       {
@@ -1283,7 +1286,8 @@
     "preorderCtaText": "PREORDER NOW →",
     "showPreorderCapacity": false,
     "createdAt": "2026-09-21T16:23:42.619Z",
-    "updatedAt": "2026-09-22T07:32:00.311Z"
+    "updatedAt": "2026-09-30T16:47:41.081Z",
+    "reservationLimitPerCustomer": 2
   },
   {
     "id": "kpd-07",
@@ -1320,10 +1324,10 @@
       "Limited Drop Edition"
     ],
     "gender": "UNISEX",
-    "image": "/images/chrome-tee.jpg",
+    "image": "/uploads/kpd-1790786873586-761-screenshot-2026-09-30-214217.png",
     "images": [
-      "/images/chrome-tee.jpg",
-      "/images/cyber-tee.jpg"
+      "/uploads/kpd-1790786873586-761-screenshot-2026-09-30-214217.png",
+      "/uploads/kpd-1790786873578-760-screenshot-2026-09-30-214226.png"
     ],
     "imageSlots": [
       {
@@ -1441,7 +1445,8 @@
     "preorderCtaText": "PREORDER NOW →",
     "showPreorderCapacity": false,
     "createdAt": "2026-09-21T16:23:42.619Z",
-    "updatedAt": "2026-09-21T16:23:42.619Z"
+    "updatedAt": "2026-09-30T16:48:00.578Z",
+    "reservationLimitPerCustomer": 2
   },
   {
     "id": "kpd-08",
@@ -1809,10 +1814,10 @@
       "Drop-Shoulder Box Cut Silhouette"
     ],
     "gender": "UNISEX",
-    "image": "/images/vintage-wash.jpg",
+    "image": "/uploads/kpd-1790786740641-916-blood-moon-warrior-graphic-tee.png",
     "images": [
-      "/images/vintage-wash.jpg",
-      "/images/hero.png"
+      "/uploads/kpd-1790786740641-916-blood-moon-warrior-graphic-tee.png",
+      "/uploads/kpd-1790786740629-919-apocalyptic-red-ink-manga-stre.png"
     ],
     "imageSlots": [
       {
@@ -1930,6 +1935,7 @@
     "preorderCtaText": "PREORDER NOW →",
     "showPreorderCapacity": false,
     "createdAt": "2026-09-21T16:23:42.620Z",
-    "updatedAt": "2026-09-22T07:31:39.981Z"
+    "updatedAt": "2026-09-30T16:45:51.050Z",
+    "reservationLimitPerCustomer": 2
   }
 ]

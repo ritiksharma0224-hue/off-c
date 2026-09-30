@@ -1,30 +1,116 @@
 import crypto from "crypto";
 import { cookies } from "next/headers";
 import { NextRequest } from "next/server";
+import {
+  AdminRole,
+  getAdminByEmail,
+  verifyPassword,
+  recordAdminLogin,
+} from "./db/admins";
 
 export const ADMIN_COOKIE_NAME = "kapdology_admin_token";
-const SECRET_KEY = process.env.ADMIN_SECRET_KEY || "kapdology_super_secret_jwt_key_2026_jaipur";
+export const SECRET_KEY =
+  process.env.ADMIN_SECRET_KEY || "kapdology_super_secret_jwt_key_2026_jaipur";
 
-const DEFAULT_ADMIN_EMAIL = process.env.ADMIN_EMAIL || "admin@kapdology.store";
-const DEFAULT_ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || "kapdology2026";
+export interface SessionUser {
+  id: string;
+  email: string;
+  name: string;
+  role: AdminRole;
+}
+
+export const ROLE_PERMISSIONS: Record<
+  AdminRole,
+  {
+    canManageAdmins: boolean;
+    canManageSettings: boolean;
+    canManageProducts: boolean;
+    canManageInventory: boolean;
+    canManageOrders: boolean;
+    canManageContent: boolean;
+  }
+> = {
+  SUPER_ADMIN: {
+    canManageAdmins: true,
+    canManageSettings: true,
+    canManageProducts: true,
+    canManageInventory: true,
+    canManageOrders: true,
+    canManageContent: true,
+  },
+  STORE_MANAGER: {
+    canManageAdmins: false,
+    canManageSettings: false,
+    canManageProducts: true,
+    canManageInventory: true,
+    canManageOrders: true,
+    canManageContent: true,
+  },
+  ORDER_OPERATOR: {
+    canManageAdmins: false,
+    canManageSettings: false,
+    canManageProducts: false,
+    canManageInventory: true,
+    canManageOrders: true,
+    canManageContent: false,
+  },
+  CATALOG_EDITOR: {
+    canManageAdmins: false,
+    canManageSettings: false,
+    canManageProducts: true,
+    canManageInventory: false,
+    canManageOrders: false,
+    canManageContent: true,
+  },
+};
 
 /**
- * Verify admin login credentials
+ * Verify admin login credentials against database
  */
-export function verifyAdminCredentials(email: string, pass: string): boolean {
-  return (
-    email.toLowerCase().trim() === DEFAULT_ADMIN_EMAIL.toLowerCase().trim() &&
-    pass === DEFAULT_ADMIN_PASSWORD
-  );
+export async function verifyAdminCredentials(
+  email: string,
+  pass: string
+): Promise<{ success: boolean; user?: SessionUser; error?: string }> {
+  const admin = await getAdminByEmail(email);
+  if (!admin) {
+    return { success: false, error: "Invalid admin credentials." };
+  }
+
+  if (admin.status !== "ACTIVE") {
+    return {
+      success: false,
+      error: "This administrator account is currently deactivated. Contact your Super Admin.",
+    };
+  }
+
+  const isValid = verifyPassword(pass, admin.passwordHash, admin.salt);
+  if (!isValid) {
+    return { success: false, error: "Invalid admin credentials." };
+  }
+
+  // Update last login
+  await recordAdminLogin(admin.id);
+
+  return {
+    success: true,
+    user: {
+      id: admin.id,
+      email: admin.email,
+      name: admin.name,
+      role: admin.role,
+    },
+  };
 }
 
 /**
  * Create a secure HMAC-signed session token
  */
-export function createSessionToken(email: string): string {
+export function createSessionToken(user: SessionUser): string {
   const payload = JSON.stringify({
-    email,
-    role: "ADMIN",
+    id: user.id,
+    email: user.email,
+    name: user.name,
+    role: user.role,
     issuedAt: Date.now(),
     expiresAt: Date.now() + 1000 * 60 * 60 * 24 * 7, // 7 days
   });
@@ -41,7 +127,11 @@ export function createSessionToken(email: string): string {
 /**
  * Validate and unpack session token
  */
-export function verifySessionToken(token: string): { valid: boolean; email?: string } {
+export function verifySessionToken(token: string): {
+  valid: boolean;
+  user?: SessionUser;
+  email?: string;
+} {
   if (!token || !token.includes(".")) {
     return { valid: false };
   }
@@ -64,7 +154,18 @@ export function verifySessionToken(token: string): { valid: boolean; email?: str
       return { valid: false };
     }
 
-    return { valid: true, email: payload.email };
+    const sessionUser: SessionUser = {
+      id: payload.id || "adm-legacy",
+      email: payload.email,
+      name: payload.name || "Administrator",
+      role: (payload.role as AdminRole) || "SUPER_ADMIN",
+    };
+
+    return {
+      valid: true,
+      user: sessionUser,
+      email: sessionUser.email,
+    };
   } catch {
     return { valid: false };
   }
@@ -73,14 +174,22 @@ export function verifySessionToken(token: string): { valid: boolean; email?: str
 /**
  * Server-side check for Next.js App Router API or Server Components
  */
-export async function getAdminSession(): Promise<{ authenticated: boolean; email?: string }> {
+export async function getAdminSession(): Promise<{
+  authenticated: boolean;
+  user?: SessionUser;
+  email?: string;
+}> {
   try {
     const cookieStore = await cookies();
     const token = cookieStore.get(ADMIN_COOKIE_NAME)?.value;
     if (!token) return { authenticated: false };
 
     const result = verifySessionToken(token);
-    return { authenticated: result.valid, email: result.email };
+    return {
+      authenticated: result.valid,
+      user: result.user,
+      email: result.user?.email,
+    };
   } catch {
     return { authenticated: false };
   }
@@ -89,19 +198,33 @@ export async function getAdminSession(): Promise<{ authenticated: boolean; email
 /**
  * Validate request in Route Handlers
  */
-export function validateAdminRequest(request: NextRequest): { authenticated: boolean; email?: string } {
+export function validateAdminRequest(request: NextRequest): {
+  authenticated: boolean;
+  user?: SessionUser;
+  email?: string;
+  role?: AdminRole;
+} {
   const token = request.cookies.get(ADMIN_COOKIE_NAME)?.value;
   if (!token) {
-    // Also check Authorization header
     const authHeader = request.headers.get("authorization");
     if (authHeader && authHeader.startsWith("Bearer ")) {
       const bearerToken = authHeader.substring(7);
       const res = verifySessionToken(bearerToken);
-      return { authenticated: res.valid, email: res.email };
+      return {
+        authenticated: res.valid,
+        user: res.user,
+        email: res.user?.email,
+        role: res.user?.role,
+      };
     }
     return { authenticated: false };
   }
 
   const result = verifySessionToken(token);
-  return { authenticated: result.valid, email: result.email };
+  return {
+    authenticated: result.valid,
+    user: result.user,
+    email: result.user?.email,
+    role: result.user?.role,
+  };
 }

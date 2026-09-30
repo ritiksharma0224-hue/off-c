@@ -1,13 +1,17 @@
 "use client";
 
 import React, { useState } from "react";
-import { useRouter } from "next/navigation";
-import { Lock, ShieldCheck, ArrowRight, AlertCircle, Sparkles } from "lucide-react";
+import { useRouter, useSearchParams } from "next/navigation";
+import { Lock, ArrowRight, AlertCircle, Eye, EyeOff } from "lucide-react";
 
 export default function AdminLoginPage() {
   const router = useRouter();
-  const [email, setEmail] = useState("admin@kapdology.store");
-  const [password, setPassword] = useState("kapdology2026");
+  const searchParams = useSearchParams();
+  const from = searchParams.get("from") || "/admin";
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
 
@@ -20,18 +24,18 @@ export default function AdminLoginPage() {
       const res = await fetch("/api/admin/auth/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify({ email: email.trim(), password }),
       });
 
       const data = await res.json();
 
       if (!res.ok || !data.success) {
-        setError(data.error || "Invalid credentials. Please verify email and password.");
+        setError(data.error || "Invalid credentials. Please verify your Email/ID and Password.");
         setLoading(false);
         return;
       }
 
-      router.push("/admin");
+      router.push(from);
     } catch {
       setError("Network error while connecting to authorization gateway.");
       setLoading(false);
@@ -42,7 +46,7 @@ export default function AdminLoginPage() {
     <div className="min-h-screen bg-[#0E1015] text-[#E4E6EB] flex flex-col items-center justify-center p-4 select-none font-sans">
       <div className="w-full max-w-md bg-[#14171F] border border-[#262B36] shadow-2xl p-8 rounded-lg relative overflow-hidden">
         
-        {/* Accent Bar */}
+        {/* Top Orange Accent Bar */}
         <div className="absolute top-0 left-0 right-0 h-1 bg-[#FF3B00]" />
 
         {/* Brand Header */}
@@ -71,14 +75,16 @@ export default function AdminLoginPage() {
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <label className="block text-[11px] font-mono font-bold uppercase text-[#9AA0A6] mb-1.5">
-              ADMIN EMAIL
+              ADMIN EMAIL / ID
             </label>
             <input
               type="email"
               required
+              autoComplete="username"
+              placeholder="Enter your admin ID or email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full px-3.5 py-2.5 bg-[#0E1015] border border-[#262B36] rounded text-sm text-white focus:outline-none focus:border-[#FF3B00] font-mono"
+              className="w-full px-3.5 py-2.5 bg-[#0E1015] border border-[#262B36] rounded text-sm text-white placeholder-[#4E5463] focus:outline-none focus:border-[#FF3B00] font-mono"
             />
           </div>
 
@@ -86,13 +92,25 @@ export default function AdminLoginPage() {
             <label className="block text-[11px] font-mono font-bold uppercase text-[#9AA0A6] mb-1.5">
               SECURE ACCESS KEY / PASSWORD
             </label>
-            <input
-              type="password"
-              required
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="w-full px-3.5 py-2.5 bg-[#0E1015] border border-[#262B36] rounded text-sm text-white focus:outline-none focus:border-[#FF3B00] font-mono"
-            />
+            <div className="relative">
+              <input
+                type={showPassword ? "text" : "password"}
+                required
+                autoComplete="current-password"
+                placeholder="Enter your password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                className="w-full px-3.5 py-2.5 bg-[#0E1015] border border-[#262B36] rounded text-sm text-white placeholder-[#4E5463] focus:outline-none focus:border-[#FF3B00] font-mono pr-10"
+              />
+              <button
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+                className="absolute right-3 top-2.5 text-[#7B828F] hover:text-white transition-colors cursor-pointer"
+                title={showPassword ? "Hide password" : "Show password"}
+              >
+                {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+              </button>
+            </div>
           </div>
 
           <button
@@ -105,14 +123,10 @@ export default function AdminLoginPage() {
           </button>
         </form>
 
-        {/* Developer / Demo Default Credentials Callout */}
-        <div className="mt-8 p-3 bg-[#1A1E27] border border-[#262B36] rounded text-[11px] font-mono text-[#7B828F] space-y-1">
-          <div className="flex items-center gap-1.5 text-white font-bold">
-            <ShieldCheck className="h-3.5 w-3.5 text-emerald-400" />
-            <span>DEFAULT CREDENTIALS:</span>
-          </div>
-          <p>Email: <strong className="text-[#FF3B00]">admin@kapdology.store</strong></p>
-          <p>Password: <strong className="text-white">kapdology2026</strong></p>
+        <div className="mt-6 text-center">
+          <p className="text-[10px] text-[#4E5463] font-mono">
+            Authorized administrative personnel only. All access attempts are recorded.
+          </p>
         </div>
 
       </div>

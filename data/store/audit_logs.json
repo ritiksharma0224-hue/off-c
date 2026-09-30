@@ -1,5 +1,185 @@
 [
   {
+    "id": "audit-1790786880583-398",
+    "admin": "admin@kapdology.store",
+    "action": "PRODUCT_UPDATED",
+    "targetType": "PRODUCT",
+    "targetId": "kpd-07",
+    "targetName": "Liquid Chrome Limited Graphic Tee",
+    "details": "Updated product fields: name, slug, shortDescription, fullDescription, price, compareAtPrice, status, badge, isNew, isPopular, featured, categoryId, categorySlug, categoryName, designFamilyId, designFamilyName, collectionId, collectionName, drop, tags, fabric, gsm, fit, printMethod, care, details, gender, image, images, availableSizes, variants, reservationEnabled, reservationLimitPerCustomer, reservationCtaText, preorderEnabled, preorderCtaText, showPreorderCapacity",
+    "timestamp": "2026-09-30T16:48:00.583Z"
+  },
+  {
+    "id": "audit-1790786873590-397",
+    "admin": "admin@kapdology.store",
+    "action": "MEDIA_UPLOADED",
+    "targetType": "MEDIA",
+    "targetId": "med-1790786873588",
+    "targetName": "kpd-1790786873586-761-screenshot-2026-09-30-214217.png",
+    "details": "Uploaded asset kpd-1790786873586-761-screenshot-2026-09-30-214217.png (/uploads/kpd-1790786873586-761-screenshot-2026-09-30-214217.png)",
+    "timestamp": "2026-09-30T16:47:53.590Z"
+  },
+  {
+    "id": "audit-1790786873583-595",
+    "admin": "admin@kapdology.store",
+    "action": "MEDIA_UPLOADED",
+    "targetType": "MEDIA",
+    "targetId": "med-1790786873580",
+    "targetName": "kpd-1790786873578-760-screenshot-2026-09-30-214226.png",
+    "details": "Uploaded asset kpd-1790786873578-760-screenshot-2026-09-30-214226.png (/uploads/kpd-1790786873578-760-screenshot-2026-09-30-214226.png)",
+    "timestamp": "2026-09-30T16:47:53.583Z"
+  },
+  {
+    "id": "audit-1790786861085-458",
+    "admin": "admin@kapdology.store",
+    "action": "PRODUCT_UPDATED",
+    "targetType": "PRODUCT",
+    "targetId": "kpd-06",
+    "targetName": "Subculture Puff Graphic Tee",
+    "details": "Updated product fields: name, slug, shortDescription, fullDescription, price, status, isNew, isPopular, featured, categoryId, categorySlug, categoryName, designFamilyId, designFamilyName, collectionId, collectionName, drop, tags, fabric, gsm, fit, printMethod, care, details, gender, image, images, availableSizes, variants, reservationEnabled, reservationLimitPerCustomer, reservationCtaText, preorderEnabled, preorderCtaText, showPreorderCapacity",
+    "timestamp": "2026-09-30T16:47:41.085Z"
+  },
+  {
+    "id": "audit-1790786854289-334",
+    "admin": "admin@kapdology.store",
+    "action": "MEDIA_UPLOADED",
+    "targetType": "MEDIA",
+    "targetId": "med-1790786854287",
+    "targetName": "kpd-1790786854286-421-screenshot-2026-09-30-213739.png",
+    "details": "Uploaded asset kpd-1790786854286-421-screenshot-2026-09-30-213739.png (/uploads/kpd-1790786854286-421-screenshot-2026-09-30-213739.png)",
+    "timestamp": "2026-09-30T16:47:34.289Z"
+  },
+  {
+    "id": "audit-1790786854282-607",
+    "admin": "admin@kapdology.store",
+    "action": "MEDIA_UPLOADED",
+    "targetType": "MEDIA",
+    "targetId": "med-1790786854280",
+    "targetName": "kpd-1790786854277-427-screenshot-2026-09-30-213746.png",
+    "details": "Uploaded asset kpd-1790786854277-427-screenshot-2026-09-30-213746.png (/uploads/kpd-1790786854277-427-screenshot-2026-09-30-213746.png)",
+    "timestamp": "2026-09-30T16:47:34.282Z"
+  },
+  {
+    "id": "audit-1790786840747-803",
+    "admin": "admin@kapdology.store",
+    "action": "PRODUCT_UPDATED",
+    "targetType": "PRODUCT",
+    "targetId": "kpd-05",
+    "targetName": "Cyber Culture Oversized Graphic Tee",
+    "details": "Updated product fields: name, slug, shortDescription, fullDescription, price, compareAtPrice, status, badge, isNew, isPopular, featured, categoryId, categorySlug, categoryName, designFamilyId, designFamilyName, collectionId, collectionName, drop, tags, fabric, gsm, fit, printMethod, care, details, gender, image, images, availableSizes, variants, reservationEnabled, reservationLimitPerCustomer, reservationCtaText, preorderEnabled, preorderCtaText, showPreorderCapacity",
+    "timestamp": "2026-09-30T16:47:20.747Z"
+  },
+  {
+    "id": "audit-1790786833929-981",
+    "admin": "admin@kapdology.store",
+    "action": "MEDIA_UPLOADED",
+    "targetType": "MEDIA",
+    "targetId": "med-1790786833927",
+    "targetName": "kpd-1790786833925-589-screenshot-2026-09-30-213617.png",
+    "details": "Uploaded asset kpd-1790786833925-589-screenshot-2026-09-30-213617.png (/uploads/kpd-1790786833925-589-screenshot-2026-09-30-213617.png)",
+    "timestamp": "2026-09-30T16:47:13.929Z"
+  },
+  {
+    "id": "audit-1790786833921-470",
+    "admin": "admin@kapdology.store",
+    "action": "MEDIA_UPLOADED",
+    "targetType": "MEDIA",
+    "targetId": "med-1790786833919",
+    "targetName": "kpd-1790786833916-791-screenshot-2026-09-30-213626.png",
+    "details": "Uploaded asset kpd-1790786833916-791-screenshot-2026-09-30-213626.png (/uploads/kpd-1790786833916-791-screenshot-2026-09-30-213626.png)",
+    "timestamp": "2026-09-30T16:47:13.921Z"
+  },
+  {
+    "id": "audit-1790786807496-141",
+    "admin": "admin@kapdology.store",
+    "action": "PRODUCT_UPDATED",
+    "targetType": "PRODUCT",
+    "targetId": "kpd-04",
+    "targetName": "Retro-Future Graphic Boxy Tee",
+    "details": "Updated product fields: name, slug, shortDescription, fullDescription, price, status, isNew, isPopular, featured, categoryId, categorySlug, categoryName, designFamilyId, designFamilyName, collectionId, collectionName, drop, tags, fabric, gsm, fit, printMethod, care, details, gender, image, images, availableSizes, variants, reservationEnabled, reservationLimitPerCustomer, reservationCtaText, preorderEnabled, preorderCtaText, showPreorderCapacity",
+    "timestamp": "2026-09-30T16:46:47.496Z"
+  },
+  {
+    "id": "audit-1790786795036-83",
+    "admin": "admin@kapdology.store",
+    "action": "MEDIA_UPLOADED",
+    "targetType": "MEDIA",
+    "targetId": "med-1790786795034",
+    "targetName": "kpd-1790786795031-233-distressed-streetwear-tee-back.png",
+    "details": "Uploaded asset kpd-1790786795031-233-distressed-streetwear-tee-back.png (/uploads/kpd-1790786795031-233-distressed-streetwear-tee-back.png)",
+    "timestamp": "2026-09-30T16:46:35.036Z"
+  },
+  {
+    "id": "audit-1790786795028-660",
+    "admin": "admin@kapdology.store",
+    "action": "MEDIA_UPLOADED",
+    "targetType": "MEDIA",
+    "targetId": "med-1790786795026",
+    "targetName": "kpd-1790786795007-187-distressed-japanese-warrior-t-.png",
+    "details": "Uploaded asset kpd-1790786795007-187-distressed-japanese-warrior-t-.png (/uploads/kpd-1790786795007-187-distressed-japanese-warrior-t-.png)",
+    "timestamp": "2026-09-30T16:46:35.028Z"
+  },
+  {
+    "id": "audit-1790786774361-935",
+    "admin": "admin@kapdology.store",
+    "action": "PRODUCT_UPDATED",
+    "targetType": "PRODUCT",
+    "targetId": "kpd-03",
+    "targetName": "Minimalist Slate Boxy Tee",
+    "details": "Updated product fields: name, slug, shortDescription, fullDescription, price, compareAtPrice, status, badge, isNew, isPopular, featured, categoryId, categorySlug, categoryName, designFamilyId, designFamilyName, collectionId, collectionName, drop, tags, fabric, gsm, fit, printMethod, care, details, gender, image, images, availableSizes, variants, reservationEnabled, reservationLimitPerCustomer, reservationCtaText, preorderEnabled, preorderCtaText, showPreorderCapacity",
+    "timestamp": "2026-09-30T16:46:14.361Z"
+  },
+  {
+    "id": "audit-1790786764391-29",
+    "admin": "admin@kapdology.store",
+    "action": "MEDIA_UPLOADED",
+    "targetType": "MEDIA",
+    "targetId": "med-1790786764388",
+    "targetName": "kpd-1790786764385-857-gritty-charcoal-streetwear-gra.png",
+    "details": "Uploaded asset kpd-1790786764385-857-gritty-charcoal-streetwear-gra.png (/uploads/kpd-1790786764385-857-gritty-charcoal-streetwear-gra.png)",
+    "timestamp": "2026-09-30T16:46:04.391Z"
+  },
+  {
+    "id": "audit-1790786764382-48",
+    "admin": "admin@kapdology.store",
+    "action": "MEDIA_UPLOADED",
+    "targetType": "MEDIA",
+    "targetId": "med-1790786764379",
+    "targetName": "kpd-1790786764376-751-crimson-eyed-shadow-wing-tee.png",
+    "details": "Uploaded asset kpd-1790786764376-751-crimson-eyed-shadow-wing-tee.png (/uploads/kpd-1790786764376-751-crimson-eyed-shadow-wing-tee.png)",
+    "timestamp": "2026-09-30T16:46:04.382Z"
+  },
+  {
+    "id": "audit-1790786751053-621",
+    "admin": "admin@kapdology.store",
+    "action": "PRODUCT_UPDATED",
+    "targetType": "PRODUCT",
+    "targetId": "kpd-10",
+    "targetName": "Raw French Terry Boxy Hoodie",
+    "details": "Updated product fields: name, slug, shortDescription, fullDescription, price, compareAtPrice, status, badge, isNew, isPopular, featured, categoryId, categorySlug, categoryName, designFamilyId, designFamilyName, collectionId, collectionName, drop, tags, fabric, gsm, fit, printMethod, care, details, gender, image, images, availableSizes, variants, reservationEnabled, reservationLimitPerCustomer, reservationCtaText, preorderEnabled, preorderCtaText, showPreorderCapacity",
+    "timestamp": "2026-09-30T16:45:51.053Z"
+  },
+  {
+    "id": "audit-1790786740647-887",
+    "admin": "admin@kapdology.store",
+    "action": "MEDIA_UPLOADED",
+    "targetType": "MEDIA",
+    "targetId": "med-1790786740644",
+    "targetName": "kpd-1790786740641-916-blood-moon-warrior-graphic-tee.png",
+    "details": "Uploaded asset kpd-1790786740641-916-blood-moon-warrior-graphic-tee.png (/uploads/kpd-1790786740641-916-blood-moon-warrior-graphic-tee.png)",
+    "timestamp": "2026-09-30T16:45:40.647Z"
+  },
+  {
+    "id": "audit-1790786740638-645",
+    "admin": "admin@kapdology.store",
+    "action": "MEDIA_UPLOADED",
+    "targetType": "MEDIA",
+    "targetId": "med-1790786740634",
+    "targetName": "kpd-1790786740629-919-apocalyptic-red-ink-manga-stre.png",
+    "details": "Uploaded asset kpd-1790786740629-919-apocalyptic-red-ink-manga-stre.png (/uploads/kpd-1790786740629-919-apocalyptic-red-ink-manga-stre.png)",
+    "timestamp": "2026-09-30T16:45:40.638Z"
+  },
+  {
     "id": "audit-1790062320315-95",
     "admin": "admin@kapdology.store",
     "action": "PRODUCT_UPDATED",
