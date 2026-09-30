@@ -1,5 +1,163 @@
 [
   {
+    "id": "kpd-965366",
+    "name": "AstaAkuma",
+    "slug": "astaakuma-1",
+    "shortDescription": "A heavyweight oversized silhouette built around a dark crimson warrior graphic and relentless streetwear energy.",
+    "fullDescription": "A statement oversized T-shirt built for a darker visual language. The deep black base is layered with an intense crimson graphic featuring a lone warrior surrounded by smoke, destruction, and a burning red moon. Distressed textures and high-contrast artwork create a raw, battle-worn aesthetic, while the oversized drop-shoulder silhouette keeps the garment relaxed and contemporary. Designed for those who carry an unapologetic presence, this piece brings anime-inspired darkness into modern streetwear.",
+    "price": 999,
+    "compareAtPrice": 1500,
+    "discountPercentage": 33,
+    "categoryId": "oversized-tees",
+    "categoryName": "OVERSIZED T-SHIRTS",
+    "categorySlug": "oversized-tees",
+    "designFamilyId": "identity",
+    "designFamilyName": "IDENTITY",
+    "collectionId": "drop-001",
+    "collectionName": "DROP 001",
+    "drop": "DROP 001",
+    "tags": [
+      "streetwear",
+      "oversized",
+      "graphic tee",
+      "anime",
+      "darkwear",
+      "red",
+      "black",
+      "warrior",
+      "japanese",
+      "distressed",
+      "drop shoulder"
+    ],
+    "fabric": "100% Combed Heavyweight Cotton",
+    "gsm": "240 GSM",
+    "fit": "Signature Oversized Box Cut",
+    "printMethod": "High-Density Screenprint",
+    "care": "Machine wash cold inside-out. Hang dry in shade.",
+    "details": [],
+    "gender": "UNISEX",
+    "image": "/uploads/kpd-1790057774212-we.png",
+    "images": [
+      "/uploads/kpd-1790057774212-we.png",
+      "/uploads/kpd-1790057785042-wee.png"
+    ],
+    "imageSlots": [
+      {
+        "id": "img-kpd-965366-1",
+        "url": "/uploads/kpd-1790057774212-we.png",
+        "alt": "AstaAkuma - View 1",
+        "slot": "PRIMARY",
+        "isPrimary": true,
+        "isHover": false,
+        "position": 1
+      },
+      {
+        "id": "img-kpd-965366-2",
+        "url": "/uploads/kpd-1790057785042-wee.png",
+        "alt": "AstaAkuma - View 2",
+        "slot": "SECONDARY",
+        "isPrimary": false,
+        "isHover": true,
+        "position": 2
+      }
+    ],
+    "availableSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "Standard Black"
+    ],
+    "variants": [
+      {
+        "id": "var-1",
+        "productId": "new",
+        "size": "S",
+        "color": "Standard",
+        "sku": "KPD-S",
+        "physicalStock": 10,
+        "reservedStock": 1,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 9
+      },
+      {
+        "id": "var-2",
+        "productId": "new",
+        "size": "M",
+        "color": "Standard",
+        "sku": "KPD-M",
+        "physicalStock": 15,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 15
+      },
+      {
+        "id": "var-3",
+        "productId": "new",
+        "size": "L",
+        "color": "Standard",
+        "sku": "KPD-L",
+        "physicalStock": 15,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 15
+      },
+      {
+        "id": "var-4",
+        "productId": "new",
+        "size": "XL",
+        "color": "Standard",
+        "sku": "KPD-XL",
+        "physicalStock": 10,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 10
+      }
+    ],
+    "totalPhysicalStock": 50,
+    "totalReservedStock": 1,
+    "totalPreorderedStock": 0,
+    "totalAvailableStock": 49,
+    "lowStockThreshold": 5,
+    "status": "PREORDER",
+    "badge": "Drop 001",
+    "isNew": true,
+    "isPopular": false,
+    "featured": false,
+    "reservationEnabled": true,
+    "reservationLimitPerCustomer": 2,
+    "reservationAllowedSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "reservationAllowedColors": [
+      "Standard Black"
+    ],
+    "reservationCtaText": "RESERVE YOUR SIZE",
+    "preorderEnabled": true,
+    "preorderAllowedSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "preorderAllowedColors": [
+      "Standard Black"
+    ],
+    "preorderCtaText": "PREORDER NOW →",
+    "showPreorderCapacity": false,
+    "createdAt": "2026-09-22T06:19:25.366Z",
+    "updatedAt": "2026-09-22T06:21:31.717Z"
+  },
+  {
     "id": "kpd-866810",
     "name": "Acid Grid Oversized Heavy Tee [UPDATED]",
     "slug": "acid-grid-oversized-heavy-tee",
@@ -29,9 +187,9 @@
       "Drop Shoulder Drape"
     ],
     "gender": "UNISEX",
-    "image": "/images/vintage-wash.jpg",
+    "image": "/uploads/kpd-1790062183363-demonic-splatter-streetwear-te.png",
     "images": [
-      "/images/vintage-wash.jpg"
+      "/uploads/kpd-1790062183363-demonic-splatter-streetwear-te.png"
     ],
     "imageSlots": [
       {
@@ -138,7 +296,7 @@
     "preorderCtaText": "PREORDER NOW →",
     "showPreorderCapacity": false,
     "createdAt": "2026-09-21T16:24:26.811Z",
-    "updatedAt": "2026-09-21T16:24:29.010Z"
+    "updatedAt": "2026-09-22T07:29:59.399Z"
   },
   {
     "id": "kpd-01",
@@ -175,10 +333,9 @@
       "Tailored In Jaipur, India"
     ],
     "gender": "UNISEX",
-    "image": "/images/hero.png",
+    "image": "/uploads/kpd-1790062223052-grunge-warrior-ink-graphic-t-s.png",
     "images": [
-      "/images/hero.png",
-      "/images/slate-boxy.jpg"
+      "/uploads/kpd-1790062223052-grunge-warrior-ink-graphic-t-s.png"
     ],
     "imageSlots": [
       {
@@ -311,7 +468,8 @@
     "preorderCtaText": "PREORDER NOW →",
     "showPreorderCapacity": false,
     "createdAt": "2026-09-21T16:23:42.618Z",
-    "updatedAt": "2026-09-21T17:13:50.106Z"
+    "updatedAt": "2026-09-22T07:30:30.739Z",
+    "reservationLimitPerCustomer": 2
   },
   {
     "id": "kpd-02",
@@ -348,10 +506,9 @@
       "Subtle Hand-Washed Handfeel"
     ],
     "gender": "UNISEX",
-    "image": "/images/vintage-wash.jpg",
+    "image": "/uploads/kpd-1790062284887-industrial-kapdology-streetwea.png",
     "images": [
-      "/images/vintage-wash.jpg",
-      "/images/hero.png"
+      "/uploads/kpd-1790062284887-industrial-kapdology-streetwea.png"
     ],
     "imageSlots": [
       {
@@ -469,7 +626,8 @@
     "preorderCtaText": "PREORDER NOW →",
     "showPreorderCapacity": false,
     "createdAt": "2026-09-21T16:23:42.619Z",
-    "updatedAt": "2026-09-21T16:23:42.619Z"
+    "updatedAt": "2026-09-22T07:31:30.522Z",
+    "reservationLimitPerCustomer": 2
   },
   {
     "id": "kpd-03",
@@ -767,7 +925,7 @@
     "totalPreorderedStock": 0,
     "totalAvailableStock": 60,
     "lowStockThreshold": 5,
-    "status": "ACTIVE",
+    "status": "ARCHIVED",
     "isNew": false,
     "isPopular": true,
     "featured": false,
@@ -797,7 +955,7 @@
     "preorderCtaText": "PREORDER NOW →",
     "showPreorderCapacity": false,
     "createdAt": "2026-09-21T16:23:42.619Z",
-    "updatedAt": "2026-09-21T16:23:42.619Z"
+    "updatedAt": "2026-09-22T07:31:52.646Z"
   },
   {
     "id": "kpd-05",
@@ -1095,7 +1253,7 @@
     "totalPreorderedStock": 0,
     "totalAvailableStock": 60,
     "lowStockThreshold": 5,
-    "status": "ACTIVE",
+    "status": "ARCHIVED",
     "isNew": true,
     "isPopular": false,
     "featured": false,
@@ -1125,7 +1283,7 @@
     "preorderCtaText": "PREORDER NOW →",
     "showPreorderCapacity": false,
     "createdAt": "2026-09-21T16:23:42.619Z",
-    "updatedAt": "2026-09-21T16:23:42.619Z"
+    "updatedAt": "2026-09-22T07:32:00.311Z"
   },
   {
     "id": "kpd-07",
@@ -1410,7 +1568,7 @@
     "totalPreorderedStock": 0,
     "totalAvailableStock": 60,
     "lowStockThreshold": 5,
-    "status": "ACTIVE",
+    "status": "ARCHIVED",
     "badge": "UTILITY",
     "isNew": true,
     "isPopular": false,
@@ -1441,7 +1599,7 @@
     "preorderCtaText": "PREORDER NOW →",
     "showPreorderCapacity": false,
     "createdAt": "2026-09-21T16:23:42.619Z",
-    "updatedAt": "2026-09-21T16:23:42.619Z"
+    "updatedAt": "2026-09-22T07:31:43.405Z"
   },
   {
     "id": "kpd-09",
@@ -1581,7 +1739,7 @@
     "totalPreorderedStock": 0,
     "totalAvailableStock": 75,
     "lowStockThreshold": 5,
-    "status": "ACTIVE",
+    "status": "ARCHIVED",
     "badge": "CORE",
     "isNew": false,
     "isPopular": true,
@@ -1614,7 +1772,7 @@
     "preorderCtaText": "PREORDER NOW →",
     "showPreorderCapacity": false,
     "createdAt": "2026-09-21T16:23:42.619Z",
-    "updatedAt": "2026-09-21T16:23:42.619Z"
+    "updatedAt": "2026-09-22T07:31:46.335Z"
   },
   {
     "id": "kpd-10",
@@ -1741,7 +1899,7 @@
     "totalPreorderedStock": 0,
     "totalAvailableStock": 60,
     "lowStockThreshold": 5,
-    "status": "ACTIVE",
+    "status": "ARCHIVED",
     "badge": "PREVIEW",
     "isNew": true,
     "isPopular": false,
@@ -1772,6 +1930,6 @@
     "preorderCtaText": "PREORDER NOW →",
     "showPreorderCapacity": false,
     "createdAt": "2026-09-21T16:23:42.620Z",
-    "updatedAt": "2026-09-21T16:23:42.620Z"
+    "updatedAt": "2026-09-22T07:31:39.981Z"
   }
 ]

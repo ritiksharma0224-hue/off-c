@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import fs from "fs/promises";
 import path from "path";
+import { put } from "@vercel/blob";
 import { addDbMedia } from "@/lib/db/media";
 import { validateAdminRequest } from "@/lib/auth";
 
@@ -102,25 +103,45 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // 4. Ensure uploads directory exists
-    await fs.mkdir(UPLOADS_DIR, { recursive: true });
-
-    // 5. Generate sanitized filename with server-derived extension (ignoring client extension)
+    // 4. Generate sanitized filename with server-derived extension
     const rawBase = path.basename(file.name, path.extname(file.name));
     const safeBase = rawBase.toLowerCase().replace(/[^a-z0-9_-]/g, "-").slice(0, 30) || "upload";
     const filename = `kpd-${Date.now()}-${safeBase}${ext}`;
-    const filePath = path.join(UPLOADS_DIR, filename);
 
-    // Path traversal check
-    const resolvedPath = path.resolve(filePath);
-    if (!resolvedPath.startsWith(path.resolve(UPLOADS_DIR))) {
-      return NextResponse.json({ success: false, error: "Invalid path destination." }, { status: 400 });
+    let publicUrl: string;
+
+    // Option A: If Vercel Blob storage is configured, upload directly to Vercel Blob CDN
+    if (process.env.BLOB_READ_WRITE_TOKEN) {
+      try {
+        const blob = await put(`uploads/${filename}`, buffer, {
+          access: "public",
+          contentType: mime,
+        });
+        publicUrl = blob.url;
+      } catch (blobErr) {
+        console.error("Vercel Blob upload failed, falling back to base64:", blobErr);
+        publicUrl = `data:${mime};base64,${buffer.toString("base64")}`;
+      }
+    } else {
+      // Option B: Try writing to local disk (works in local dev), with fallback if on read-only serverless
+      try {
+        await fs.mkdir(UPLOADS_DIR, { recursive: true });
+        const filePath = path.join(UPLOADS_DIR, filename);
+        const resolvedPath = path.resolve(filePath);
+        if (!resolvedPath.startsWith(path.resolve(UPLOADS_DIR))) {
+          return NextResponse.json({ success: false, error: "Invalid path destination." }, { status: 400 });
+        }
+        await fs.writeFile(filePath, buffer);
+        publicUrl = `/uploads/${filename}`;
+      } catch (fsErr: any) {
+        // If filesystem is read-only (e.g. Vercel serverless without BLOB_READ_WRITE_TOKEN)
+        if (fsErr.code === "EROFS" || fsErr.message?.includes("read-only")) {
+          publicUrl = `data:${mime};base64,${buffer.toString("base64")}`;
+        } else {
+          throw fsErr;
+        }
+      }
     }
-
-    // Write file to public/uploads
-    await fs.writeFile(filePath, buffer);
-
-    const publicUrl = `/uploads/${filename}`;
 
     // Register media in database
     const asset = await addDbMedia(

@@ -2,106 +2,9 @@
 
 import { useRef } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight, Sparkles } from "lucide-react";
-import KapdologyLogo from "./KapdologyLogo";
-
-interface LookbookCardProps {
-  isMobile?: boolean;
-}
-
-function LookbookCard({ isMobile = false }: LookbookCardProps) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, scale: 0.96 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
-      className={`relative ${
-        isMobile
-          ? "w-[290px] sm:w-[340px] h-[390px] sm:h-[450px] mx-auto my-5"
-          : "w-[300px] sm:w-[350px] md:w-[380px] lg:w-[410px] xl:w-[440px] h-[430px] sm:h-[480px] md:h-[520px] lg:h-[560px] xl:h-[590px]"
-      } flex items-center justify-center select-none`}
-    >
-      {/* Layer 1: Back Underlay Card (KAPDOLOGY Orange-Red Accent Panel) */}
-      <div className="absolute inset-0 bg-[#FF3B00] border-3 border-[#111111] rotate-[-4deg] translate-x-[-8px] sm:translate-x-[-10px] translate-y-[6px] sm:translate-y-[8px] shadow-[4px_4px_0px_#111111]" />
-
-      {/* Layer 2: Mid Underlay Card (Crisp White / Technical Offset) */}
-      <div className="absolute inset-0 bg-white border-3 border-[#111111] rotate-[2.5deg] translate-x-[6px] sm:translate-x-[8px] translate-y-[-3px] sm:translate-y-[-4px] shadow-[4px_4px_0px_#111111]" />
-
-      {/* Layer 3: Foreground Main Editorial Card */}
-      <motion.div
-        whileHover={{ scale: 1.015, rotate: -0.5 }}
-        transition={{ duration: 0.2 }}
-        className="absolute inset-0 bg-white border-3 border-[#111111] overflow-hidden flex flex-col shadow-[8px_8px_0px_#111111] z-10"
-      >
-        {/* Image Container with Real Kapdology Campaign Lookbook */}
-        <div className="relative w-full flex-grow bg-[#151515] overflow-hidden">
-          <Image
-            src="/images/hero.png"
-            alt="KAPDOLOGY Streetwear Campaign Lookbook - Signature Oversized Tee"
-            fill
-            priority
-            sizes="(max-width: 768px) 340px, 450px"
-            className="object-cover object-center transition-transform duration-500 hover:scale-105"
-          />
-
-          {/* Top Badge: Campaign & Drop Identifier */}
-          <div className="absolute top-3 left-3 z-10 flex items-center gap-1.5 bg-[#111111] text-white text-[9px] sm:text-[10px] font-black uppercase tracking-widest px-2.5 py-1 border border-white/20">
-            <span className="text-[#FF3B00]">●</span>
-            <span>CAMPAIGN 01</span>
-            <span className="opacity-40">/</span>
-            <span>DROP 001</span>
-          </div>
-
-          {/* Subtle Kapdology Stencil Watermark Tag */}
-          <div className="absolute bottom-3 right-3 z-10 bg-[#111111]/85 backdrop-blur-sm px-2.5 py-1 border border-white/20">
-            <KapdologyLogo variant="minimal" className="w-14 sm:w-18 h-auto invert brightness-200" />
-          </div>
-        </div>
-
-        {/* Editorial Product Footer Bar */}
-        <div className="p-3 sm:p-3.5 border-t-3 border-[#111111] flex justify-between items-center bg-white z-10">
-          <div>
-            <div className="flex items-center gap-2">
-              <span className="text-[9px] font-mono font-bold uppercase tracking-wider text-[#FF3B00]">DROP 001</span>
-              <span className="text-[#111111]/30">•</span>
-              <span className="text-[9px] font-mono font-bold uppercase tracking-wider text-[#111111]/60">240 GSM</span>
-            </div>
-            <h3 className="font-black uppercase text-xs sm:text-sm tracking-wide text-[#111111] mt-0.5">
-              Signature Oversized Tee
-            </h3>
-          </div>
-
-          <div className="flex items-center gap-2.5">
-            <span className="font-black text-base sm:text-lg text-[#FF3B00] tracking-tight">
-              ₹599
-            </span>
-            <Link
-              href="/collections?category=drop-001"
-              className="inline-flex items-center gap-1 text-[11px] font-black uppercase tracking-wider text-[#111111] hover:text-[#FF3B00] transition-colors group"
-            >
-              <span>SHOP</span>
-              <ArrowRight className="h-3 w-3 text-[#FF3B00] transition-transform group-hover:translate-x-0.5" />
-            </Link>
-          </div>
-        </div>
-      </motion.div>
-
-      {/* Floating Graphic Element 1: Angled Streetwear Spec Sticker */}
-      <div className="absolute -top-3 -right-2 sm:-top-3.5 sm:-right-3.5 z-20 bg-white text-[#111111] border-2 border-[#111111] px-2.5 sm:px-3 py-0.5 sm:py-1 font-black text-[9px] sm:text-[10px] tracking-widest uppercase rotate-[6deg] shadow-[2px_2px_0px_#111111]">
-        OVERSIZED BOX CUT
-      </div>
-
-      {/* Floating Graphic Element 2: Round Accent Seal Badge */}
-      <div className={`${isMobile ? 'hidden sm:flex' : 'flex'} absolute -bottom-4 -right-4 sm:-bottom-5 sm:-right-5 z-20 w-18 h-18 sm:w-22 sm:h-22 rounded-full bg-[#111111] text-[#FAF7F2] border-2 sm:border-3 border-[#111111] shadow-[3px_3px_0px_#FF3B00] flex-col items-center justify-center p-2 text-center rotate-[-10deg]`}>
-        <span className="text-[7px] sm:text-[8px] font-mono tracking-widest text-[#FF3B00] font-black uppercase">DROP 001</span>
-        <span className="text-xs sm:text-sm font-black leading-none text-white my-0.5">₹599</span>
-        <span className="text-[6px] sm:text-[7px] font-extrabold uppercase tracking-tight text-white/75">KAPDOLOGY®</span>
-      </div>
-    </motion.div>
-  );
-}
+import HeroCampaignStack from "./HeroCampaignStack";
 
 export default function HeroSection() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -149,7 +52,7 @@ export default function HeroSection() {
 
           {/* MOBILE ONLY: Campaign Lookbook Visual Anchor (Appears immediately after Headline on Mobile) */}
           <div className="block lg:hidden my-2">
-            <LookbookCard isMobile={true} />
+            <HeroCampaignStack isMobile={true} />
           </div>
 
           {/* Editorial Narrative Supporting Copy (Strictly 2 lines on desktop) */}
@@ -205,7 +108,7 @@ export default function HeroSection() {
 
         {/* DESKTOP ONLY: Right Column Commanding Editorial Lookbook Card Stack */}
         <div className="hidden lg:flex lg:col-span-5 relative items-center justify-center pt-2 sm:pt-4 lg:pt-0">
-          <LookbookCard isMobile={false} />
+          <HeroCampaignStack isMobile={false} />
         </div>
 
       </div>

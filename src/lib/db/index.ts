@@ -18,7 +18,13 @@ import { productsData } from "@/data/products";
 import { garmentCategories } from "@/data/categories";
 import { designFamilies } from "@/data/collections";
 
-const DATA_DIR = path.join(process.cwd(), "data", "store");
+import os from "os";
+
+const IS_SERVERLESS = Boolean(process.env.VERCEL || process.env.AWS_LAMBDA_FUNCTION_NAME);
+const BUNDLED_DATA_DIR = path.join(process.cwd(), "data", "store");
+const WRITABLE_DATA_DIR = IS_SERVERLESS
+  ? path.join(os.tmpdir(), "data", "store")
+  : BUNDLED_DATA_DIR;
 
 // In-memory cache for fast sub-millisecond retrieval
 const memoryCache: { [tableName: string]: unknown } = {};
@@ -26,52 +32,69 @@ const memoryCache: { [tableName: string]: unknown } = {};
 /**
  * Ensures the data storage directory exists
  */
-async function ensureDir() {
+async function ensureDir(dir: string = WRITABLE_DATA_DIR) {
   try {
-    await fs.mkdir(DATA_DIR, { recursive: true });
+    await fs.mkdir(dir, { recursive: true });
   } catch {
-    // Already exists
+    // Already exists or read-only
   }
 }
 
 /**
- * Generic atomic JSON file reader with in-memory caching
+ * Generic atomic JSON file reader with in-memory caching and serverless fallback
  */
 export async function readTable<T>(tableName: string, defaultSeed: T[]): Promise<T[]> {
   if (memoryCache[tableName]) {
     return memoryCache[tableName] as T[];
   }
 
-  await ensureDir();
-  const filePath = path.join(DATA_DIR, `${tableName}.json`);
-
+  // 1. Try reading from writable directory (updated runtime state)
   try {
-    const data = await fs.readFile(filePath, "utf-8");
+    const writablePath = path.join(WRITABLE_DATA_DIR, `${tableName}.json`);
+    const data = await fs.readFile(writablePath, "utf-8");
     const parsed = JSON.parse(data) as T[];
     memoryCache[tableName] = parsed;
     return parsed;
   } catch {
-    // If file doesn't exist or is empty, write the initial seed
-    await writeTable<T>(tableName, defaultSeed);
-    memoryCache[tableName] = defaultSeed;
-    return defaultSeed;
+    // Not found in writable dir
   }
+
+  // 2. Try reading from bundled project directory (git deployed data)
+  try {
+    const bundledPath = path.join(BUNDLED_DATA_DIR, `${tableName}.json`);
+    const data = await fs.readFile(bundledPath, "utf-8");
+    const parsed = JSON.parse(data) as T[];
+    memoryCache[tableName] = parsed;
+    return parsed;
+  } catch {
+    // Not found in bundled dir, fall back to defaultSeed
+  }
+
+  // 3. Fall back to initial seed and store in memory
+  memoryCache[tableName] = defaultSeed;
+  writeTable<T>(tableName, defaultSeed).catch(() => {});
+  return defaultSeed;
 }
 
 /**
  * Generic atomic JSON file writer with write-to-temp-then-rename safety
  */
 export async function writeTable<T>(tableName: string, data: T[]): Promise<void> {
-  await ensureDir();
-  const filePath = path.join(DATA_DIR, `${tableName}.json`);
-  const tempPath = path.join(DATA_DIR, `${tableName}.${Date.now()}.tmp`);
-
-  const serialized = JSON.stringify(data, null, 2);
-  await fs.writeFile(tempPath, serialized, "utf-8");
-  await fs.rename(tempPath, filePath);
-
-  // Update in-memory cache immediately
+  // Update in-memory cache immediately so requests remain fast and consistent
   memoryCache[tableName] = data;
+
+  try {
+    await ensureDir(WRITABLE_DATA_DIR);
+    const filePath = path.join(WRITABLE_DATA_DIR, `${tableName}.json`);
+    const tempPath = path.join(WRITABLE_DATA_DIR, `${tableName}.${Date.now()}.tmp`);
+
+    const serialized = JSON.stringify(data, null, 2);
+    await fs.writeFile(tempPath, serialized, "utf-8");
+    await fs.rename(tempPath, filePath);
+  } catch (error) {
+    // In serverless, if disk writes are restricted, in-memory cache keeps serving the latest state
+    console.warn(`[DB] Note: Could not write table ${tableName} to disk:`, (error as Error).message);
+  }
 }
 
 /**
@@ -82,30 +105,45 @@ export async function readSettings(defaultSettings: StoreSettings): Promise<Stor
     return memoryCache["settings"] as StoreSettings;
   }
 
-  await ensureDir();
-  const filePath = path.join(DATA_DIR, "settings.json");
-
   try {
-    const data = await fs.readFile(filePath, "utf-8");
+    const writablePath = path.join(WRITABLE_DATA_DIR, "settings.json");
+    const data = await fs.readFile(writablePath, "utf-8");
     const parsed = JSON.parse(data) as StoreSettings;
     memoryCache["settings"] = parsed;
     return parsed;
   } catch {
-    await writeSettings(defaultSettings);
-    return defaultSettings;
+    // Try bundled
   }
+
+  try {
+    const bundledPath = path.join(BUNDLED_DATA_DIR, "settings.json");
+    const data = await fs.readFile(bundledPath, "utf-8");
+    const parsed = JSON.parse(data) as StoreSettings;
+    memoryCache["settings"] = parsed;
+    return parsed;
+  } catch {
+    // Default
+  }
+
+  memoryCache["settings"] = defaultSettings;
+  writeSettings(defaultSettings).catch(() => {});
+  return defaultSettings;
 }
 
 export async function writeSettings(settings: StoreSettings): Promise<void> {
-  await ensureDir();
-  const filePath = path.join(DATA_DIR, "settings.json");
-  const tempPath = path.join(DATA_DIR, `settings.${Date.now()}.tmp`);
-
-  const serialized = JSON.stringify(settings, null, 2);
-  await fs.writeFile(tempPath, serialized, "utf-8");
-  await fs.rename(tempPath, filePath);
-
   memoryCache["settings"] = settings;
+
+  try {
+    await ensureDir(WRITABLE_DATA_DIR);
+    const filePath = path.join(WRITABLE_DATA_DIR, "settings.json");
+    const tempPath = path.join(WRITABLE_DATA_DIR, `settings.${Date.now()}.tmp`);
+
+    const serialized = JSON.stringify(settings, null, 2);
+    await fs.writeFile(tempPath, serialized, "utf-8");
+    await fs.rename(tempPath, filePath);
+  } catch (error) {
+    console.warn("[DB] Note: Could not write settings to disk:", (error as Error).message);
+  }
 }
 
 /**

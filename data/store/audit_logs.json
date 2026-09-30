@@ -1,5 +1,225 @@
 [
   {
+    "id": "audit-1790062320315-95",
+    "admin": "admin@kapdology.store",
+    "action": "PRODUCT_UPDATED",
+    "targetType": "PRODUCT",
+    "targetId": "kpd-06",
+    "targetName": "Subculture Puff Graphic Tee",
+    "details": "Updated product fields: status",
+    "timestamp": "2026-09-22T07:32:00.315Z"
+  },
+  {
+    "id": "audit-1790062312651-93",
+    "admin": "admin@kapdology.store",
+    "action": "PRODUCT_UPDATED",
+    "targetType": "PRODUCT",
+    "targetId": "kpd-04",
+    "targetName": "Retro-Future Graphic Boxy Tee",
+    "details": "Updated product fields: status",
+    "timestamp": "2026-09-22T07:31:52.651Z"
+  },
+  {
+    "id": "audit-1790062306339-197",
+    "admin": "admin@kapdology.store",
+    "action": "PRODUCT_UPDATED",
+    "targetType": "PRODUCT",
+    "targetId": "kpd-09",
+    "targetName": "Modular Street Cargo Pants",
+    "details": "Updated product fields: status",
+    "timestamp": "2026-09-22T07:31:46.339Z"
+  },
+  {
+    "id": "audit-1790062303410-88",
+    "admin": "admin@kapdology.store",
+    "action": "PRODUCT_UPDATED",
+    "targetType": "PRODUCT",
+    "targetId": "kpd-08",
+    "targetName": "Urban Utility Cropped Shirt",
+    "details": "Updated product fields: status",
+    "timestamp": "2026-09-22T07:31:43.410Z"
+  },
+  {
+    "id": "audit-1790062299987-610",
+    "admin": "admin@kapdology.store",
+    "action": "PRODUCT_UPDATED",
+    "targetType": "PRODUCT",
+    "targetId": "kpd-10",
+    "targetName": "Raw French Terry Boxy Hoodie",
+    "details": "Updated product fields: status",
+    "timestamp": "2026-09-22T07:31:39.987Z"
+  },
+  {
+    "id": "audit-1790062290525-642",
+    "admin": "admin@kapdology.store",
+    "action": "PRODUCT_UPDATED",
+    "targetType": "PRODUCT",
+    "targetId": "kpd-02",
+    "targetName": "Vintage Distressed Acid Wash Tee",
+    "details": "Updated product fields: name, slug, shortDescription, fullDescription, price, compareAtPrice, status, badge, isNew, isPopular, featured, categoryId, categorySlug, categoryName, designFamilyId, designFamilyName, collectionId, collectionName, drop, tags, fabric, gsm, fit, printMethod, care, details, gender, image, images, availableSizes, variants, reservationEnabled, reservationLimitPerCustomer, reservationCtaText, preorderEnabled, preorderCtaText, showPreorderCapacity",
+    "timestamp": "2026-09-22T07:31:30.525Z"
+  },
+  {
+    "id": "audit-1790062284896-253",
+    "admin": "admin@kapdology.store",
+    "action": "MEDIA_UPLOADED",
+    "targetType": "MEDIA",
+    "targetId": "med-1790062284893",
+    "targetName": "kpd-1790062284887-industrial-kapdology-streetwea.png",
+    "details": "Uploaded asset kpd-1790062284887-industrial-kapdology-streetwea.png (/uploads/kpd-1790062284887-industrial-kapdology-streetwea.png)",
+    "timestamp": "2026-09-22T07:31:24.896Z"
+  },
+  {
+    "id": "audit-1790062230743-565",
+    "admin": "admin@kapdology.store",
+    "action": "PRODUCT_UPDATED",
+    "targetType": "PRODUCT",
+    "targetId": "kpd-01",
+    "targetName": "Signature Oversized Box Tee",
+    "details": "Updated product fields: name, slug, shortDescription, fullDescription, price, compareAtPrice, status, badge, isNew, isPopular, featured, categoryId, categorySlug, categoryName, designFamilyId, designFamilyName, collectionId, collectionName, drop, tags, fabric, gsm, fit, printMethod, care, details, gender, image, images, availableSizes, variants, reservationEnabled, reservationLimitPerCustomer, reservationCtaText, preorderEnabled, preorderCtaText, showPreorderCapacity",
+    "timestamp": "2026-09-22T07:30:30.743Z"
+  },
+  {
+    "id": "audit-1790062223058-658",
+    "admin": "admin@kapdology.store",
+    "action": "MEDIA_UPLOADED",
+    "targetType": "MEDIA",
+    "targetId": "med-1790062223055",
+    "targetName": "kpd-1790062223052-grunge-warrior-ink-graphic-t-s.png",
+    "details": "Uploaded asset kpd-1790062223052-grunge-warrior-ink-graphic-t-s.png (/uploads/kpd-1790062223052-grunge-warrior-ink-graphic-t-s.png)",
+    "timestamp": "2026-09-22T07:30:23.059Z"
+  },
+  {
+    "id": "audit-1790062199403-955",
+    "admin": "admin@kapdology.store",
+    "action": "PRODUCT_UPDATED",
+    "targetType": "PRODUCT",
+    "targetId": "kpd-866810",
+    "targetName": "Acid Grid Oversized Heavy Tee [UPDATED]",
+    "details": "Updated product fields: name, slug, shortDescription, fullDescription, price, compareAtPrice, status, badge, isNew, isPopular, featured, categoryId, categorySlug, categoryName, designFamilyId, designFamilyName, collectionId, collectionName, drop, tags, fabric, gsm, fit, printMethod, care, details, gender, image, images, availableSizes, variants, reservationEnabled, reservationLimitPerCustomer, reservationCtaText, preorderEnabled, preorderCtaText, showPreorderCapacity",
+    "timestamp": "2026-09-22T07:29:59.403Z"
+  },
+  {
+    "id": "audit-1790062183371-332",
+    "admin": "admin@kapdology.store",
+    "action": "MEDIA_UPLOADED",
+    "targetType": "MEDIA",
+    "targetId": "med-1790062183368",
+    "targetName": "kpd-1790062183363-demonic-splatter-streetwear-te.png",
+    "details": "Uploaded asset kpd-1790062183363-demonic-splatter-streetwear-te.png (/uploads/kpd-1790062183363-demonic-splatter-streetwear-te.png)",
+    "timestamp": "2026-09-22T07:29:43.371Z"
+  },
+  {
+    "id": "audit-1790062160561-255",
+    "admin": "admin@kapdology.store",
+    "action": "PRODUCT_DELETED",
+    "targetType": "PRODUCT",
+    "targetId": "kpd-964163",
+    "targetName": "AstaAkuma",
+    "details": "Permanently deleted product AstaAkuma",
+    "timestamp": "2026-09-22T07:29:20.561Z"
+  },
+  {
+    "id": "audit-1790059980291-316",
+    "admin": "admin@kapdology.store",
+    "action": "PRODUCT_UPDATED",
+    "targetType": "PRODUCT",
+    "targetId": "kpd-964163",
+    "targetName": "AstaAkuma",
+    "details": "Updated product fields: status",
+    "timestamp": "2026-09-22T06:53:00.291Z"
+  },
+  {
+    "id": "audit-1790058109016-711",
+    "admin": "admin@kapdology.store",
+    "action": "RESERVATION_STATUS_CHANGED",
+    "targetType": "RESERVATION",
+    "targetId": "res-1790058091716-7302",
+    "targetName": "#RES-7302",
+    "details": "Changed status from PENDING to CONFIRMED",
+    "timestamp": "2026-09-22T06:21:49.016Z"
+  },
+  {
+    "id": "audit-1790058091732-316",
+    "admin": "Customer / Storefront",
+    "action": "RESERVATION_CREATED",
+    "targetType": "RESERVATION",
+    "targetId": "res-1790058091716-7302",
+    "targetName": "#RES-7302 - AstaAkuma",
+    "details": "mj reserved size S (1 unit)",
+    "timestamp": "2026-09-22T06:21:31.732Z"
+  },
+  {
+    "id": "audit-1790058091728-635",
+    "admin": "System Admin",
+    "action": "PRODUCT_UPDATED",
+    "targetType": "PRODUCT",
+    "targetId": "kpd-965366",
+    "targetName": "AstaAkuma",
+    "details": "Updated product fields: variants",
+    "timestamp": "2026-09-22T06:21:31.728Z"
+  },
+  {
+    "id": "audit-1790057965370-196",
+    "admin": "admin@kapdology.store",
+    "action": "PRODUCT_CREATED",
+    "targetType": "PRODUCT",
+    "targetId": "kpd-965366",
+    "targetName": "AstaAkuma",
+    "details": "Created new product AstaAkuma at ₹999",
+    "timestamp": "2026-09-22T06:19:25.371Z"
+  },
+  {
+    "id": "audit-1790057964166-611",
+    "admin": "admin@kapdology.store",
+    "action": "PRODUCT_CREATED",
+    "targetType": "PRODUCT",
+    "targetId": "kpd-964163",
+    "targetName": "AstaAkuma",
+    "details": "Created new product AstaAkuma at ₹999",
+    "timestamp": "2026-09-22T06:19:24.166Z"
+  },
+  {
+    "id": "audit-1790057785047-454",
+    "admin": "admin@kapdology.store",
+    "action": "MEDIA_UPLOADED",
+    "targetType": "MEDIA",
+    "targetId": "med-1790057785045",
+    "targetName": "kpd-1790057785042-wee.png",
+    "details": "Uploaded asset kpd-1790057785042-wee.png (/uploads/kpd-1790057785042-wee.png)",
+    "timestamp": "2026-09-22T06:16:25.047Z"
+  },
+  {
+    "id": "audit-1790057774216-161",
+    "admin": "admin@kapdology.store",
+    "action": "MEDIA_UPLOADED",
+    "targetType": "MEDIA",
+    "targetId": "med-1790057774214",
+    "targetName": "kpd-1790057774212-we.png",
+    "details": "Uploaded asset kpd-1790057774212-we.png (/uploads/kpd-1790057774212-we.png)",
+    "timestamp": "2026-09-22T06:16:14.216Z"
+  },
+  {
+    "id": "audit-1790057610770-680",
+    "admin": "admin@kapdology.store",
+    "action": "MEDIA_UPLOADED",
+    "targetType": "MEDIA",
+    "targetId": "med-1790057610767",
+    "targetName": "kpd-1790057610763-chatgpt-image-sep-21--2026--08.png",
+    "details": "Uploaded asset kpd-1790057610763-chatgpt-image-sep-21--2026--08.png (/uploads/kpd-1790057610763-chatgpt-image-sep-21--2026--08.png)",
+    "timestamp": "2026-09-22T06:13:30.770Z"
+  },
+  {
+    "id": "audit-1790057602151-614",
+    "admin": "admin@kapdology.store",
+    "action": "MEDIA_UPLOADED",
+    "targetType": "MEDIA",
+    "targetId": "med-1790057602146",
+    "targetName": "kpd-1790057602140-chatgpt-image-sep-21--2026--08.png",
+    "details": "Uploaded asset kpd-1790057602140-chatgpt-image-sep-21--2026--08.png (/uploads/kpd-1790057602140-chatgpt-image-sep-21--2026--08.png)",
+    "timestamp": "2026-09-22T06:13:22.151Z"
+  },
+  {
     "id": "audit-1790010878436-947",
     "admin": "admin@kapdology.store",
     "action": "MEDIA_UPLOADED",

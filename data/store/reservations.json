@@ -1,5 +1,22 @@
 [
   {
+    "id": "res-1790058091716-7302",
+    "reservationNumber": "#RES-7302",
+    "productId": "kpd-965366",
+    "productName": "AstaAkuma",
+    "variantId": "var-1",
+    "size": "S",
+    "color": "Standard Black",
+    "quantity": 1,
+    "customerName": "mj",
+    "customerEmail": "mj@mj.om",
+    "customerPhone": "9988840905",
+    "status": "CONFIRMED",
+    "notes": "gift",
+    "createdAt": "2026-09-22T06:21:31.730Z",
+    "updatedAt": "2026-09-22T06:21:49.013Z"
+  },
+  {
     "id": "res-1790007852806-1402",
     "reservationNumber": "#RES-1402",
     "productId": "kpd-01",
