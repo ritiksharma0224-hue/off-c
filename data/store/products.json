@@ -1,5 +1,705 @@
 [
   {
+    "id": "kpd-798101",
+    "name": "Raw Edge Baggy Denim Trousers",
+    "slug": "raw-edge-baggy-denim-trousers",
+    "shortDescription": "14.5 oz heavyweight raw rigid denim washed down to a distressed vintage charcoal black.",
+    "fullDescription": "Constructed from custom 14.5 oz ringspun cotton denim, these wide-leg baggy trousers feature an authentic mineral wash patina, whiskering, custom black oxide hardware, and a sweeping slouchy stack at the hem engineered specifically for chunky sneakers and boots.",
+    "price": 2699,
+    "compareAtPrice": 3799,
+    "discountPercentage": 29,
+    "categoryId": "bottoms",
+    "categoryName": "BOTTOMS",
+    "categorySlug": "bottoms",
+    "designFamilyId": "chaos",
+    "designFamilyName": "CHAOS",
+    "collectionId": "drop-001",
+    "collectionName": "DROP 001",
+    "drop": "DROP 001",
+    "tags": [
+      "denim",
+      "baggy",
+      "bottoms",
+      "jeans",
+      "raw-edge",
+      "vintage-wash",
+      "streetwear"
+    ],
+    "fabric": "100% Heavyweight Cotton Denim (14.5 oz)",
+    "gsm": "420 GSM Denim",
+    "fit": "Relaxed Wide-Leg Baggy Fit",
+    "printMethod": "Mineral Acid Fade & Subtle Whiskering",
+    "care": "Machine wash cold inside out. Reshape damp and line dry in shade.",
+    "details": [
+      "14.5 oz Premium 100% Cotton Heavyweight Denim",
+      "Vintage Charcoal Mineral Stonewash Patina",
+      "Extra Wide-Leg Slouchy Silhouette Engineered for Heavy Footwear",
+      "Custom Embossed Kapdology Matte Black Shank Hardware",
+      "Reinforced Bar-Tack Stitches on All Stress Points"
+    ],
+    "gender": "UNISEX",
+    "image": "/images/baggy-denim.jpg",
+    "images": [
+      "/images/baggy-denim.jpg",
+      "/images/double-knee-carpenter.jpg"
+    ],
+    "imageSlots": [
+      {
+        "id": "img-kpd-798101-1",
+        "url": "/images/baggy-denim.jpg",
+        "alt": "Raw Edge Baggy Denim Trousers - View 1",
+        "slot": "PRIMARY",
+        "isPrimary": true,
+        "isHover": false,
+        "position": 1
+      },
+      {
+        "id": "img-kpd-798101-2",
+        "url": "/images/double-knee-carpenter.jpg",
+        "alt": "Raw Edge Baggy Denim Trousers - View 2",
+        "slot": "SECONDARY",
+        "isPrimary": false,
+        "isHover": true,
+        "position": 2
+      }
+    ],
+    "availableSizes": [
+      "28",
+      "30",
+      "32",
+      "34",
+      "36"
+    ],
+    "colors": [
+      "Vintage Charcoal Wash"
+    ],
+    "variants": [
+      {
+        "id": "var-kpd-798101-28",
+        "productId": "kpd-798101",
+        "size": "28",
+        "color": "Vintage Charcoal Wash",
+        "sku": "KPD-798101-28",
+        "physicalStock": 12,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 12
+      },
+      {
+        "id": "var-kpd-798101-30",
+        "productId": "kpd-798101",
+        "size": "30",
+        "color": "Vintage Charcoal Wash",
+        "sku": "KPD-798101-30",
+        "physicalStock": 12,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 12
+      },
+      {
+        "id": "var-kpd-798101-32",
+        "productId": "kpd-798101",
+        "size": "32",
+        "color": "Vintage Charcoal Wash",
+        "sku": "KPD-798101-32",
+        "physicalStock": 12,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 12
+      },
+      {
+        "id": "var-kpd-798101-34",
+        "productId": "kpd-798101",
+        "size": "34",
+        "color": "Vintage Charcoal Wash",
+        "sku": "KPD-798101-34",
+        "physicalStock": 12,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 12
+      },
+      {
+        "id": "var-kpd-798101-36",
+        "productId": "kpd-798101",
+        "size": "36",
+        "color": "Vintage Charcoal Wash",
+        "sku": "KPD-798101-36",
+        "physicalStock": 12,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 12
+      }
+    ],
+    "totalPhysicalStock": 60,
+    "totalReservedStock": 0,
+    "totalPreorderedStock": 0,
+    "totalAvailableStock": 60,
+    "lowStockThreshold": 5,
+    "status": "ACTIVE",
+    "badge": "LIMITED EDITION",
+    "isNew": true,
+    "isPopular": true,
+    "featured": true,
+    "reservationEnabled": true,
+    "reservationLimitPerCustomer": 2,
+    "reservationAllowedSizes": [
+      "28",
+      "30",
+      "32",
+      "34",
+      "36"
+    ],
+    "reservationAllowedColors": [
+      "Vintage Charcoal Wash"
+    ],
+    "reservationCtaText": "RESERVE YOUR SIZE",
+    "preorderEnabled": true,
+    "preorderAllowedSizes": [
+      "28",
+      "30",
+      "32",
+      "34",
+      "36"
+    ],
+    "preorderAllowedColors": [
+      "Vintage Charcoal Wash"
+    ],
+    "preorderCtaText": "PREORDER NOW →",
+    "showPreorderCapacity": false,
+    "createdAt": "2026-09-30T20:06:36.116Z",
+    "updatedAt": "2026-09-30T20:06:36.116Z"
+  },
+  {
+    "id": "kpd-798102",
+    "name": "Double-Knee Heavy Carpenter Pants",
+    "slug": "double-knee-heavy-carpenter-pants",
+    "shortDescription": "Constructed from heavy 12 oz duck canvas with reinforced double-layer knee panels.",
+    "fullDescription": "Taking cues from classic workwear and modified for street proportions. Heavy 380 GSM duck canvas with reinforced dual-layer knee patches, antique brass hardware, side hammer loop, and multiple utility knife and phone slots.",
+    "price": 2599,
+    "compareAtPrice": 3599,
+    "discountPercentage": 28,
+    "categoryId": "bottoms",
+    "categoryName": "BOTTOMS",
+    "categorySlug": "bottoms",
+    "designFamilyId": "technical",
+    "designFamilyName": "TECHNICAL",
+    "collectionId": "drop-001",
+    "collectionName": "DROP 001",
+    "drop": "DROP 001",
+    "tags": [
+      "carpenter",
+      "double-knee",
+      "canvas",
+      "workwear",
+      "bottoms",
+      "pants",
+      "streetwear"
+    ],
+    "fabric": "100% Heavy Duck Canvas Cotton",
+    "gsm": "380 GSM Canvas",
+    "fit": "Straight-Leg Relaxed Workwear Fit",
+    "printMethod": "Enzyme Garment Wash & Antiqued Hardware",
+    "care": "Machine wash cold inside out. Tumble dry low or line dry in shade.",
+    "details": [
+      "12 oz / 380 GSM Heavy Cotton Duck Canvas",
+      "Dual Reinforced Knee Panels with Hexagonal Rivets",
+      "Authentic Side Utility Hammer Loop & Tool Pockets",
+      "Triple-Needle Felled Inseams for Indestructible Build",
+      "Deep Slanted Hand Pockets & Heavy YKK Metal Zipper Fly"
+    ],
+    "gender": "UNISEX",
+    "image": "/images/double-knee-carpenter.jpg",
+    "images": [
+      "/images/double-knee-carpenter.jpg",
+      "/images/baggy-denim.jpg"
+    ],
+    "imageSlots": [
+      {
+        "id": "img-kpd-798102-1",
+        "url": "/images/double-knee-carpenter.jpg",
+        "alt": "Double-Knee Heavy Carpenter Pants - View 1",
+        "slot": "PRIMARY",
+        "isPrimary": true,
+        "isHover": false,
+        "position": 1
+      },
+      {
+        "id": "img-kpd-798102-2",
+        "url": "/images/baggy-denim.jpg",
+        "alt": "Double-Knee Heavy Carpenter Pants - View 2",
+        "slot": "SECONDARY",
+        "isPrimary": false,
+        "isHover": true,
+        "position": 2
+      }
+    ],
+    "availableSizes": [
+      "28",
+      "30",
+      "32",
+      "34",
+      "36"
+    ],
+    "colors": [
+      "Faded Black Canvas"
+    ],
+    "variants": [
+      {
+        "id": "var-kpd-798102-28",
+        "productId": "kpd-798102",
+        "size": "28",
+        "color": "Faded Black Canvas",
+        "sku": "KPD-798102-28",
+        "physicalStock": 10,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 10
+      },
+      {
+        "id": "var-kpd-798102-30",
+        "productId": "kpd-798102",
+        "size": "30",
+        "color": "Faded Black Canvas",
+        "sku": "KPD-798102-30",
+        "physicalStock": 10,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 10
+      },
+      {
+        "id": "var-kpd-798102-32",
+        "productId": "kpd-798102",
+        "size": "32",
+        "color": "Faded Black Canvas",
+        "sku": "KPD-798102-32",
+        "physicalStock": 10,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 10
+      },
+      {
+        "id": "var-kpd-798102-34",
+        "productId": "kpd-798102",
+        "size": "34",
+        "color": "Faded Black Canvas",
+        "sku": "KPD-798102-34",
+        "physicalStock": 10,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 10
+      },
+      {
+        "id": "var-kpd-798102-36",
+        "productId": "kpd-798102",
+        "size": "36",
+        "color": "Faded Black Canvas",
+        "sku": "KPD-798102-36",
+        "physicalStock": 10,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 10
+      }
+    ],
+    "totalPhysicalStock": 50,
+    "totalReservedStock": 0,
+    "totalPreorderedStock": 0,
+    "totalAvailableStock": 50,
+    "lowStockThreshold": 5,
+    "status": "ACTIVE",
+    "badge": "HEAVY DUTY",
+    "isNew": true,
+    "isPopular": true,
+    "featured": true,
+    "reservationEnabled": true,
+    "reservationLimitPerCustomer": 2,
+    "reservationAllowedSizes": [
+      "28",
+      "30",
+      "32",
+      "34",
+      "36"
+    ],
+    "reservationAllowedColors": [
+      "Faded Black Canvas"
+    ],
+    "reservationCtaText": "RESERVE YOUR SIZE",
+    "preorderEnabled": true,
+    "preorderAllowedSizes": [
+      "28",
+      "30",
+      "32",
+      "34",
+      "36"
+    ],
+    "preorderAllowedColors": [
+      "Faded Black Canvas"
+    ],
+    "preorderCtaText": "PREORDER NOW →",
+    "showPreorderCapacity": false,
+    "createdAt": "2026-09-30T20:06:36.116Z",
+    "updatedAt": "2026-09-30T20:06:36.116Z"
+  },
+  {
+    "id": "kpd-798103",
+    "name": "Modular Bungee Parachute Trackpants",
+    "slug": "modular-bungee-parachute-trackpants",
+    "shortDescription": "Ultra-light matte crinkle nylon trackpants with knee darts and hem bungees.",
+    "fullDescription": "A darkwear essential. Engineered in lightweight, water-resistant crinkled Taslan nylon with dual 3D zip cargo pockets, articulated knee pleats, and shock cord bungees at the leg openings to transition instantly between a stacked wide balloon and a high-top cuff.",
+    "price": 2399,
+    "compareAtPrice": 3299,
+    "discountPercentage": 27,
+    "categoryId": "bottoms",
+    "categoryName": "BOTTOMS",
+    "categorySlug": "bottoms",
+    "designFamilyId": "technical",
+    "designFamilyName": "TECHNICAL",
+    "collectionId": "drop-001",
+    "collectionName": "DROP 001",
+    "drop": "DROP 001",
+    "tags": [
+      "trackpants",
+      "parachute",
+      "bungee",
+      "technical",
+      "nylon",
+      "bottoms",
+      "darkwear"
+    ],
+    "fabric": "100% Matte Crinkled Taslan Nylon",
+    "gsm": "210 GSM Technical Taslan",
+    "fit": "Voluminous Parachute Silhouette with Bungee Cinch",
+    "printMethod": "Silicone High-Density Technical Badge",
+    "care": "Machine wash cold gentle cycle. Do not iron. Air dry only.",
+    "details": [
+      "210 GSM Water-Repellent Matte Crinkle Taslan Nylon",
+      "Dual 3D Slanted Cargo Compartments with Aquaguard Zips",
+      "Concealed Elastic Ankle Cinch Bungees with Metal Toggles",
+      "Articulated Double-Darted Knee Construction",
+      "Elasticated Waistband with High-Tensile Drawcord"
+    ],
+    "gender": "UNISEX",
+    "image": "/images/modular-trackpants.jpg",
+    "images": [
+      "/images/modular-trackpants.jpg",
+      "/images/cargos.jpg"
+    ],
+    "imageSlots": [
+      {
+        "id": "img-kpd-798103-1",
+        "url": "/images/modular-trackpants.jpg",
+        "alt": "Modular Bungee Parachute Trackpants - View 1",
+        "slot": "PRIMARY",
+        "isPrimary": true,
+        "isHover": false,
+        "position": 1
+      },
+      {
+        "id": "img-kpd-798103-2",
+        "url": "/images/cargos.jpg",
+        "alt": "Modular Bungee Parachute Trackpants - View 2",
+        "slot": "SECONDARY",
+        "isPrimary": false,
+        "isHover": true,
+        "position": 2
+      }
+    ],
+    "availableSizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Matte Jet Black"
+    ],
+    "variants": [
+      {
+        "id": "var-kpd-798103-s",
+        "productId": "kpd-798103",
+        "size": "S",
+        "color": "Matte Jet Black",
+        "sku": "KPD-798103-S",
+        "physicalStock": 14,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 14
+      },
+      {
+        "id": "var-kpd-798103-m",
+        "productId": "kpd-798103",
+        "size": "M",
+        "color": "Matte Jet Black",
+        "sku": "KPD-798103-M",
+        "physicalStock": 14,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 14
+      },
+      {
+        "id": "var-kpd-798103-l",
+        "productId": "kpd-798103",
+        "size": "L",
+        "color": "Matte Jet Black",
+        "sku": "KPD-798103-L",
+        "physicalStock": 14,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 14
+      },
+      {
+        "id": "var-kpd-798103-xl",
+        "productId": "kpd-798103",
+        "size": "XL",
+        "color": "Matte Jet Black",
+        "sku": "KPD-798103-XL",
+        "physicalStock": 14,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 14
+      },
+      {
+        "id": "var-kpd-798103-xxl",
+        "productId": "kpd-798103",
+        "size": "XXL",
+        "color": "Matte Jet Black",
+        "sku": "KPD-798103-XXL",
+        "physicalStock": 14,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 14
+      }
+    ],
+    "totalPhysicalStock": 70,
+    "totalReservedStock": 0,
+    "totalPreorderedStock": 0,
+    "totalAvailableStock": 70,
+    "lowStockThreshold": 5,
+    "status": "ACTIVE",
+    "badge": "NEW DROP",
+    "isNew": true,
+    "isPopular": true,
+    "featured": true,
+    "reservationEnabled": true,
+    "reservationLimitPerCustomer": 2,
+    "reservationAllowedSizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "reservationAllowedColors": [
+      "Matte Jet Black"
+    ],
+    "reservationCtaText": "RESERVE YOUR SIZE",
+    "preorderEnabled": true,
+    "preorderAllowedSizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "preorderAllowedColors": [
+      "Matte Jet Black"
+    ],
+    "preorderCtaText": "PREORDER NOW →",
+    "showPreorderCapacity": false,
+    "createdAt": "2026-09-30T20:06:36.116Z",
+    "updatedAt": "2026-09-30T20:06:36.116Z"
+  },
+  {
+    "id": "kpd-798104",
+    "name": "Heavy Terry Relaxed Street Sweatpants",
+    "slug": "heavy-terry-relaxed-street-sweatpants",
+    "shortDescription": "Ultra-heavyweight 450 GSM loopback cotton fleece sweatpants with ribbed cuffs.",
+    "fullDescription": "The ultimate lounge-to-street bottom. Cut from dense 450 GSM French terry fleece in custom-faded asphalt mineral grey, featuring raw flat drawstrings, deep slash pockets with concealed zip liners, a rear studio patch pocket, and sculpted balloon legs.",
+    "price": 2199,
+    "compareAtPrice": 2999,
+    "discountPercentage": 27,
+    "categoryId": "bottoms",
+    "categoryName": "BOTTOMS",
+    "categorySlug": "bottoms",
+    "designFamilyId": "minimal",
+    "designFamilyName": "MINIMAL",
+    "collectionId": "drop-001",
+    "collectionName": "DROP 001",
+    "drop": "DROP 001",
+    "tags": [
+      "sweatpants",
+      "terry",
+      "fleece",
+      "heavyweight",
+      "bottoms",
+      "joggers",
+      "streetwear"
+    ],
+    "fabric": "100% Combed Loopback French Terry Cotton",
+    "gsm": "450 GSM Fleece",
+    "fit": "Sculpted Balloon Fit with Heavy Ribbed Cuffs",
+    "printMethod": "Tone-on-Tone Studio Micro Embroidery",
+    "care": "Machine wash cold inside out. Flat dry to preserve silhouette.",
+    "details": [
+      "450 GSM Ultra-Heavyweight French Terry Cotton",
+      "Hand-Finished Sun-Faded Mineral Wash",
+      "High-Density 2x2 Rib Waistband & Deep Ankle Cuffs",
+      "Dual Concealed Zip Hand Pockets + Exterior Patch Pocket",
+      "Custom Woven Extended Flat Cotton Drawstrings"
+    ],
+    "gender": "UNISEX",
+    "image": "/images/terry-sweatpants.jpg",
+    "images": [
+      "/images/terry-sweatpants.jpg",
+      "/images/baggy-denim.jpg"
+    ],
+    "imageSlots": [
+      {
+        "id": "img-kpd-798104-1",
+        "url": "/images/terry-sweatpants.jpg",
+        "alt": "Heavy Terry Relaxed Street Sweatpants - View 1",
+        "slot": "PRIMARY",
+        "isPrimary": true,
+        "isHover": false,
+        "position": 1
+      },
+      {
+        "id": "img-kpd-798104-2",
+        "url": "/images/baggy-denim.jpg",
+        "alt": "Heavy Terry Relaxed Street Sweatpants - View 2",
+        "slot": "SECONDARY",
+        "isPrimary": false,
+        "isHover": true,
+        "position": 2
+      }
+    ],
+    "availableSizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Asphalt Mineral Grey"
+    ],
+    "variants": [
+      {
+        "id": "var-kpd-798104-s",
+        "productId": "kpd-798104",
+        "size": "S",
+        "color": "Asphalt Mineral Grey",
+        "sku": "KPD-798104-S",
+        "physicalStock": 15,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 15
+      },
+      {
+        "id": "var-kpd-798104-m",
+        "productId": "kpd-798104",
+        "size": "M",
+        "color": "Asphalt Mineral Grey",
+        "sku": "KPD-798104-M",
+        "physicalStock": 15,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 15
+      },
+      {
+        "id": "var-kpd-798104-l",
+        "productId": "kpd-798104",
+        "size": "L",
+        "color": "Asphalt Mineral Grey",
+        "sku": "KPD-798104-L",
+        "physicalStock": 15,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 15
+      },
+      {
+        "id": "var-kpd-798104-xl",
+        "productId": "kpd-798104",
+        "size": "XL",
+        "color": "Asphalt Mineral Grey",
+        "sku": "KPD-798104-XL",
+        "physicalStock": 15,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 15
+      },
+      {
+        "id": "var-kpd-798104-xxl",
+        "productId": "kpd-798104",
+        "size": "XXL",
+        "color": "Asphalt Mineral Grey",
+        "sku": "KPD-798104-XXL",
+        "physicalStock": 15,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 15
+      }
+    ],
+    "totalPhysicalStock": 75,
+    "totalReservedStock": 0,
+    "totalPreorderedStock": 0,
+    "totalAvailableStock": 75,
+    "lowStockThreshold": 5,
+    "status": "ACTIVE",
+    "badge": "ESSENTIALS",
+    "isNew": true,
+    "isPopular": true,
+    "featured": true,
+    "reservationEnabled": true,
+    "reservationLimitPerCustomer": 2,
+    "reservationAllowedSizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "reservationAllowedColors": [
+      "Asphalt Mineral Grey"
+    ],
+    "reservationCtaText": "RESERVE YOUR SIZE",
+    "preorderEnabled": true,
+    "preorderAllowedSizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "preorderAllowedColors": [
+      "Asphalt Mineral Grey"
+    ],
+    "preorderCtaText": "PREORDER NOW →",
+    "showPreorderCapacity": false,
+    "createdAt": "2026-09-30T20:06:36.116Z",
+    "updatedAt": "2026-09-30T20:06:36.116Z"
+  },
+  {
     "id": "kpd-695818",
     "name": "Heavy French Terry Obsidian Boxy Hoodie",
     "slug": "heavy-french-terry-obsidian-boxy-hoodie",
