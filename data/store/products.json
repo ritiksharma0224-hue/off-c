@@ -1,5 +1,1309 @@
 [
   {
+    "id": "kpd-695818",
+    "name": "Heavy French Terry Obsidian Boxy Hoodie",
+    "slug": "heavy-french-terry-obsidian-boxy-hoodie",
+    "shortDescription": "Ultra-heavyweight 450 GSM French terry fleece hoodie with a double-layered structured hood.",
+    "fullDescription": "Engineered without drawstring distractions, this minimalist heavyweight hoodie features a sculpted double-lined hood that stands erect, seamless hidden kangaroo pocket access, and deep ribbing on the waist and cuffs.",
+    "price": 2999,
+    "compareAtPrice": 4199,
+    "discountPercentage": 29,
+    "categoryId": "hoodies",
+    "categoryName": "HOODIES / SWEATSHIRTS",
+    "categorySlug": "hoodies",
+    "designFamilyId": "minimal",
+    "designFamilyName": "MINIMAL",
+    "collectionId": "drop-001",
+    "collectionName": "DROP 001",
+    "drop": "DROP 001",
+    "tags": [
+      "hoodie",
+      "heavyweight",
+      "fleece",
+      "terry",
+      "minimal",
+      "obsidian",
+      "streetwear"
+    ],
+    "fabric": "100% Loopback French Terry Cotton",
+    "gsm": "450 GSM",
+    "fit": "Ultra-Heavy Boxy Fit",
+    "printMethod": "Embossed Tonal Logo on Wrist",
+    "care": "Machine wash cold inside out. Reshape while damp. Lay flat to dry.",
+    "details": [
+      "450 GSM Premium Loopback French Terry Fleece",
+      "Double-Layered Hood Without Drawstrings",
+      "Concealed Side-Entry Kangaroo Pocket",
+      "Drop-Shoulder Architectural Streetwear Cut",
+      "Pre-Shrunk & Enzyme Washed For Zero Pilling"
+    ],
+    "gender": "UNISEX",
+    "image": "/images/vintage-wash.jpg",
+    "images": [
+      "/images/vintage-wash.jpg",
+      "/images/slate-boxy.jpg"
+    ],
+    "imageSlots": [
+      {
+        "id": "img-kpd-695818-1",
+        "url": "/images/vintage-wash.jpg",
+        "alt": "Heavy French Terry Obsidian Boxy Hoodie - View 1",
+        "slot": "PRIMARY",
+        "isPrimary": true,
+        "isHover": false,
+        "position": 1
+      },
+      {
+        "id": "img-kpd-695818-2",
+        "url": "/images/slate-boxy.jpg",
+        "alt": "Heavy French Terry Obsidian Boxy Hoodie - View 2",
+        "slot": "SECONDARY",
+        "isPrimary": false,
+        "isHover": true,
+        "position": 2
+      }
+    ],
+    "availableSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "Standard Black"
+    ],
+    "variants": [
+      {
+        "id": "var-kpd-695818-s",
+        "productId": "kpd-695818",
+        "size": "S",
+        "color": "Standard Black",
+        "sku": "KPD-KPD-695818-S",
+        "physicalStock": 10,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 10
+      },
+      {
+        "id": "var-kpd-695818-m",
+        "productId": "kpd-695818",
+        "size": "M",
+        "color": "Standard Black",
+        "sku": "KPD-KPD-695818-M",
+        "physicalStock": 10,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 10
+      },
+      {
+        "id": "var-kpd-695818-l",
+        "productId": "kpd-695818",
+        "size": "L",
+        "color": "Standard Black",
+        "sku": "KPD-KPD-695818-L",
+        "physicalStock": 10,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 10
+      },
+      {
+        "id": "var-kpd-695818-xl",
+        "productId": "kpd-695818",
+        "size": "XL",
+        "color": "Standard Black",
+        "sku": "KPD-KPD-695818-XL",
+        "physicalStock": 10,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 10
+      }
+    ],
+    "totalPhysicalStock": 40,
+    "totalReservedStock": 0,
+    "totalPreorderedStock": 0,
+    "totalAvailableStock": 40,
+    "lowStockThreshold": 5,
+    "status": "ACTIVE",
+    "badge": "WINTER DROP",
+    "isNew": true,
+    "isPopular": true,
+    "featured": true,
+    "reservationEnabled": true,
+    "reservationLimitPerCustomer": 2,
+    "reservationAllowedSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "reservationAllowedColors": [
+      "Standard Black"
+    ],
+    "reservationCtaText": "RESERVE YOUR SIZE",
+    "preorderEnabled": true,
+    "preorderAllowedSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "preorderAllowedColors": [
+      "Standard Black"
+    ],
+    "preorderCtaText": "PREORDER NOW →",
+    "showPreorderCapacity": false,
+    "createdAt": "2026-09-30T19:48:15.818Z",
+    "updatedAt": "2026-09-30T19:48:15.818Z"
+  },
+  {
+    "id": "kpd-695816",
+    "name": "Tactical Multi-Pocket Parachute Cargo",
+    "slug": "tactical-multi-pocket-parachute-cargo",
+    "shortDescription": "310 GSM ripstop cotton cargo pants with 8 modular pockets and adjustable bungee hems.",
+    "fullDescription": "Designed to anchor any Kapdology boxy tee. Built from high-density ripstop cotton with articulated knee darts, deep bellows cargo pockets, and drawcord ankle adjusters that transform the silhouette from wide straight-leg to tapered balloon.",
+    "price": 2499,
+    "compareAtPrice": 3499,
+    "discountPercentage": 29,
+    "categoryId": "bottoms",
+    "categoryName": "BOTTOMS",
+    "categorySlug": "bottoms",
+    "designFamilyId": "technical",
+    "designFamilyName": "TECHNICAL",
+    "collectionId": "drop-001",
+    "collectionName": "DROP 001",
+    "drop": "DROP 001",
+    "tags": [
+      "cargo",
+      "tactical",
+      "bottoms",
+      "pants",
+      "parachute",
+      "ripstop",
+      "streetwear"
+    ],
+    "fabric": "100% Ripstop Cotton Twill",
+    "gsm": "310 GSM",
+    "fit": "Relaxed Straight / Tapered Bungee",
+    "printMethod": "Matte Metal Hardware & Subtle Embroidery",
+    "care": "Machine wash cold inside out with like colors. Hang dry.",
+    "details": [
+      "310 GSM Heavyweight Ripstop Cotton Twill",
+      "8 Functional Pockets with Flap Closures",
+      "Elastic Waistband with High-Density Drawcord",
+      "Bungee Toggle Adjusters at Ankle Hems",
+      "Articulated Knee Panels For Free Movement"
+    ],
+    "gender": "UNISEX",
+    "image": "/images/cargos.jpg",
+    "images": [
+      "/images/cargos.jpg",
+      "/images/cropped-shirt.jpg"
+    ],
+    "imageSlots": [
+      {
+        "id": "img-kpd-695816-1",
+        "url": "/images/cargos.jpg",
+        "alt": "Tactical Multi-Pocket Parachute Cargo - View 1",
+        "slot": "PRIMARY",
+        "isPrimary": true,
+        "isHover": false,
+        "position": 1
+      },
+      {
+        "id": "img-kpd-695816-2",
+        "url": "/images/cropped-shirt.jpg",
+        "alt": "Tactical Multi-Pocket Parachute Cargo - View 2",
+        "slot": "SECONDARY",
+        "isPrimary": false,
+        "isHover": true,
+        "position": 2
+      }
+    ],
+    "availableSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "Standard Black"
+    ],
+    "variants": [
+      {
+        "id": "var-kpd-695816-s",
+        "productId": "kpd-695816",
+        "size": "S",
+        "color": "Standard Black",
+        "sku": "KPD-KPD-695816-S",
+        "physicalStock": 10,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 10
+      },
+      {
+        "id": "var-kpd-695816-m",
+        "productId": "kpd-695816",
+        "size": "M",
+        "color": "Standard Black",
+        "sku": "KPD-KPD-695816-M",
+        "physicalStock": 10,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 10
+      },
+      {
+        "id": "var-kpd-695816-l",
+        "productId": "kpd-695816",
+        "size": "L",
+        "color": "Standard Black",
+        "sku": "KPD-KPD-695816-L",
+        "physicalStock": 10,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 10
+      },
+      {
+        "id": "var-kpd-695816-xl",
+        "productId": "kpd-695816",
+        "size": "XL",
+        "color": "Standard Black",
+        "sku": "KPD-KPD-695816-XL",
+        "physicalStock": 10,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 10
+      }
+    ],
+    "totalPhysicalStock": 40,
+    "totalReservedStock": 0,
+    "totalPreorderedStock": 0,
+    "totalAvailableStock": 40,
+    "lowStockThreshold": 5,
+    "status": "ACTIVE",
+    "badge": "SIGNATURE",
+    "isNew": true,
+    "isPopular": true,
+    "featured": true,
+    "reservationEnabled": true,
+    "reservationLimitPerCustomer": 2,
+    "reservationAllowedSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "reservationAllowedColors": [
+      "Standard Black"
+    ],
+    "reservationCtaText": "RESERVE YOUR SIZE",
+    "preorderEnabled": true,
+    "preorderAllowedSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "preorderAllowedColors": [
+      "Standard Black"
+    ],
+    "preorderCtaText": "PREORDER NOW →",
+    "showPreorderCapacity": false,
+    "createdAt": "2026-09-30T19:48:15.816Z",
+    "updatedAt": "2026-09-30T19:48:15.816Z"
+  },
+  {
+    "id": "kpd-695813",
+    "name": "Industrial Cyber Overprint Tee",
+    "slug": "industrial-cyber-overprint-tee",
+    "shortDescription": "Minimalist technical schematics and brutalist typography printed on structured slate cotton.",
+    "fullDescription": "An architectural approach to casual streetwear. The Industrial Cyber Overprint highlights clean geometry, spec sheets, and studio serial numbers on a wide-cut boxy silhouette.",
+    "price": 1299,
+    "compareAtPrice": 1799,
+    "discountPercentage": 28,
+    "categoryId": "boxy-tees",
+    "categoryName": "BOXY / RELAXED TEES",
+    "categorySlug": "boxy-tees",
+    "designFamilyId": "minimal",
+    "designFamilyName": "MINIMAL",
+    "collectionId": "drop-001",
+    "collectionName": "DROP 001",
+    "drop": "DROP 001",
+    "tags": [
+      "cyber",
+      "industrial",
+      "brutalist",
+      "boxy",
+      "minimal",
+      "slate"
+    ],
+    "fabric": "100% Heavy Combed Cotton",
+    "gsm": "240 GSM",
+    "fit": "Structured Boxy Fit",
+    "printMethod": "Direct-to-Fabric Technical Stencil",
+    "care": "Machine wash cold inside-out. Do not iron on print.",
+    "details": [
+      "240 GSM Dense Combed Cotton Fabric",
+      "Architectural Studio Schematic Print",
+      "Reinforced High-Rib Neck",
+      "Box Cut For Clean Everyday Proportions"
+    ],
+    "gender": "UNISEX",
+    "image": "/uploads/kpd-1790062284887-industrial-kapdology-streetwea.png",
+    "images": [
+      "/uploads/kpd-1790062284887-industrial-kapdology-streetwea.png",
+      "/images/slate-boxy.jpg"
+    ],
+    "imageSlots": [
+      {
+        "id": "img-kpd-695813-1",
+        "url": "/uploads/kpd-1790062284887-industrial-kapdology-streetwea.png",
+        "alt": "Industrial Cyber Overprint Tee - View 1",
+        "slot": "PRIMARY",
+        "isPrimary": true,
+        "isHover": false,
+        "position": 1
+      },
+      {
+        "id": "img-kpd-695813-2",
+        "url": "/images/slate-boxy.jpg",
+        "alt": "Industrial Cyber Overprint Tee - View 2",
+        "slot": "SECONDARY",
+        "isPrimary": false,
+        "isHover": true,
+        "position": 2
+      }
+    ],
+    "availableSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "Standard Black"
+    ],
+    "variants": [
+      {
+        "id": "var-kpd-695813-s",
+        "productId": "kpd-695813",
+        "size": "S",
+        "color": "Standard Black",
+        "sku": "KPD-KPD-695813-S",
+        "physicalStock": 10,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 10
+      },
+      {
+        "id": "var-kpd-695813-m",
+        "productId": "kpd-695813",
+        "size": "M",
+        "color": "Standard Black",
+        "sku": "KPD-KPD-695813-M",
+        "physicalStock": 10,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 10
+      },
+      {
+        "id": "var-kpd-695813-l",
+        "productId": "kpd-695813",
+        "size": "L",
+        "color": "Standard Black",
+        "sku": "KPD-KPD-695813-L",
+        "physicalStock": 10,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 10
+      },
+      {
+        "id": "var-kpd-695813-xl",
+        "productId": "kpd-695813",
+        "size": "XL",
+        "color": "Standard Black",
+        "sku": "KPD-KPD-695813-XL",
+        "physicalStock": 10,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 10
+      }
+    ],
+    "totalPhysicalStock": 40,
+    "totalReservedStock": 0,
+    "totalPreorderedStock": 0,
+    "totalAvailableStock": 40,
+    "lowStockThreshold": 5,
+    "status": "ACTIVE",
+    "badge": "CORE",
+    "isNew": true,
+    "isPopular": false,
+    "featured": false,
+    "reservationEnabled": true,
+    "reservationLimitPerCustomer": 2,
+    "reservationAllowedSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "reservationAllowedColors": [
+      "Standard Black"
+    ],
+    "reservationCtaText": "RESERVE YOUR SIZE",
+    "preorderEnabled": false,
+    "preorderAllowedSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "preorderAllowedColors": [
+      "Standard Black"
+    ],
+    "preorderCtaText": "PREORDER NOW →",
+    "showPreorderCapacity": false,
+    "createdAt": "2026-09-30T19:48:15.813Z",
+    "updatedAt": "2026-09-30T19:48:15.813Z"
+  },
+  {
+    "id": "kpd-695810",
+    "name": "Grunge Ronin Ink Graphic Tee",
+    "slug": "grunge-ronin-ink-graphic-tee",
+    "shortDescription": "Hand-inked monochrome warrior illustration overlaid with brutalist subculture typography.",
+    "fullDescription": "Inspired by underground Tokyo zines and 90s manga ink art. Designed on a slightly boxy drape with dense combed cotton that holds its lines across seasons.",
+    "price": 1249,
+    "compareAtPrice": 1749,
+    "discountPercentage": 29,
+    "categoryId": "graphic-tees",
+    "categoryName": "GRAPHIC TEES",
+    "categorySlug": "graphic-tees",
+    "designFamilyId": "identity",
+    "designFamilyName": "IDENTITY",
+    "collectionId": "drop-001",
+    "collectionName": "DROP 001",
+    "drop": "DROP 001",
+    "tags": [
+      "grunge",
+      "warrior",
+      "ink",
+      "monochrome",
+      "graphic tee",
+      "streetwear"
+    ],
+    "fabric": "100% Combed Cotton",
+    "gsm": "240 GSM",
+    "fit": "Oversized Graphic Cut",
+    "printMethod": "Soft-Feel Plastisol Print",
+    "care": "Machine wash cold. Hang dry in shade. Warm iron on reverse.",
+    "details": [
+      "240 GSM Breathable Heavy Cotton",
+      "Fine Line Monochrome Inking Technique",
+      "Relaxed Fit Suitable for Layering",
+      "Double-Stitched Cuffs and Hem"
+    ],
+    "gender": "UNISEX",
+    "image": "/uploads/kpd-1790062223052-grunge-warrior-ink-graphic-t-s.png",
+    "images": [
+      "/uploads/kpd-1790062223052-grunge-warrior-ink-graphic-t-s.png",
+      "/uploads/kpd-1790786764376-751-crimson-eyed-shadow-wing-tee.png"
+    ],
+    "imageSlots": [
+      {
+        "id": "img-kpd-695810-1",
+        "url": "/uploads/kpd-1790062223052-grunge-warrior-ink-graphic-t-s.png",
+        "alt": "Grunge Ronin Ink Graphic Tee - View 1",
+        "slot": "PRIMARY",
+        "isPrimary": true,
+        "isHover": false,
+        "position": 1
+      },
+      {
+        "id": "img-kpd-695810-2",
+        "url": "/uploads/kpd-1790786764376-751-crimson-eyed-shadow-wing-tee.png",
+        "alt": "Grunge Ronin Ink Graphic Tee - View 2",
+        "slot": "SECONDARY",
+        "isPrimary": false,
+        "isHover": true,
+        "position": 2
+      }
+    ],
+    "availableSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "Standard Black"
+    ],
+    "variants": [
+      {
+        "id": "var-kpd-695810-s",
+        "productId": "kpd-695810",
+        "size": "S",
+        "color": "Standard Black",
+        "sku": "KPD-KPD-695810-S",
+        "physicalStock": 10,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 10
+      },
+      {
+        "id": "var-kpd-695810-m",
+        "productId": "kpd-695810",
+        "size": "M",
+        "color": "Standard Black",
+        "sku": "KPD-KPD-695810-M",
+        "physicalStock": 10,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 10
+      },
+      {
+        "id": "var-kpd-695810-l",
+        "productId": "kpd-695810",
+        "size": "L",
+        "color": "Standard Black",
+        "sku": "KPD-KPD-695810-L",
+        "physicalStock": 10,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 10
+      },
+      {
+        "id": "var-kpd-695810-xl",
+        "productId": "kpd-695810",
+        "size": "XL",
+        "color": "Standard Black",
+        "sku": "KPD-KPD-695810-XL",
+        "physicalStock": 10,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 10
+      }
+    ],
+    "totalPhysicalStock": 40,
+    "totalReservedStock": 0,
+    "totalPreorderedStock": 0,
+    "totalAvailableStock": 40,
+    "lowStockThreshold": 5,
+    "status": "ACTIVE",
+    "badge": "FEATURED",
+    "isNew": true,
+    "isPopular": true,
+    "featured": true,
+    "reservationEnabled": true,
+    "reservationLimitPerCustomer": 2,
+    "reservationAllowedSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "reservationAllowedColors": [
+      "Standard Black"
+    ],
+    "reservationCtaText": "RESERVE YOUR SIZE",
+    "preorderEnabled": true,
+    "preorderAllowedSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "preorderAllowedColors": [
+      "Standard Black"
+    ],
+    "preorderCtaText": "PREORDER NOW →",
+    "showPreorderCapacity": false,
+    "createdAt": "2026-09-30T19:48:15.810Z",
+    "updatedAt": "2026-09-30T19:48:15.810Z"
+  },
+  {
+    "id": "kpd-695807",
+    "name": "Demonic Splatter Raw Graphic Tee",
+    "slug": "demonic-splatter-raw-graphic-tee",
+    "shortDescription": "Raw splatter artwork in saturated crimson over an ink-black canvas with high-density print finish.",
+    "fullDescription": "A pure representation of the Kapdology dark streetwear palette. Built for maximum visual punch, the Demonic Splatter tee utilizes high-opacity screen inks over pure obsidian cotton.",
+    "price": 1199,
+    "compareAtPrice": 1649,
+    "discountPercentage": 27,
+    "categoryId": "graphic-tees",
+    "categoryName": "GRAPHIC TEES",
+    "categorySlug": "graphic-tees",
+    "designFamilyId": "identity",
+    "designFamilyName": "IDENTITY",
+    "collectionId": "drop-001",
+    "collectionName": "DROP 001",
+    "drop": "DROP 001",
+    "tags": [
+      "graphic",
+      "splatter",
+      "red",
+      "black",
+      "streetwear",
+      "heavyweight"
+    ],
+    "fabric": "100% Combed Cotton",
+    "gsm": "240 GSM",
+    "fit": "Signature Oversized Cut",
+    "printMethod": "High-Density Screenprint",
+    "care": "Machine wash cold inside-out. Do not tumble dry.",
+    "details": [
+      "240 GSM Pure Combed Cotton",
+      "Multi-Pass High-Opacity Crimson Print",
+      "Comfort Drop Shoulders",
+      "Pre-Shrunk To Fit"
+    ],
+    "gender": "UNISEX",
+    "image": "/uploads/kpd-1790062183363-demonic-splatter-streetwear-te.png",
+    "images": [
+      "/uploads/kpd-1790062183363-demonic-splatter-streetwear-te.png",
+      "/uploads/kpd-1790786740641-916-blood-moon-warrior-graphic-tee.png"
+    ],
+    "imageSlots": [
+      {
+        "id": "img-kpd-695807-1",
+        "url": "/uploads/kpd-1790062183363-demonic-splatter-streetwear-te.png",
+        "alt": "Demonic Splatter Raw Graphic Tee - View 1",
+        "slot": "PRIMARY",
+        "isPrimary": true,
+        "isHover": false,
+        "position": 1
+      },
+      {
+        "id": "img-kpd-695807-2",
+        "url": "/uploads/kpd-1790786740641-916-blood-moon-warrior-graphic-tee.png",
+        "alt": "Demonic Splatter Raw Graphic Tee - View 2",
+        "slot": "SECONDARY",
+        "isPrimary": false,
+        "isHover": true,
+        "position": 2
+      }
+    ],
+    "availableSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "Standard Black"
+    ],
+    "variants": [
+      {
+        "id": "var-kpd-695807-s",
+        "productId": "kpd-695807",
+        "size": "S",
+        "color": "Standard Black",
+        "sku": "KPD-KPD-695807-S",
+        "physicalStock": 10,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 10
+      },
+      {
+        "id": "var-kpd-695807-m",
+        "productId": "kpd-695807",
+        "size": "M",
+        "color": "Standard Black",
+        "sku": "KPD-KPD-695807-M",
+        "physicalStock": 10,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 10
+      },
+      {
+        "id": "var-kpd-695807-l",
+        "productId": "kpd-695807",
+        "size": "L",
+        "color": "Standard Black",
+        "sku": "KPD-KPD-695807-L",
+        "physicalStock": 10,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 10
+      },
+      {
+        "id": "var-kpd-695807-xl",
+        "productId": "kpd-695807",
+        "size": "XL",
+        "color": "Standard Black",
+        "sku": "KPD-KPD-695807-XL",
+        "physicalStock": 10,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 10
+      }
+    ],
+    "totalPhysicalStock": 40,
+    "totalReservedStock": 0,
+    "totalPreorderedStock": 0,
+    "totalAvailableStock": 40,
+    "lowStockThreshold": 5,
+    "status": "ACTIVE",
+    "badge": "NEW",
+    "isNew": true,
+    "isPopular": false,
+    "featured": false,
+    "reservationEnabled": true,
+    "reservationLimitPerCustomer": 2,
+    "reservationAllowedSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "reservationAllowedColors": [
+      "Standard Black"
+    ],
+    "reservationCtaText": "RESERVE YOUR SIZE",
+    "preorderEnabled": false,
+    "preorderAllowedSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "preorderAllowedColors": [
+      "Standard Black"
+    ],
+    "preorderCtaText": "PREORDER NOW →",
+    "showPreorderCapacity": false,
+    "createdAt": "2026-09-30T19:48:15.807Z",
+    "updatedAt": "2026-09-30T19:48:15.807Z"
+  },
+  {
+    "id": "kpd-695804",
+    "name": "Distressed Ronin Acid Wash Tee",
+    "slug": "distressed-ronin-acid-wash-tee",
+    "shortDescription": "Individually acid-treated oversized garment featuring distressed Japanese warrior illustrations front and back.",
+    "fullDescription": "Every piece undergoes an artisan mineral acid wash, resulting in a completely unique charcoal-to-slate fade. Dual-sided printing captures warrior scripture across the chest and full back artwork.",
+    "price": 1399,
+    "compareAtPrice": 1999,
+    "discountPercentage": 30,
+    "categoryId": "oversized-tees",
+    "categoryName": "OVERSIZED T-SHIRTS",
+    "categorySlug": "oversized-tees",
+    "designFamilyId": "chaos",
+    "designFamilyName": "CHAOS",
+    "collectionId": "drop-001",
+    "collectionName": "DROP 001",
+    "drop": "DROP 001",
+    "tags": [
+      "acid wash",
+      "distressed",
+      "ronin",
+      "japanese",
+      "dual print",
+      "oversized",
+      "heavyweight"
+    ],
+    "fabric": "100% Heavy Terry Cloth Cotton",
+    "gsm": "260 GSM",
+    "fit": "Signature Oversized Box Cut",
+    "printMethod": "Front & Back Vintage Discharge",
+    "care": "Hand or machine wash cold inside out. Gentle cycle. Hang dry.",
+    "details": [
+      "260 GSM Ultra-Heavyweight Terry Cotton",
+      "Front Chest & Full Back Graphic Artwork",
+      "Individually Treated Acid Wash Patina",
+      "Heavy Ribbed Collar That Never Sags"
+    ],
+    "gender": "UNISEX",
+    "image": "/uploads/kpd-1790786795007-187-distressed-japanese-warrior-t-.png",
+    "images": [
+      "/uploads/kpd-1790786795007-187-distressed-japanese-warrior-t-.png",
+      "/uploads/kpd-1790786795031-233-distressed-streetwear-tee-back.png"
+    ],
+    "imageSlots": [
+      {
+        "id": "img-kpd-695804-1",
+        "url": "/uploads/kpd-1790786795007-187-distressed-japanese-warrior-t-.png",
+        "alt": "Distressed Ronin Acid Wash Tee - View 1",
+        "slot": "PRIMARY",
+        "isPrimary": true,
+        "isHover": false,
+        "position": 1
+      },
+      {
+        "id": "img-kpd-695804-2",
+        "url": "/uploads/kpd-1790786795031-233-distressed-streetwear-tee-back.png",
+        "alt": "Distressed Ronin Acid Wash Tee - View 2",
+        "slot": "SECONDARY",
+        "isPrimary": false,
+        "isHover": true,
+        "position": 2
+      }
+    ],
+    "availableSizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Standard Black"
+    ],
+    "variants": [
+      {
+        "id": "var-kpd-695804-s",
+        "productId": "kpd-695804",
+        "size": "S",
+        "color": "Standard Black",
+        "sku": "KPD-KPD-695804-S",
+        "physicalStock": 10,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 10
+      },
+      {
+        "id": "var-kpd-695804-m",
+        "productId": "kpd-695804",
+        "size": "M",
+        "color": "Standard Black",
+        "sku": "KPD-KPD-695804-M",
+        "physicalStock": 10,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 10
+      },
+      {
+        "id": "var-kpd-695804-l",
+        "productId": "kpd-695804",
+        "size": "L",
+        "color": "Standard Black",
+        "sku": "KPD-KPD-695804-L",
+        "physicalStock": 10,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 10
+      },
+      {
+        "id": "var-kpd-695804-xl",
+        "productId": "kpd-695804",
+        "size": "XL",
+        "color": "Standard Black",
+        "sku": "KPD-KPD-695804-XL",
+        "physicalStock": 10,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 10
+      },
+      {
+        "id": "var-kpd-695804-xxl",
+        "productId": "kpd-695804",
+        "size": "XXL",
+        "color": "Standard Black",
+        "sku": "KPD-KPD-695804-XXL",
+        "physicalStock": 10,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 10
+      }
+    ],
+    "totalPhysicalStock": 50,
+    "totalReservedStock": 0,
+    "totalPreorderedStock": 0,
+    "totalAvailableStock": 50,
+    "lowStockThreshold": 5,
+    "status": "ACTIVE",
+    "badge": "HOT DROP",
+    "isNew": true,
+    "isPopular": true,
+    "featured": true,
+    "reservationEnabled": true,
+    "reservationLimitPerCustomer": 2,
+    "reservationAllowedSizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "reservationAllowedColors": [
+      "Standard Black"
+    ],
+    "reservationCtaText": "RESERVE YOUR SIZE",
+    "preorderEnabled": true,
+    "preorderAllowedSizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "preorderAllowedColors": [
+      "Standard Black"
+    ],
+    "preorderCtaText": "PREORDER NOW →",
+    "showPreorderCapacity": false,
+    "createdAt": "2026-09-30T19:48:15.804Z",
+    "updatedAt": "2026-09-30T19:48:15.804Z"
+  },
+  {
+    "id": "kpd-695802",
+    "name": "Shadow Wing Demon Graphic Boxy Tee",
+    "slug": "shadow-wing-demon-boxy-tee",
+    "shortDescription": "A wide boxy drape layered with demonic wing calligraphy and vivid crimson eye accents on charcoal cotton.",
+    "fullDescription": "A statement piece from the Chaos line, this boxy tee balances gritty mineral wash textures with high-contrast graphic detailing. The boxy drape allows fluid layering while maintaining a clean, structured torso silhouette.",
+    "price": 1349,
+    "compareAtPrice": 1899,
+    "discountPercentage": 29,
+    "categoryId": "boxy-tees",
+    "categoryName": "BOXY / RELAXED TEES",
+    "categorySlug": "boxy-tees",
+    "designFamilyId": "chaos",
+    "designFamilyName": "CHAOS",
+    "collectionId": "drop-001",
+    "collectionName": "DROP 001",
+    "drop": "DROP 001",
+    "tags": [
+      "boxy",
+      "relaxed",
+      "shadow",
+      "demon",
+      "crimson",
+      "streetwear",
+      "charcoal"
+    ],
+    "fabric": "100% Ring-Spun Cotton",
+    "gsm": "240 GSM",
+    "fit": "Structured Boxy Fit",
+    "printMethod": "Mineral Wash Discharge Graphic",
+    "care": "Machine wash cold separately. Do not bleach. Line dry in shade.",
+    "details": [
+      "240 GSM Ring-Spun Cotton Construction",
+      "Square Box Cut with Relaxed Torso",
+      "Seamless Ribbed Crewneck",
+      "Pre-Washed for Authentic Vintage Softness"
+    ],
+    "gender": "UNISEX",
+    "image": "/uploads/kpd-1790786764376-751-crimson-eyed-shadow-wing-tee.png",
+    "images": [
+      "/uploads/kpd-1790786764376-751-crimson-eyed-shadow-wing-tee.png",
+      "/uploads/kpd-1790786764385-857-gritty-charcoal-streetwear-gra.png"
+    ],
+    "imageSlots": [
+      {
+        "id": "img-kpd-695802-1",
+        "url": "/uploads/kpd-1790786764376-751-crimson-eyed-shadow-wing-tee.png",
+        "alt": "Shadow Wing Demon Graphic Boxy Tee - View 1",
+        "slot": "PRIMARY",
+        "isPrimary": true,
+        "isHover": false,
+        "position": 1
+      },
+      {
+        "id": "img-kpd-695802-2",
+        "url": "/uploads/kpd-1790786764385-857-gritty-charcoal-streetwear-gra.png",
+        "alt": "Shadow Wing Demon Graphic Boxy Tee - View 2",
+        "slot": "SECONDARY",
+        "isPrimary": false,
+        "isHover": true,
+        "position": 2
+      }
+    ],
+    "availableSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "Standard Black"
+    ],
+    "variants": [
+      {
+        "id": "var-kpd-695802-s",
+        "productId": "kpd-695802",
+        "size": "S",
+        "color": "Standard Black",
+        "sku": "KPD-KPD-695802-S",
+        "physicalStock": 10,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 10
+      },
+      {
+        "id": "var-kpd-695802-m",
+        "productId": "kpd-695802",
+        "size": "M",
+        "color": "Standard Black",
+        "sku": "KPD-KPD-695802-M",
+        "physicalStock": 10,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 10
+      },
+      {
+        "id": "var-kpd-695802-l",
+        "productId": "kpd-695802",
+        "size": "L",
+        "color": "Standard Black",
+        "sku": "KPD-KPD-695802-L",
+        "physicalStock": 10,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 10
+      },
+      {
+        "id": "var-kpd-695802-xl",
+        "productId": "kpd-695802",
+        "size": "XL",
+        "color": "Standard Black",
+        "sku": "KPD-KPD-695802-XL",
+        "physicalStock": 10,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 10
+      }
+    ],
+    "totalPhysicalStock": 40,
+    "totalReservedStock": 0,
+    "totalPreorderedStock": 0,
+    "totalAvailableStock": 40,
+    "lowStockThreshold": 5,
+    "status": "ACTIVE",
+    "badge": "LIMITED",
+    "isNew": true,
+    "isPopular": false,
+    "featured": true,
+    "reservationEnabled": true,
+    "reservationLimitPerCustomer": 2,
+    "reservationAllowedSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "reservationAllowedColors": [
+      "Standard Black"
+    ],
+    "reservationCtaText": "RESERVE YOUR SIZE",
+    "preorderEnabled": false,
+    "preorderAllowedSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "preorderAllowedColors": [
+      "Standard Black"
+    ],
+    "preorderCtaText": "PREORDER NOW →",
+    "showPreorderCapacity": false,
+    "createdAt": "2026-09-30T19:48:15.802Z",
+    "updatedAt": "2026-09-30T19:48:15.802Z"
+  },
+  {
+    "id": "kpd-695797",
+    "name": "Blood Moon Ronin Oversized Tee",
+    "slug": "blood-moon-ronin-oversized-tee",
+    "shortDescription": "Heavyweight drop-shoulder silhouette featuring high-contrast crimson warrior artwork under an apocalyptic blood moon.",
+    "fullDescription": "Built from 240 GSM organic combed cotton, the Blood Moon Ronin tee anchors our visual identity in contemporary anime darkwear. Engineered with a structured drop-shoulder drape, thick 1.2-inch ribbed collar, and crack-resistant DTF screenprint that maintains flexibility across washes.",
+    "price": 1299,
+    "compareAtPrice": 1799,
+    "discountPercentage": 28,
+    "categoryId": "oversized-tees",
+    "categoryName": "OVERSIZED T-SHIRTS",
+    "categorySlug": "oversized-tees",
+    "designFamilyId": "identity",
+    "designFamilyName": "IDENTITY",
+    "collectionId": "drop-001",
+    "collectionName": "DROP 001",
+    "drop": "DROP 001",
+    "tags": [
+      "streetwear",
+      "oversized",
+      "graphic tee",
+      "ronin",
+      "samurai",
+      "blood moon",
+      "crimson",
+      "darkwear",
+      "drop shoulder"
+    ],
+    "fabric": "100% Combed Heavyweight Cotton",
+    "gsm": "240 GSM",
+    "fit": "Signature Oversized Box Cut",
+    "printMethod": "High-Density DTF Discharge",
+    "care": "Machine wash cold inside-out. Do not iron print directly. Hang dry in shade.",
+    "details": [
+      "240 GSM 100% Heavy Combed Cotton",
+      "Signature Relaxed Drop-Shoulder Silhouette",
+      "1.2-Inch High-Rib Shape-Retaining Collar",
+      "Reinforced Double-Stitched Shoulder Taping",
+      "Engineered & Tailored in Jaipur, India"
+    ],
+    "gender": "UNISEX",
+    "image": "/uploads/kpd-1790786740641-916-blood-moon-warrior-graphic-tee.png",
+    "images": [
+      "/uploads/kpd-1790786740641-916-blood-moon-warrior-graphic-tee.png",
+      "/uploads/kpd-1790786740629-919-apocalyptic-red-ink-manga-stre.png"
+    ],
+    "imageSlots": [
+      {
+        "id": "img-kpd-695797-1",
+        "url": "/uploads/kpd-1790786740641-916-blood-moon-warrior-graphic-tee.png",
+        "alt": "Blood Moon Ronin Oversized Tee - View 1",
+        "slot": "PRIMARY",
+        "isPrimary": true,
+        "isHover": false,
+        "position": 1
+      },
+      {
+        "id": "img-kpd-695797-2",
+        "url": "/uploads/kpd-1790786740629-919-apocalyptic-red-ink-manga-stre.png",
+        "alt": "Blood Moon Ronin Oversized Tee - View 2",
+        "slot": "SECONDARY",
+        "isPrimary": false,
+        "isHover": true,
+        "position": 2
+      }
+    ],
+    "availableSizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Standard Black"
+    ],
+    "variants": [
+      {
+        "id": "var-kpd-695797-s",
+        "productId": "kpd-695797",
+        "size": "S",
+        "color": "Standard Black",
+        "sku": "KPD-KPD-695797-S",
+        "physicalStock": 10,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 10
+      },
+      {
+        "id": "var-kpd-695797-m",
+        "productId": "kpd-695797",
+        "size": "M",
+        "color": "Standard Black",
+        "sku": "KPD-KPD-695797-M",
+        "physicalStock": 10,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 10
+      },
+      {
+        "id": "var-kpd-695797-l",
+        "productId": "kpd-695797",
+        "size": "L",
+        "color": "Standard Black",
+        "sku": "KPD-KPD-695797-L",
+        "physicalStock": 10,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 10
+      },
+      {
+        "id": "var-kpd-695797-xl",
+        "productId": "kpd-695797",
+        "size": "XL",
+        "color": "Standard Black",
+        "sku": "KPD-KPD-695797-XL",
+        "physicalStock": 10,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 10
+      },
+      {
+        "id": "var-kpd-695797-xxl",
+        "productId": "kpd-695797",
+        "size": "XXL",
+        "color": "Standard Black",
+        "sku": "KPD-KPD-695797-XXL",
+        "physicalStock": 10,
+        "reservedStock": 0,
+        "preorderedStock": 0,
+        "allocatedStock": 0,
+        "availableStock": 10
+      }
+    ],
+    "totalPhysicalStock": 50,
+    "totalReservedStock": 0,
+    "totalPreorderedStock": 0,
+    "totalAvailableStock": 50,
+    "lowStockThreshold": 5,
+    "status": "ACTIVE",
+    "badge": "BESTSELLER",
+    "isNew": true,
+    "isPopular": true,
+    "featured": true,
+    "reservationEnabled": true,
+    "reservationLimitPerCustomer": 2,
+    "reservationAllowedSizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "reservationAllowedColors": [
+      "Standard Black"
+    ],
+    "reservationCtaText": "RESERVE YOUR SIZE",
+    "preorderEnabled": true,
+    "preorderAllowedSizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "preorderAllowedColors": [
+      "Standard Black"
+    ],
+    "preorderCtaText": "PREORDER NOW →",
+    "showPreorderCapacity": false,
+    "createdAt": "2026-09-30T19:48:15.797Z",
+    "updatedAt": "2026-09-30T19:48:15.797Z"
+  },
+  {
     "id": "kpd-965366",
     "name": "AstaAkuma",
     "slug": "astaakuma-1",

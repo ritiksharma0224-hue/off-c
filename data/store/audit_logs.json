@@ -1,5 +1,85 @@
 [
   {
+    "id": "audit-1790797695819-696",
+    "admin": "Admin Catalog Expansion",
+    "action": "PRODUCT_CREATED",
+    "targetType": "PRODUCT",
+    "targetId": "kpd-695818",
+    "targetName": "Heavy French Terry Obsidian Boxy Hoodie",
+    "details": "Created new product Heavy French Terry Obsidian Boxy Hoodie at ₹2999",
+    "timestamp": "2026-09-30T19:48:15.819Z"
+  },
+  {
+    "id": "audit-1790797695817-149",
+    "admin": "Admin Catalog Expansion",
+    "action": "PRODUCT_CREATED",
+    "targetType": "PRODUCT",
+    "targetId": "kpd-695816",
+    "targetName": "Tactical Multi-Pocket Parachute Cargo",
+    "details": "Created new product Tactical Multi-Pocket Parachute Cargo at ₹2499",
+    "timestamp": "2026-09-30T19:48:15.817Z"
+  },
+  {
+    "id": "audit-1790797695814-214",
+    "admin": "Admin Catalog Expansion",
+    "action": "PRODUCT_CREATED",
+    "targetType": "PRODUCT",
+    "targetId": "kpd-695813",
+    "targetName": "Industrial Cyber Overprint Tee",
+    "details": "Created new product Industrial Cyber Overprint Tee at ₹1299",
+    "timestamp": "2026-09-30T19:48:15.814Z"
+  },
+  {
+    "id": "audit-1790797695811-628",
+    "admin": "Admin Catalog Expansion",
+    "action": "PRODUCT_CREATED",
+    "targetType": "PRODUCT",
+    "targetId": "kpd-695810",
+    "targetName": "Grunge Ronin Ink Graphic Tee",
+    "details": "Created new product Grunge Ronin Ink Graphic Tee at ₹1249",
+    "timestamp": "2026-09-30T19:48:15.811Z"
+  },
+  {
+    "id": "audit-1790797695809-126",
+    "admin": "Admin Catalog Expansion",
+    "action": "PRODUCT_CREATED",
+    "targetType": "PRODUCT",
+    "targetId": "kpd-695807",
+    "targetName": "Demonic Splatter Raw Graphic Tee",
+    "details": "Created new product Demonic Splatter Raw Graphic Tee at ₹1199",
+    "timestamp": "2026-09-30T19:48:15.809Z"
+  },
+  {
+    "id": "audit-1790797695806-888",
+    "admin": "Admin Catalog Expansion",
+    "action": "PRODUCT_CREATED",
+    "targetType": "PRODUCT",
+    "targetId": "kpd-695804",
+    "targetName": "Distressed Ronin Acid Wash Tee",
+    "details": "Created new product Distressed Ronin Acid Wash Tee at ₹1399",
+    "timestamp": "2026-09-30T19:48:15.806Z"
+  },
+  {
+    "id": "audit-1790797695803-667",
+    "admin": "Admin Catalog Expansion",
+    "action": "PRODUCT_CREATED",
+    "targetType": "PRODUCT",
+    "targetId": "kpd-695802",
+    "targetName": "Shadow Wing Demon Graphic Boxy Tee",
+    "details": "Created new product Shadow Wing Demon Graphic Boxy Tee at ₹1349",
+    "timestamp": "2026-09-30T19:48:15.803Z"
+  },
+  {
+    "id": "audit-1790797695800-817",
+    "admin": "Admin Catalog Expansion",
+    "action": "PRODUCT_CREATED",
+    "targetType": "PRODUCT",
+    "targetId": "kpd-695797",
+    "targetName": "Blood Moon Ronin Oversized Tee",
+    "details": "Created new product Blood Moon Ronin Oversized Tee at ₹1299",
+    "timestamp": "2026-09-30T19:48:15.800Z"
+  },
+  {
     "id": "audit-1790787401524-365",
     "admin": "Master Super Admin",
     "action": "ADMIN_LOGIN",
